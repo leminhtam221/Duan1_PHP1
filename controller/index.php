@@ -19,6 +19,7 @@
       break;
     default: 
       include __DIR__."/../view/404.php";
+      break;
   }
 
   include __DIR__."/../view/footer.php";
