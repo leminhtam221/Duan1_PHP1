@@ -1,3 +1,3 @@
 <?php
-  header("location: ./controller/index.php");
+  include __DIR__."/controller/index.php";
 ?>

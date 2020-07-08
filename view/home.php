@@ -1,6 +1,6 @@
 <div class="main-banner">
   <div class="hvrbox">
-    <img src="../view/base/images/bn.jpg" alt="Mountains" class="hvrbox-layer_bottom">
+    <img src="./view/base/images/bn.jpg" alt="Mountains" class="hvrbox-layer_bottom">
     <div class="hvrbox-layer_top">
       <div class="container">
         <div class="overlay-text text-center">
@@ -19,7 +19,7 @@
                 </select>
               </div>
               <div class="input-group-append">
-                <button class="btn btn-search" type="button"><img src="../view/base/images/search.png"
+                <button class="btn btn-search" type="button"><img src="./view/base/images/search.png"
                     alt="Image"></button>
               </div>
             </div>
@@ -27,9 +27,9 @@
 
           <div class="slider-feature">
             <ul>
-              <li><img src="../view/base/images/book.png" alt="Mountains"> 2502 Khóa Học</li>
-              <li><img src="../view/base/images/cap.png" alt="Mountains"> 32052 Học Viên</li>
-              <li><img src="../view/base/images/man.png" alt="Mountains"> 459 Giảng Viên</li>
+              <li><img src="./view/base/images/book.png" alt="Mountains"> 2502 Khóa Học</li>
+              <li><img src="./view/base/images/cap.png" alt="Mountains"> 32052 Học Viên</li>
+              <li><img src="./view/base/images/man.png" alt="Mountains"> 459 Giảng Viên</li>
             </ul>
           </div>
         </div>
@@ -44,7 +44,7 @@
       <div class="col-md-6">
         <div class="category-left left-image">
           <div class="hvrbox">
-            <img src="../view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+            <img src="./view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
             <div class="hvrbox-layer_top">
               <div class="hvrbox-text">
                 <a href="#">Design Introduction</a>
@@ -60,7 +60,7 @@
           <div class="col-md-6">
             <div class="category-left right-image">
               <div class="hvrbox">
-                <img src="../view/base/images/5.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                <img src="./view/base/images/5.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                 <div class="hvrbox-layer_top hvrbox-text">
                   <div class="hvrbox-text">
                     <a href="#">Web Developement</a>
@@ -74,7 +74,7 @@
           <div class="col-md-6">
             <div class="category-left right-image">
               <div class="hvrbox">
-                <img src="../view/base/images/2.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                <img src="./view/base/images/2.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                 <div class="hvrbox-layer_top hvrbox-text">
                   <div class="hvrbox-text">
                     <a href="#">Digital Marketing</a>
@@ -88,7 +88,7 @@
           <div class="col-md-6">
             <div class="category-left right-image">
               <div class="hvrbox">
-                <img src="../view/base/images/3.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                <img src="./view/base/images/3.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                 <div class="hvrbox-layer_top hvrbox-text">
                   <div class="hvrbox-text">
                     <a href="#">Busines</a>
@@ -102,7 +102,7 @@
           <div class="col-md-6">
             <div class="category-left right-image">
               <div class="hvrbox">
-                <img src="../view/base/images/4.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                <img src="./view/base/images/4.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                 <div class="hvrbox-layer_top hvrbox-text">
                   <div class="hvrbox-text">
                     <a href="#">Photography</a>
@@ -120,21 +120,21 @@
           <div class="row">
             <div class="col-md-4">
               <div class="single-feature">
-                <img src="../view/base/images/man-2.png" alt="slide 1">
+                <img src="./view/base/images/man-2.png" alt="slide 1">
                 <h4>Học với chuyên gia</h4>
                 <p>We rigorously screen and train our instructors ensure that they meet </p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="single-feature">
-                <img src="../view/base/images/clock.png" alt="slide 1">
+                <img src="./view/base/images/clock.png" alt="slide 1">
                 <h4>Truy cập trọn đời</h4>
                 <p>We rigorously screen and train our instructors ensure that they meet </p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="single-feature">
-                <img src="../view/base/images/pc.png" alt="slide 1">
+                <img src="./view/base/images/pc.png" alt="slide 1">
                 <h4>Học mọi lúc mọi nơi</h4>
                 <p>We rigorously screen and train our instructors ensure that they meet </p>
               </div>
@@ -177,7 +177,7 @@
             <div class="col-md-3 tile web">
               <div class="single-course">
                 <div class="hvrbox">
-                  <img src="../view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                  <img src="./view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                   <div class="hvrbox-layer_top hvrbox-text">
                     <div class="hvrbox-text">
                       <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
@@ -203,7 +203,7 @@
             <div class="col-md-3 tile design">
               <div class="single-course">
                 <div class="hvrbox">
-                  <img src="../view/base/images/2.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                  <img src="./view/base/images/2.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                   <div class="hvrbox-layer_top hvrbox-text">
                     <div class="hvrbox-text">
                       <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
@@ -230,7 +230,7 @@
             <div class="col-md-3 tile marketing">
               <div class="single-course">
                 <div class="hvrbox">
-                  <img src="../view/base/images/3.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                  <img src="./view/base/images/3.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                   <div class="hvrbox-layer_top hvrbox-text">
                     <div class="hvrbox-text">
                       <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
@@ -257,7 +257,7 @@
             <div class="col-md-3 tile design">
               <div class="single-course">
                 <div class="hvrbox">
-                  <img src="../view/base/images/4.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                  <img src="./view/base/images/4.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                   <div class="hvrbox-layer_top hvrbox-text">
                     <div class="hvrbox-text">
                       <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
@@ -284,7 +284,7 @@
             <div class="col-md-3 tile marketing">
               <div class="single-course">
                 <div class="hvrbox">
-                  <img src="../view/base/images/5.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                  <img src="./view/base/images/5.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                   <div class="hvrbox-layer_top hvrbox-text">
                     <div class="hvrbox-text">
                       <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
@@ -311,7 +311,7 @@
             <div class="col-md-3 tile photography">
               <div class="single-course">
                 <div class="hvrbox">
-                  <img src="../view/base/images/6.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                  <img src="./view/base/images/6.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                   <div class="hvrbox-layer_top hvrbox-text">
                     <div class="hvrbox-text">
                       <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
@@ -338,7 +338,7 @@
             <div class="col-md-3 tile bcards">
               <div class="single-course">
                 <div class="hvrbox">
-                  <img src="../view/base/images/7.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                  <img src="./view/base/images/7.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                   <div class="hvrbox-layer_top hvrbox-text">
                     <div class="hvrbox-text">
                       <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
@@ -365,7 +365,7 @@
             <div class="col-md-3 tile photography">
               <div class="single-course">
                 <div class="hvrbox">
-                  <img src="../view/base/images/8.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                  <img src="./view/base/images/8.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                   <div class="hvrbox-layer_top hvrbox-text">
                     <div class="hvrbox-text">
                       <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
@@ -414,21 +414,21 @@
       <div class="row">
         <div class="col-md-4">
           <div class="single-goals">
-            <img src="../view/base/images/icon-1.png" alt="slide 1">
+            <img src="./view/base/images/icon-1.png" alt="slide 1">
             <h4>Phát Triển kĩ năng</h4>
             <p>These goals will assist them in achieving their ultimate career position </p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="single-goals">
-            <img src="../view/base/images/icon-2.png" alt="slide 1">
+            <img src="./view/base/images/icon-2.png" alt="slide 1">
             <h4>Học Tập Cộng Đồng</h4>
             <p>These goals will assist them in achieving their ultimate career position </p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="single-goals">
-            <img src="../view/base/images/icon-4.png" alt="slide 1">
+            <img src="./view/base/images/icon-4.png" alt="slide 1">
             <h4>Dự Án Thực Tế</h4>
             <p>These goals will assist them in achieving their ultimate career position </p>
           </div>
@@ -443,7 +443,7 @@
     <div class="col-md-10 offset-md-1">
       <div class="testimonial">
         <div class="single-testimonial text-center">
-          <img src="../view/base/images/testimonial-1.jpg" alt="slide 1">
+          <img src="./view/base/images/testimonial-1.jpg" alt="slide 1">
           <p><i class="fas fa-quote-left"></i> Before Coursecity, I was working two minimum wage jobs. Now, I have a new
             job, a new mindset,<br> and new life!"I learned most of my programming skills and database management skills
             <br> through self-study and the material available on Coursecity.</p>
@@ -452,7 +452,7 @@
         </div>
 
         <div class="single-testimonial text-center">
-          <img src="../view/base/images/testimonial-2.jpg" alt="slide 1">
+          <img src="./view/base/images/testimonial-2.jpg" alt="slide 1">
           <p><i class="fas fa-quote-left"></i> Before Coursecity, I was working two minimum wage jobs. Now, I have a new
             job, a new mindset,<br> and new life!"I learned most of my programming skills and database management skills
             <br> through self-study and the material available on Coursecity.</p>

@@ -6,7 +6,7 @@
           <div class="row">
             <div class="col-md-4">
               <div class="footer-top-right">
-                <img src="../view/base/images/logo.png" alt="slide 1">
+                <img src="./view/base/images/logo.png" alt="slide 1">
                 <p>Cung cấp tất cả các khóa học <br>chất lượng tốt nhất<br> đến với các bạn.</p>
                 <ul>
                   <li>+84 398 623 696</li>

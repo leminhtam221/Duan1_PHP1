@@ -8,30 +8,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Favicon icon -->
-  <link rel="shortcut icon" type="image/png" href="../view/base/images/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="./view/base/images/favicon.png" />
 
   <!-- Bootstrap -->
-  <link href="../view/base/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./view/base/css/bootstrap.min.css" rel="stylesheet">
   <!-- Fontawsome -->
-  <link href="../view/base/fonts/css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="./view/base/fonts/css/fontawesome-all.min.css" rel="stylesheet">
   <!-- Animate CSS-->
-  <link href="../view/base/css/animate.css" rel="stylesheet">
+  <link href="./view/base/css/animate.css" rel="stylesheet">
   <!-- menu CSS-->
-  <link href="../view/base/css/bootstrap-4-navbar.css" rel="stylesheet">
+  <link href="./view/base/css/bootstrap-4-navbar.css" rel="stylesheet">
   <!-- menu CSS-->
-  <link href="../view/base/slick/slick.css" rel="stylesheet">
+  <link href="./view/base/slick/slick.css" rel="stylesheet">
   <!-- Lightbox Gallery -->
-  <link href="../view/base/inc/lightbox/css/jquery.fancybox.css" rel="stylesheet">
+  <link href="./view/base/inc/lightbox/css/jquery.fancybox.css" rel="stylesheet">
   <!-- Preloader CSS-->
-  <link href="../view/base/css/fakeLoader.css" rel="stylesheet">
+  <link href="./view/base/css/fakeLoader.css" rel="stylesheet">
   <!-- Video popup CSS-->
-  <link href="../view/base/css/magnific-popup.css" rel="stylesheet">
+  <link href="./view/base/css/magnific-popup.css" rel="stylesheet">
   <!-- Main CSS -->
-  <link href="../view/base/style.css" rel="stylesheet">
+  <link href="./view/base/style.css" rel="stylesheet">
   <!-- Color CSS -->
-  <link href="../view/base/css/color-switcher.css" rel="stylesheet">
+  <link href="./view/base/css/color-switcher.css" rel="stylesheet">
   <!-- Responsive CSS -->
-  <link href="../view/base/css/responsive.css" rel="stylesheet">
+  <link href="./view/base/css/responsive.css" rel="stylesheet">
 
 </head>
 
@@ -49,8 +49,8 @@
               <a class="nav-link" href="#">Kích Hoạt Khóa Học</a>
               <a class="nav-link" href="#">Tham Gia Dạy Học </a>
               <a class="nav-link" href="#">Khóa Học Của Tôi</a>
-              <a class="nav-link" href="#">Đăng Ký</a>
-              <a class="nav-link" href="#">Đăng Nhập</a>
+              <a class="nav-link" href="/Duan1_PHP1/signup.html">Đăng Ký</a>
+              <a class="nav-link" href="/Duan1_PHP1/signin.html">Đăng Nhập</a>
             </nav>
           </div>
         </div>
@@ -65,7 +65,7 @@
           <div class="main-menu">
             <nav class="navbar navbar-expand-lg navbar-light bg-light btco-hover-menu">
               <a class="navbar-brand" href="#">
-                <img src="../view/base/images/logo.png" class="d-inline-block align-top" alt="">
+                <img src="./view/base/images/logo.png" class="d-inline-block align-top" alt="">
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -143,7 +143,7 @@
 
 
                   <li class="nav-item begin">
-                    <a class="nav-link btn-cart" href="#"><img src="../view/base/images/cart-icon.png" alt="">
+                    <a class="nav-link btn-cart" href="#"><img src="./view/base/images/cart-icon.png" alt="">
                       <span>1</span>
                     </a>
                   </li>
