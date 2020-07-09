@@ -17,29 +17,40 @@ function connection(){
    }
 }
 // lấy nhiều record
-function findMultiple($sql){
+function findMultiple($query){
    $conn = connection();
-   $stmt = $conn->query($sql);
-   $result = $stmt->fetchALl(PDO::FETCH_ASSOC);
-   return $result;
-}
-// lấy 1 record
-function find($sql){
-   $conn = connection();
-   $stmt = $conn->query($sql);
-   $result = $stmt->fetch(PDO::FETCH_ASSOC);
-   return $result;
-}
-function insert($sql){
-   $conn = connection();
-   $conn->exec($stmt);
+   $stmt = $conn->prepare($query);
+   $stmt->execute();
+   return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+// lấy 1 record
+function find($query){
+   $conn = connection();
+   $stmt = $conn->prepare($query);
+   $stmt->execute();
+   return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+// hàm exec
+function execSQL($sql,$c){
+   $conn = connection();
+   if($c===1){
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+   }else{
+      $conn->exec($sql);
+   }
+}
+
+// 
 function delete($sql){
    $conn = connection();
-   $conn->exec($sql);
+   $stmt = $conn->prepare($sql);
+   $stmt->execute();
 }
 
+//
 function update($sql){
    $conn = connection();
    $stmt = $conn->prepare($sql);
