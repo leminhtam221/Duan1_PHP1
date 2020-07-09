@@ -5,12 +5,10 @@
   <title>Courcity</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <base href="https://localhost/Duan1_PHP1/">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Favicon icon -->
   <link rel="shortcut icon" type="image/png" href="./view/base/images/favicon.png" />
-
   <!-- Bootstrap -->
   <link href="./view/base/css/bootstrap.min.css" rel="stylesheet">
   <!-- Fontawsome -->

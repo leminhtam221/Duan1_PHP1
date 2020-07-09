@@ -17,16 +17,16 @@ function connection(){
    }
 }
 // lấy nhiều record
-function findMultiple($query){
+function findMultiple($sql){
    $conn = connection();
-   $stmt = $conn->query($query);
+   $stmt = $conn->query($sql);
    $result = $stmt->fetchALl(PDO::FETCH_ASSOC);
    return $result;
 }
 // lấy 1 record
-function find($query){
+function find($sql){
    $conn = connection();
-   $stmt = $conn->query($query);
+   $stmt = $conn->query($sql);
    $result = $stmt->fetch(PDO::FETCH_ASSOC);
    return $result;
 }
@@ -35,6 +35,13 @@ function insert($sql){
    $conn->exec($stmt);
 }
 
+function delete($sql){
+   $conn = connection();
+   $conn->exec($sql);
+}
 
-
-
+function update($sql){
+   $conn = connection();
+   $stmt = $conn->prepare($sql);
+   $stmt->execute();
+}
