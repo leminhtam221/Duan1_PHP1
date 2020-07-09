@@ -2,7 +2,7 @@
 function connection(){
    $servername = "localhost";
    $username = "root";
-   $dbname = "qlbh_db";
+   $dbname = "";
    $password = "";
    $charset = "utf8";
 
