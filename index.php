@@ -1,3 +1,3 @@
 <?php
-  include __DIR__."/controller/index.php";
+  include "./controller/index.php";
 ?>
