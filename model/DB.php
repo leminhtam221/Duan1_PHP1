@@ -43,16 +43,3 @@ function execSQL($sql,$c){
    }
 }
 
-// 
-function delete($sql){
-   $conn = connection();
-   $stmt = $conn->prepare($sql);
-   $stmt->execute();
-}
-
-//
-function update($sql){
-   $conn = connection();
-   $stmt = $conn->prepare($sql);
-   $stmt->execute();
-}
