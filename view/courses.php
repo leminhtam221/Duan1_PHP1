@@ -41,27 +41,16 @@
                 <div class="card-body">
                   <div class="category">
                     <ul>
-                      <li><a href="#"><img src="view/base/images/arrow-right.png" alt="Image"> All Categories
-                          <span>45</span></a>
-                      </li>
-                      <li><a href="#"><img src="view/base/images/arrow-right.png" alt="Image"> Wordpress
-                          <span>30</span></a>
-                      </li>
-                      <li><a href="#"><img src="view/base/images/arrow-right.png" alt="Image"> Landing Page
-                          <span>20</span></a>
-                      </li>
-                      <li><a href="#"><img src="view/base/images/arrow-right.png" alt="Image"> Photography
-                          <span>15</span></a>
-                      </li>
-                      <li><a href="#"><img src="view/base/images/arrow-right.png" alt="Image"> Creative
-                          <span>30</span></a>
-                      </li>
-                      <li><a href="#"><img src="view/base/images/arrow-right.png" alt="Image"> Portfolio
-                          <span>20</span></a>
-                      </li>
-                      <li><a href="#"><img src="view/base/images/arrow-right.png" alt="Image"> PSD Template
-                          <span>30</span></a>
-                      </li>
+                      <?php
+                        foreach ($danhSachDanhMuc as $danhMuc) {
+                          echo '<li>
+                                  <a href="#">
+                                    <img src="view/base/images/arrow-right.png" alt="Image"> '.$danhMuc['ten_danh_muc'].'
+                                    <span>30</span>
+                                  </a>
+                                </li>';
+                        }
+                      ?>
                     </ul>
                   </div>
                 </div>

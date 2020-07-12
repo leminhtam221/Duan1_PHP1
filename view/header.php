@@ -62,7 +62,7 @@
         <div class="col-md-12">
           <div class="main-menu">
             <nav class="navbar navbar-expand-lg navbar-light bg-light btco-hover-menu">
-              <a class="navbar-brand" href="index.php?act=home">
+              <a class="navbar-brand" href="index.php?act=trang-chu">
                 <img src="./view/base/images/logo.png" class="d-inline-block align-top" alt="">
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

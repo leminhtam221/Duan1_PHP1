@@ -1,6 +1,9 @@
 <?php
 
   include "./view/header.php";
+  include "./model/DB.php";
+  include "./model/danh-muc.php";
+  $danhSachDanhMuc = loadDanhMuc();
 
   $action = isset($_GET['act'])?($_GET['act']):'trang-chu';
   switch($action){

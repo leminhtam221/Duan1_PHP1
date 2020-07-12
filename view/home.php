@@ -13,9 +13,11 @@
               <div class="input-group-append styleSelect">
                 <select id="inputGroupSelect01">
                   <option selected>Tất Cả Danh Mục</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <?php
+                    foreach ($danhSachDanhMuc as $danhMuc) {
+                      echo '<option value="'.$danhMuc['id'].'">'.$danhMuc['ten_danh_muc'].'</option>';
+                    }
+                  ?>
                 </select>
               </div>
               <div class="input-group-append">
