@@ -28,13 +28,13 @@
 							<?php if($signin_error==true): ?>
 							<div style="color: red;font-size: 0.8rem;transform: translateY(-30px);">* Sai tên tài khoản hoặc mật khẩu</div>
 							<?php endif ?>
-							<form id="signin-form" method="post" action="index.php?act=dang-nhap">
+							<form id="signin-form" method="post" action="">
 								<div class="row">
 									<div class="col-md-12">	
 										<div class="single-input">
 											<i class="fas fa-envelope"></i>	  
 											<div class="form-group">
-												<input id="si-name" type="text" class="form-control" placeholder="Tên tài khoản hoặc E-mail" aria-label="Name" name="uname"><div id="si-name-err"class="error-text"></div>
+												<input id="si-name" type="text" class="form-control" placeholder="Tên tài khoản hoặc E-mail" aria-label="Name" name="uname" value="<?=($signin_error==true)?$_POST['uname']:''?>"><div id="si-name-err"class="error-text"></div>
 											</div>
 										</div>
 									</div>	

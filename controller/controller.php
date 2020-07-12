@@ -16,6 +16,10 @@
     case 'dang-ky':
       include "./controller/signup.php";
       break;
+    case 'dang-xuat':
+      unset($_SESSION['user']);
+      header("Location: index.php?act=dang-nhap");
+      break;
     case 'thong-tin':
       include "./controller/about.php";
       break;

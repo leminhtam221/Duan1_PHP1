@@ -3,7 +3,7 @@
 // INCLUDE model
 include './model/DB.php';
 include "./model/danh-muc.php";
-include './model/signin.php';
+include './model/user.php';
 
 
 $danhSachDanhMuc = loadDanhMuc();
