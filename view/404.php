@@ -27,7 +27,7 @@
 						<h2>Oooops!</h2>
 						<h3>Something Went Wrong</h3>
 						<img src="./view/base/images/404.gif" alt="Mountains">
-						<a href="index.html" class="btn-small">Trở Lại Trang Chủ</a>
+						<a href="index.php" class="btn-small">Trở Lại Trang Chủ</a>
 					</div>	
 				</div>
 													

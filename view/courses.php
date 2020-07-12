@@ -4,11 +4,11 @@
     <div class="hvrbox-layer_top">
       <div class="container">
         <div class="overlay-text text-center">
-          <h3><b>2,579</b> Online Course & Video Tutorials!</h3>
+          <h3><b>2,579</b> Khóa Học Online & Video Hướng Dẫn!</h3>
           <div class="col-md-8 offset-md-2">
             <div class="input-group">
               <input type="text" class="form-control" aria-label="Text input with dropdown button"
-                placeholder="Enter Your Search Here">
+                placeholder="Tìm Kiếm Khóa Học, Giảng Viên">
               <div class="input-group-append">
                 <button class="btn btn-search" type="button"><i class="fas fa-search"></i></button>
               </div>
@@ -25,7 +25,7 @@
     <div class="row">
       <div class="col-md-3">
         <div class="course-header-left-top">
-          <p><img src="view/base/images/cross.png" alt="Image"> Remove Filter</p>
+          <p><img src="view/base/images/cross.png" alt="Image">Xóa Bộ Lọc Tìm Kiếm</p>
         </div>
         <div class="course-header-left">
           <div id="accordion">
@@ -153,7 +153,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="search-box d-flex flex-row">
-                <p>Sort by : </p>
+                <p>Sắp xếp theo : </p>
                 <select class="form-control styleSelect">
                   <option selected="">All Categories</option>
                   <option value="1">Wordpress</option>

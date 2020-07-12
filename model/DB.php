@@ -2,7 +2,7 @@
 function connection(){
    $servername = "localhost";
    $username = "root";
-   $dbname = "";
+   $dbname = "courcity";
    $password = "";
    $charset = "utf8";
 
@@ -32,7 +32,10 @@ function find($query){
    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-// hàm exec 
+/* hàm exec 
+* INSERT UPDATE $c = 0
+* DELETE $c = 1
+*/
 function execSQL($sql,$c){
    $conn = connection();
    if($c===1){

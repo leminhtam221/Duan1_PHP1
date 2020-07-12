@@ -47,8 +47,8 @@
               <a class="nav-link" href="#">Kích Hoạt Khóa Học</a>
               <a class="nav-link" href="#">Tham Gia Dạy Học </a>
               <a class="nav-link" href="#">Khóa Học Của Tôi</a>
-              <a class="nav-link" href="/Duan1_PHP1/signup.html">Đăng Ký</a>
-              <a class="nav-link" href="/Duan1_PHP1/signin.html">Đăng Nhập</a>
+              <a class="nav-link" href="index.php?act=dang-ky">Đăng Ký</a>
+              <a class="nav-link" href="index.php?act=dang-nhap">Đăng Nhập</a>
             </nav>
           </div>
         </div>
@@ -75,29 +75,29 @@
                 <ul class="navbar-nav ml-auto main-menu-nav">
 
                   <li class="nav-item active">
-                    <a class="nav-link" href="index.php?act=home">
+                    <a class="nav-link" href="index.php?act=trang-chu">
                       Trang Chủ <span class="sr-only">(current)</span>
                     </a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="index.php?act=courses">
+                    <a class="nav-link" href="index.php?act=khoa-hoc">
                       Khóa Học
                     </a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Thông Tin</a>
+                    <a class="nav-link" href="index.php?act=thong-tin">Thông Tin</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="index.php?act=bai-viet">
                       Blog
                     </a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Liên Hệ</a>
+                    <a class="nav-link" href="index.php?act=lien-he">Liên Hệ</a>
                   </li>
 
                   <li class="nav-item begin">
