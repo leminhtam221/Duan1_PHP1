@@ -1,3 +1,3 @@
 <?php
-  include "./controller/index.php";
-?>
+include './bridge.php';
+
