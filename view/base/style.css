@@ -4608,4 +4608,52 @@ ul.main-menu-nav li.dropdown a i {
 	top: 48%;
 }
 
+.alertbox-1x .menu{
+	position: relative;
+}
+.alertbox-1x .menu>div{
+	position: absolute;
+	top: 110%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #FFF;
+	width: 200%;
+	z-index: 10000;
+	box-shadow: 0 10px 25px 0 rgba(46, 61, 73, 0.15);
+	padding: 0 10px;
+}
+.alertbox-1x .menu>div>div{
+	width: 100%;
+	height: 60px;
+	display: flex;
+	border-bottom: 1px solid #eee;
+	padding: 10px 0;
+}
+.alertbox-1x .menu>div>div div,
+.alertbox-1x .menu>div>div p{
+	font-size: 0.8rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	height: fit-content;
+	line-height: 1.2rem;
+}
+.alertbox-1x .menu>div>div>img{
+	width: 40px;
+	height: 40px;
+	display: block;
+	margin-right: 10px;
+	border-radius: 1000px;
+}
+.alertbox-1x .menu>div>a{
+	color: #454545 !important;
+	padding-left: 0;
+	padding-right: 0;
+}
+.alertbox-1x .menu>div>a:hover{
+	color: #02b3e4 !important;
+}
+
+
+
 

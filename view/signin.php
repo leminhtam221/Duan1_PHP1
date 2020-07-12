@@ -25,13 +25,16 @@
 					<div class="col-md-4">
 						<div class="sign-in-form">
 							<h3>Đăng Nhập</h3>
-							<form id="signin-form" method="post" action="">
+							<?php if($signin_error==true): ?>
+							<div style="color: red;font-size: 0.8rem;transform: translateY(-30px);">* Sai tên tài khoản hoặc mật khẩu</div>
+							<?php endif ?>
+							<form id="signin-form" method="post" action="index.php?act=dang-nhap">
 								<div class="row">
 									<div class="col-md-12">	
 										<div class="single-input">
 											<i class="fas fa-envelope"></i>	  
 											<div class="form-group">
-												<input id="si-name" type="text" class="form-control" placeholder="Tên tài khoản hoặc E-mail" aria-label="Name"><div id="si-name-err"class="error-text"></div>
+												<input id="si-name" type="text" class="form-control" placeholder="Tên tài khoản hoặc E-mail" aria-label="Name" name="uname"><div id="si-name-err"class="error-text"></div>
 											</div>
 										</div>
 									</div>	
@@ -39,7 +42,7 @@
 										<div class="single-input">
 											<i class="fas fa-key"></i>																  
 											<div class="form-group">							    
-											    <input id="si-pwd" type="password" class="form-control" placeholder="Mật Khẩu">	    
+											    <input id="si-pwd" type="password" class="form-control" placeholder="Mật Khẩu" name="pwd">	    
 											</div>
 									  	</div>
 									</div>  		

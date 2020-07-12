@@ -47,8 +47,23 @@
               <a class="nav-link" href="#">Kích Hoạt Khóa Học</a>
               <a class="nav-link" href="#">Tham Gia Dạy Học </a>
               <a class="nav-link" href="#">Khóa Học Của Tôi</a>
+              <?php if(!isset($_COOKIE['user'])): ?>
               <a class="nav-link" href="index.php?act=dang-ky">Đăng Ký</a>
               <a class="nav-link" href="index.php?act=dang-nhap">Đăng Nhập</a>
+              <?php else: ?>
+              <div class="menu">
+								<a id="user-btn" class="nav-link" href="#"><b>truongvd <i class="fa fa-caret-down"></i></b>
+								</a>
+								<div id="user-dd">
+									<div>
+										<img src="images/user-avatar.jpg" alt="">
+										<div><p>Vo Dang Truong</p><p style="font-size: 0.7rem;margin-top: 0px;">truongvdps11261@gmail.com</p></div>
+									</div>
+									<a class="nav-link" href="#" style="border-bottom: 1px solid #eee;">Quản Lí Tài Khoản</a>
+									<a class="nav-link" href="#">Đăng Xuất</a>
+								</div>
+              </div>
+              <?php endif ?>
             </nav>
           </div>
         </div>
