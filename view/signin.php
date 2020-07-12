@@ -1,11 +1,4 @@
-<?php
-// if(isset($_GET['id'])){
-//    echo '+++=='.$_GET['id'];
-//    if(isset($_GET['name'])){
-//       echo '+++=='.$_GET['name'];
-//    }
-// }
-?>
+
 	<div class="page-banner">           			
         <div class="hvrbox">
             <img src="./view/base/images/bn.jpg" alt="Mountains" class="hvrbox-layer_bottom">
@@ -32,13 +25,13 @@
 					<div class="col-md-4">
 						<div class="sign-in-form">
 							<h3>Đăng Nhập</h3>
-							<form>
+							<form id="signin-form" method="post" action="">
 								<div class="row">
 									<div class="col-md-12">	
 										<div class="single-input">
-											<i class="fas fa-envelope"></i>																  
+											<i class="fas fa-envelope"></i>	  
 											<div class="form-group">
-												<input type="text" class="form-control" placeholder="Tên tài khoản hoặc E-mail" aria-label="Name">				    										    						    
+												<input id="si-name" type="text" class="form-control" placeholder="Tên tài khoản hoặc E-mail" aria-label="Name"><div id="si-name-err"class="error-text"></div>
 											</div>
 										</div>
 									</div>	
@@ -46,21 +39,21 @@
 										<div class="single-input">
 											<i class="fas fa-key"></i>																  
 											<div class="form-group">							    
-											    <input type="password" class="form-control" placeholder="Mật Khẩu">							    
+											    <input id="si-pwd" type="password" class="form-control" placeholder="Mật Khẩu">	    
 											</div>
 									  	</div>
 									</div>  		
 									<div class="col-md-12">
 										<div class="sign-in-btn">																
 											<span><a href="#">Quên mật khẩu?</a></span>
-											<a href="#" class="btn-small">Đăng Nhập </a>
+											<a style="color:#fff;cursor:pointer;" id="btn-signin" class="btn-small">Đăng Nhập </a>
 											<p>Hoặc đăng nhập với</p>
 											<ul>
 												<li><a href=""> Facebook </a></li>
 												<li><a href=""> Linkedin </a></li>
 												<li><a href=""> Google </a></li>
 											</ul>
-											<h4>Bạn Chưa Có Tài Khoản? <a href="/Duan1_PHP1/signup.html">Tạo Tài Khoản!</a></h4>	
+											<h4>Bạn Chưa Có Tài Khoản? <a href="index.php?act=dang-ky">Tạo Tài Khoản!</a></h4>	
 										</div>								
 									</div>
 								</div>

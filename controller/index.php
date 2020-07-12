@@ -34,5 +34,5 @@
   }
 
   include "./view/footer.php";
-  include "./view/script.php";
+  include "./view/base/script.php";
 ?>

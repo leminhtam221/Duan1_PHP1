@@ -4600,8 +4600,12 @@ ul.main-menu-nav li.dropdown a i {
 	padding: 300px 0;
 }
 
-
-button.ColorSwitcher__control {
-	display: none;
+.error-text{
+	color: red;
+	font-size: 0.7rem;
+	position: absolute;
+	right: 5%;
+	top: 48%;
 }
+
 
