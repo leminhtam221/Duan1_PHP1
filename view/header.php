@@ -5,7 +5,6 @@
   <title>Courcity</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <base href="/Duan1_PHP1/">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Favicon icon -->
   <link rel="shortcut icon" type="image/png" href="./view/base/images/favicon.png" />
@@ -63,7 +62,7 @@
         <div class="col-md-12">
           <div class="main-menu">
             <nav class="navbar navbar-expand-lg navbar-light bg-light btco-hover-menu">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="index.php?act=home">
                 <img src="./view/base/images/logo.png" class="d-inline-block align-top" alt="">
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -75,71 +74,31 @@
 
                 <ul class="navbar-nav ml-auto main-menu-nav">
 
-                  <li class="nav-item dropdown active">
-                    <a class="nav-link" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.php?act=home">
                       Trang Chủ <span class="sr-only">(current)</span>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-                      <li><a class="dropdown-item" href="index.html" target="_blank">Home One</a></li>
-                      <li><a class="dropdown-item" href="home-two.html" target="_blank">Home Two</a></li>
-                    </ul>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">Thông Tin</a>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="index.php?act=courses">
                       Khóa Học
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-
-                      <li><a class="dropdown-item" href="learning-path.html">Learning Path</a></li>
-                      <li><a class="dropdown-item dropdown-toggle" href="course-list.html">Course</a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="course-list.html">All Course</a></li>
-                          <li><a class="dropdown-item" href="course-single-one.html">Course Single One</a></li>
-                          <li><a class="dropdown-item" href="course-single-two.html">Course Single Two</a></li>
-                        </ul>
-                      </li>
-
-                      <li><a class="dropdown-item dropdown-toggle" href="career.html">Carrer</a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="career.html">Carrer</a></li>
-                          <li><a class="dropdown-item" href="career-single.html">Carrer Single</a></li>
-                        </ul>
-                      </li>
-                      <li><a class="dropdown-item dropdown-toggle" href="our-team.html">Events </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="events.html"> Events</a></li>
-                          <li><a class="dropdown-item" href="events-details.html">Events Details </a></li>
-                        </ul>
-                      </li>
-                      <li><a class="dropdown-item" href="404.html">404 Page</a></li>
-                      <li><a class="dropdown-item" href="comming-soon.html">Comming Soon</a></li>
-                      <li><a class="dropdown-item" href="components.html">Components</a></li>
-                    </ul>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                    <a class="nav-link" href="blog.html" id="navbarDropdownMenuLink4" data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
-                      Blog
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink4">
-                      <li><a class="dropdown-item" href="blog.html">Grid View</a></li>
-                      <li><a class="dropdown-item" href="blog-list.html">List View</a></li>
-                      <li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
-                    </ul>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="contact-us.html">Liên Hệ</a>
+                    <a class="nav-link" href="#">Thông Tin</a>
                   </li>
 
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      Blog
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Liên Hệ</a>
+                  </li>
 
                   <li class="nav-item begin">
                     <a class="nav-link btn-cart" href="#"><img src="./view/base/images/cart-icon.png" alt="">

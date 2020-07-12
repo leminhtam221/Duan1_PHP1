@@ -32,7 +32,7 @@ function find($query){
    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-// hàm exec
+// hàm exec 
 function execSQL($sql,$c){
    $conn = connection();
    if($c===1){
@@ -42,4 +42,3 @@ function execSQL($sql,$c){
       $conn->exec($sql);
    }
 }
-
