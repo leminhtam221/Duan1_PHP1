@@ -44,7 +44,7 @@
                       <?php
                         foreach ($danhSachDanhMuc as $danhMuc) {
                           echo '<li>
-                                  <a href="#">
+                                  <a href="index.php?act=khoa-hoc&idDanhMuc='.$danhMuc['id'].'">
                                     <img src="view/base/images/arrow-right.png" alt="Image"> '.$danhMuc['ten_danh_muc'].'
                                     <span>30</span>
                                   </a>
@@ -145,10 +145,11 @@
                 <p>Sắp xếp theo : </p>
                 <select class="form-control styleSelect">
                   <option selected="">All Categories</option>
-                  <option value="1">Wordpress</option>
-                  <option value="2">HTML</option>
-                  <option value="3">Javascript</option>
-                  <option value="3">Photoshop</option>
+                  <?php
+                    foreach ($danhSachDanhMuc as $danhMuc) {
+                      echo '<option value="'.$danhMuc['id'].'">'.$danhMuc['ten_danh_muc'].'</option>';
+                    }
+                  ?>
                 </select>
               </div>
             </div>
@@ -179,166 +180,37 @@
 
                     <div class="all-course">
                       <div class="row">
-                        <div class="col-md-4 tile web">
-                          <div class="single-course">
-                            <div class="hvrbox">
-                              <img src="view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                              <div class="hvrbox-layer_top hvrbox-text">
-                                <div class="hvrbox-text">
-                                  <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                                      class="fas fa-play"></i></a><br>
-                                  <a href="course-single-one.html">Preview Course</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="single-course-content">
-                              <a href="course-single-one.html">Learn Photoshop With Eyal Complete Course</a>
-                              <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                              <h3>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> (4)
-                                <span>Enroll: 128</span>
-                              </h3>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-4 tile design">
-                          <div class="single-course">
-                            <div class="hvrbox">
-                              <img src="view/base/images/2.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                              <div class="hvrbox-layer_top hvrbox-text">
-                                <div class="hvrbox-text">
-                                  <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                                      class="fas fa-play"></i></a><br>
-                                  <a href="course-single-one.html">Preview Course</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="single-course-content">
-                              <a href="course-single-one.html">Visual Basic Essential Training</a>
-                              <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                              <h3>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> (4)
-                                <span>Enroll: 128</span>
-                              </h3>
-                            </div>
-                          </div>
-                        </div>
+                        <?php foreach ($danhSachKhoaHoc as $khoaHoc) {
+                            $tenGiangVien = layTenGiangVien($khoaHoc['id_giang_vien']);
+                            $tenGiangVien =  $tenGiangVien['ho_ten'];
+                            echo '<div class="col-md-4 tile">
+                                    <div class="single-course">
+                                      <div class="hvrbox">
+                                        <img src="view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                                        <div class="hvrbox-layer_top hvrbox-text">
+                                          <div class="hvrbox-text">
+                                            <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
+                                                class="fas fa-play"></i></a><br>
+                                            <a href="course-single-one.html">Preview Course</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="single-course-content">
+                                        <a href="course-single-one.html">'.$khoaHoc['ten_khoa_hoc'].'</a>
+                                        <p>'.$tenGiangVien.' <span><del>'.$khoaHoc['don_gia'].'VND</del> <b>'.$khoaHoc['khuyen_mai'].'VND</b></span></p>
+                                        <h3>
+                                          <i class="fas fa-star"></i>
+                                          <i class="fas fa-star"></i>
+                                          <i class="fas fa-star"></i>
+                                          <i class="fas fa-star"></i>
+                                          <i class="fas fa-star"></i> (4)
+                                          <span>Enroll: 128</span>
+                                        </h3>
+                                      </div>
+                                    </div>
+                                  </div>';
+                        } ?>
 
-                        <div class="col-md-4 tile marketing">
-                          <div class="single-course">
-                            <div class="hvrbox">
-                              <img src="view/base/images/3.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                              <div class="hvrbox-layer_top hvrbox-text">
-                                <div class="hvrbox-text">
-                                  <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                                      class="fas fa-play"></i></a><br>
-                                  <a href="course-single-one.html">Preview Course</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="single-course-content">
-                              <a href="course-single-one.html">The Complete Developer Web Course</a>
-                              <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                              <h3>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> (4)
-                                <span>Enroll: 128</span>
-                              </h3>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-md-4 tile design">
-                          <div class="single-course">
-                            <div class="hvrbox">
-                              <img src="view/base/images/4.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                              <div class="hvrbox-layer_top hvrbox-text">
-                                <div class="hvrbox-text">
-                                  <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                                      class="fas fa-play"></i></a><br>
-                                  <a href="course-single-one.html">Preview Course</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="single-course-content">
-                              <a href="course-single-one.html">Creating 3D environment in Blender</a>
-                              <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                              <h3>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> (4)
-                                <span>Enroll: 128</span>
-                              </h3>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-md-4 tile marketing">
-                          <div class="single-course">
-                            <div class="hvrbox">
-                              <img src="view/base/images/5.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                              <div class="hvrbox-layer_top hvrbox-text">
-                                <div class="hvrbox-text">
-                                  <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                                      class="fas fa-play"></i></a><br>
-                                  <a href="course-single-one.html">Preview Course</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="single-course-content">
-                              <a href="course-single-one.html">Advanced CSS and Sass Flexbox Grid</a>
-                              <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                              <h3>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> (4)
-                                <span>Enroll: 128</span>
-                              </h3>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-md-4 tile photography">
-                          <div class="single-course">
-                            <div class="hvrbox">
-                              <img src="view/base/images/6.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                              <div class="hvrbox-layer_top hvrbox-text">
-                                <div class="hvrbox-text">
-                                  <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                                      class="fas fa-play"></i></a><br>
-                                  <a href="course-single-one.html">Preview Course</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="single-course-content">
-                              <a href="course-single-one.html"> Cyber Security Course Hackers</a>
-                              <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                              <h3>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> (4)
-                                <span>Enroll: 128</span>
-                              </h3>
-                            </div>
-                          </div>
-                        </div>
                         <div class="col-md-12">
                           <div class="course-pagination">
                             <ul class="pagination">
@@ -364,6 +236,41 @@
 
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
               <div class="all-course-list">
+                <?php
+                  foreach ($danhSachKhoaHoc as $khoaHoc) {
+                    $tenGiangVien = layTenGiangVien($khoaHoc['id_giang_vien']);
+                    $tenGiangVien =  $tenGiangVien['ho_ten'];
+                    echo '<div class="media">
+                            <div class="media-left-image">
+                              <div class="hvrbox">
+                                <img src="view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                                <div class="hvrbox-layer_top hvrbox-text">
+                                  <div class="hvrbox-text">
+                                    <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
+                                        class="fas fa-play"></i></a><br>
+                                    <a href="course-single-one.html">Preview Course</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="media-body">
+                              <h2><a href="course-single-one.html">'.$khoaHoc['ten_khoa_hoc'].'</a></h2>
+                              <h5>'.$tenGiangVien.'</h5>
+                              <h4>'.$khoaHoc['khuyen_mai'].' VND<del>'.$khoaHoc['don_gia'].' VND</del></h4>
+                              <a href="course-single-one.html" class="btn-bordered"> View Course </a>
+                              <h3>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i> (4)
+                                <span>Enroll: 128 <i class="far fa-heart"></i></span>
+                              </h3>
+                            </div>
+                          </div>'; 
+                  }
+                ?>
+
                 <div class="media">
                   <div class="media-left-image">
                     <div class="hvrbox">
@@ -393,92 +300,6 @@
                   </div>
                 </div>
 
-                <div class="media">
-                  <div class="media-left-image">
-                    <div class="hvrbox">
-                      <img src="view/base/images/2.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                      <div class="hvrbox-layer_top hvrbox-text">
-                        <div class="hvrbox-text">
-                          <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                              class="fas fa-play"></i></a><br>
-                          <a href="course-single-one.html">Preview Course</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="media-body">
-                    <h2><a href="course-single-one.html"> Visual Basic Essential Training Course </a></h2>
-                    <h5>By Nir Eyal</h5>
-                    <h4>$49 <del>$69</del></h4>
-                    <a href="course-single-one.html" class="btn-bordered"> View Course </a>
-                    <h3>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i> (4)
-                      <span>Enroll: 128 <i class="far fa-heart"></i></span>
-                    </h3>
-                  </div>
-                </div>
-
-                <div class="media">
-                  <div class="media-left-image">
-                    <div class="hvrbox">
-                      <img src="view/base/images/3.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                      <div class="hvrbox-layer_top hvrbox-text">
-                        <div class="hvrbox-text">
-                          <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                              class="fas fa-play"></i></a><br>
-                          <a href="course-single-one.html">Preview Course</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="media-body">
-                    <h2><a href="course-single-one.html"> Certificate Early Education Leadership (CEEL) </a></h2>
-                    <h5>By Nir Eyal</h5>
-                    <h4>$49 <del>$69</del></h4>
-                    <a href="course-single-one.html" class="btn-bordered"> View Course </a>
-                    <h3>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i> (4)
-                      <span>Enroll: 128 <i class="far fa-heart"></i></span>
-                    </h3>
-                  </div>
-                </div>
-
-                <div class="media">
-                  <div class="media-left-image">
-                    <div class="hvrbox">
-                      <img src="view/base/images/4.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                      <div class="hvrbox-layer_top hvrbox-text">
-                        <div class="hvrbox-text">
-                          <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                              class="fas fa-play"></i></a><br>
-                          <a href="course-single-one.html">Preview Course</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="media-body">
-                    <h2><a href="course-single-one.html"> Complete Cyber Security Course Hackers</a></h2>
-                    <h5>By Nir Eyal</h5>
-                    <h4>$49 <del>$69</del></h4>
-                    <a href="course-single-one.html" class="btn-bordered"> View Course </a>
-                    <h3>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i> (4)
-                      <span>Enroll: 128 <i class="far fa-heart"></i></span>
-                    </h3>
-                  </div>
-                </div>
 
                 <div class="course-pagination">
                   <ul class="pagination">
