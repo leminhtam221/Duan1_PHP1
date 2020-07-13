@@ -197,7 +197,7 @@
                                       </div>
                                       <div class="single-course-content">
                                         <a href="course-single-one.html">'.$khoaHoc['ten_khoa_hoc'].'</a>
-                                        <p>'.$tenGiangVien.' <span><del>'.$khoaHoc['don_gia'].'VND</del> <b>'.$khoaHoc['khuyen_mai'].'VND</b></span></p>
+                                        <p>'.$tenGiangVien.' <span><del>'.$khoaHoc['don_gia'].' đ</del> <b>'.$khoaHoc['khuyen_mai'].' đ</b></span></p>
                                         <h3>
                                           <i class="fas fa-star"></i>
                                           <i class="fas fa-star"></i>
@@ -256,7 +256,7 @@
                             <div class="media-body">
                               <h2><a href="course-single-one.html">'.$khoaHoc['ten_khoa_hoc'].'</a></h2>
                               <h5>'.$tenGiangVien.'</h5>
-                              <h4>'.$khoaHoc['khuyen_mai'].' VND<del>'.$khoaHoc['don_gia'].' VND</del></h4>
+                              <h4>'.$khoaHoc['khuyen_mai'].' đ<del>'.$khoaHoc['don_gia'].' đ</del></h4>
                               <a href="course-single-one.html" class="btn-bordered"> View Course </a>
                               <h3>
                                 <i class="fas fa-star"></i>
