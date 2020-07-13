@@ -27,6 +27,8 @@
  <script src="./view/base/js/custom.js"></script>
   <!-- Signin script -->
   <script src="./view/base/js/signin.js"></script>
+   <!-- Signup script -->
+   <script src="./view/base/js/signup.js"></script>
  </body>
 
  </html>

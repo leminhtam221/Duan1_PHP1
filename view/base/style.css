@@ -4654,6 +4654,11 @@ ul.main-menu-nav li.dropdown a i {
 	color: #02b3e4 !important;
 }
 
-
+.err-text{
+	transform: translateY(-30px);
+	color: red;
+	font-size: 0.7rem;
+	margin-bottom: 0px;
+}
 
 
