@@ -8,7 +8,5 @@ include "./model/courses.php";
 include "./model/giang-vien.php";
 
 
-$danhSachDanhMuc = loadDanhMuc();
-
 // INCLUDE controller
 include "./controller/controller.php";

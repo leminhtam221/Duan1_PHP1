@@ -40,7 +40,7 @@
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
                   <div class="category">
-                    <ul>
+                    <ul id="nav-list">
                       <?php
                         foreach ($danhSachDanhMuc as $danhMuc) {
                           echo '<li>
@@ -173,6 +173,7 @@
 
         <div class="course-grid-list">
           <div class="tab-content" id="myTabContent">
+
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div class="course-1x all-course-grid">
                 <div class="container">
@@ -270,35 +271,6 @@
                           </div>'; 
                   }
                 ?>
-
-                <div class="media">
-                  <div class="media-left-image">
-                    <div class="hvrbox">
-                      <img src="view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                      <div class="hvrbox-layer_top hvrbox-text">
-                        <div class="hvrbox-text">
-                          <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                              class="fas fa-play"></i></a><br>
-                          <a href="course-single-one.html">Preview Course</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="media-body">
-                    <h2><a href="course-single-one.html"> Learn Photoshop CC With Nir Eyal Complete Course </a></h2>
-                    <h5>By Nir Eyal</h5>
-                    <h4>$49 <del>$69</del></h4>
-                    <a href="course-single-one.html" class="btn-bordered"> View Course </a>
-                    <h3>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i> (4)
-                      <span>Enroll: 128 <i class="far fa-heart"></i></span>
-                    </h3>
-                  </div>
-                </div>
 
 
                 <div class="course-pagination">

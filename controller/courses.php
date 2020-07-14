@@ -5,7 +5,12 @@
     $idDanhMuc = 0;
   }
 
-  $danhSachKhoaHoc = loadKhoaHocTheoDanhMuc($idDanhMuc);
+  if(isset($_POST['submit-search'])){
+    $keyWord = $_POST['input-search'];
+    $idDanhMuc = $_POST['select-value'];
+  }
+
+  $danhSachKhoaHoc = loadKhoaHocTheoDanhMuc($idDanhMuc, $keyWord);
   include './view/courses.php';
 
 ?>

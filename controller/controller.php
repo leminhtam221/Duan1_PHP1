@@ -1,6 +1,7 @@
 <?php
 
   include "./view/header.php";
+  $danhSachDanhMuc = loadDanhMuc();
 
   $action = isset($_GET['act'])?($_GET['act']):'trang-chu';
   switch($action){
