@@ -215,11 +215,7 @@
                         <div class="col-md-12">
                           <div class="course-pagination">
                             <ul class="pagination">
-                              <li class="page-item active"><span class="page-link">1</span></li>
-                              <li class="page-item"><a class="page-link" href="#">2</a></li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                              <li class="page-item"><a class="page-link" href="#">4</a></li>
-                              <li class="page-item"><a class="page-link" href="#">5</a></li>
+                              <?=$phanTrang;?>
                               <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a>
                               </li>
                             </ul>
