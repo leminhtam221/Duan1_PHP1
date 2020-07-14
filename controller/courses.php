@@ -8,6 +8,8 @@
   if(isset($_POST['submit-search'])){
     $keyWord = $_POST['input-search'];
     $idDanhMuc = $_POST['select-value'];
+  }else{
+    $keyWord = ""; 
   }
 
   $danhSachKhoaHoc = loadKhoaHocTheoDanhMuc($idDanhMuc, $keyWord);
