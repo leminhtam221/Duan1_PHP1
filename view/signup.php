@@ -30,7 +30,7 @@
 										<div class="single-input">
 											<i class="fas fa-envelope"></i>																  
 											<div class="form-group">
-												<input name="uname" id="su-name"  type="text" class="form-control" placeholder="Tên tài khoản" aria-label="Name">				<div id="su-name-err" class="err-text"></div>										    		    
+												<input name="uname" id="su-name"  type="text" class="form-control blur-hdl" placeholder="Tên tài khoản" aria-label="Name"><div id="su-name-err" class="err-text"></div>										    		    
 											</div>
 										</div>
 									</div>	
@@ -38,7 +38,7 @@
 										<div class="single-input">
 											<i class="fas fa-envelope"></i>																  
 											<div class="form-group">
-												<input name="email" id="su-mail" type="email" class="form-control" placeholder="E-mail" aria-label="Name">	<div id="su-mail-err" class="err-text"></div>		    
+												<input name="email" id="su-mail" type="email" class="form-control blur-hdl" placeholder="E-mail" aria-label="Name">	<div id="su-mail-err" class="err-text"></div>		    
 											</div>
 										</div>
 									</div>	
@@ -46,7 +46,7 @@
 										<div class="single-input">
 											<i class="far fa-user"></i>															  
 											<div class="form-group">
-												<input name="fname" id="su-fname" type="text" class="form-control" placeholder="Họ và tên đệm" aria-label="Name">
+												<input name="fname" id="su-fname" type="text" class="form-control blur-hdl" placeholder="Họ và tên đệm" aria-label="Name">
 												<div id="su-fname-err" class="err-text"></div>				    										    
 											</div>
 										</div>
@@ -55,7 +55,7 @@
 										<div class="single-input">
 											<i class="far fa-user"></i>													  
 											<div class="form-group">
-												<input name="lname" id="su-lname" type="text" class="form-control" placeholder="Tên" aria-label="Name">			<div id="su-lname-err" class="err-text"></div>										    
+												<input name="lname" id="su-lname" type="text" class="form-control blur-hdl" placeholder="Tên" aria-label="Name">			<div id="su-lname-err" class="err-text"></div>										    
 											</div>
 										</div>
 									</div>	
@@ -63,7 +63,7 @@
 										<div class="single-input">
 											<i class="fas fa-key"></i>																  
 											<div class="form-group">							    
-											    <input name="pwd" id="su-pwd" type="password" class="form-control" placeholder="Mật khẩu">
+											    <input name="pwd" id="su-pwd" type="password" class="form-control blur-hdl" placeholder="Mật khẩu">
 												 <div id="su-pwd-err" class="err-text"></div>							    
 											</div>
 									  	</div>
@@ -72,7 +72,7 @@
 										<div class="single-input">
 											<i class="fas fa-key"></i>																  
 											<div class="form-group">							    
-											    <input id="su-re-pwd" type="password" class="form-control" placeholder="Nhập lại mật khẩu">		<div id="su-re-pwd-err" class="err-text"></div>			    
+											    <input id="su-re-pwd" type="password" class="form-control blur-hdl" placeholder="Nhập lại mật khẩu">		<div id="su-re-pwd-err" class="err-text"></div>			    
 											</div>
 									  	</div>
 									</div> 		
