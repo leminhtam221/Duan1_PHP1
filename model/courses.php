@@ -7,7 +7,7 @@
 
     $sql = "SELECT * FROM khoa_hoc WhERE 1";
     if($idDanhMuc > 0){
-      $sql .= " AND idDanhMuc=".$idDanhMuc;
+      $sql .= " AND id_danh_muc=".$idDanhMuc;
     }
     if($keyWord != ""){
       $sql .= " AND ten_khoa_hoc like '%".$keyWord."%'";
@@ -20,7 +20,7 @@
   function tongSoLuong($idDanhMuc=0){
     $sql = "SELECT * FROM khoa_hoc WhERE 1";
     if($idDanhMuc > 0){
-      $sql .= " AND idDanhMuc=".$idDanhMuc;
+      $sql .= " AND id_danh_muc=".$idDanhMuc;
     }
     return findMultiple($sql);
   }
