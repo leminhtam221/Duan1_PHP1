@@ -442,6 +442,76 @@
   </div>
 </div>
 
+<div class="learning-path-1x">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="title-middle">
+        <h2>Get Ahead With Learning Paths</h2>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="learning-path">
+
+        <div class="single-learning-path">
+          <div class="hvrbox">
+            <a href="#"><img src="view/base/images/become_design.jpg" alt="slide 1" class="hvrbox-layer_bottom"></a>
+            <div class="hvrbox-layer_top hvrbox-text blue">
+              <div class="hvrbox-text">
+                <a href="#">Become a Designer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="single-learning-path">
+          <div class="hvrbox">
+            <a href="#"><img src="view/base/images/become_developer.jpg" alt="slide 1" class="hvrbox-layer_bottom"></a>
+            <div class="hvrbox-layer_top hvrbox-text green">
+              <div class="hvrbox-text">
+                <a href="#">Become a Developer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="single-learning-path">
+          <div class="hvrbox">
+            <a href="#"><img src="view/base/images/become_manager.jpg" alt="slide 1" class="hvrbox-layer_bottom"></a>
+            <div class="hvrbox-layer_top hvrbox-text red">
+              <div class="hvrbox-text">
+                <a href="#">Become a Manager</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="single-learning-path">
+          <div class="hvrbox">
+            <a href="#"><img src="view/base/images/become_marketer.jpg" alt="slide 1" class="hvrbox-layer_bottom"></a>
+            <div class="hvrbox-layer_top hvrbox-text yellow">
+              <div class="hvrbox-text">
+                <a href="#">Become a Marketer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="single-learning-path">
+          <div class="hvrbox">
+            <a href="#"><img src="view/base/images/become_introduction.jpg" alt="slide 1"
+                class="hvrbox-layer_bottom"></a>
+            <div class="hvrbox-layer_top hvrbox-text">
+              <div class="hvrbox-text">
+                <a href="#">Design Introduction</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="tesimonial-1x">
   <div class="container">
     <div class="col-md-10 offset-md-1">
