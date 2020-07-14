@@ -7,24 +7,26 @@
           <h3>The Future Begins Here!</h3>
           <p>Học thầy, học bạn, vô vạn phong lưu.</p>
           <div class="col-md-8 offset-md-2">
-            <div class="input-group">
-              <input type="text" class="form-control" aria-label="Text input with dropdown button"
-                placeholder="Tìm Kiếm Khóa Học, Giảng Viên">
-              <div class="input-group-append styleSelect">
-                <select id="inputGroupSelect01">
-                  <option selected>Tất Cả Danh Mục</option>
-                  <?php
+            <form action="index.php?act=khoa-hoc" method="post">
+              <div class="input-group">
+                <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                  placeholder="Tìm Kiếm Khóa Học" required name="input-search" autocomplete="off">
+                <div class="input-group-append styleSelect">
+                  <select id="inputGroupSelect01" name="select-value">
+                    <option selected value="0">Tất Cả Danh Mục</option>
+                    <?php
                     foreach ($danhSachDanhMuc as $danhMuc) {
                       echo '<option value="'.$danhMuc['id'].'">'.$danhMuc['ten_danh_muc'].'</option>';
                     }
                   ?>
-                </select>
+                  </select>
+                </div>
+                <div class="input-group-append">
+                  <button class="btn btn-search" type="submit" name="submit-search"><img
+                      src="./view/base/images/search.png" alt="Image"></button>
+                </div>
               </div>
-              <div class="input-group-append">
-                <button class="btn btn-search" type="button"><img src="./view/base/images/search.png"
-                    alt="Image"></button>
-              </div>
-            </div>
+            </form>
           </div>
 
           <div class="slider-feature">

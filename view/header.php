@@ -52,16 +52,20 @@
               <a class="nav-link" href="index.php?act=dang-nhap">Đăng Nhập</a>
               <?php elseif(isset($_SESSION['user'])): ?>
               <div class="menu">
-								<a id="user-btn" class="nav-link" href="#"><b><?=$_SESSION['user']['tai_khoan']?>&nbsp;<i class="fa fa-caret-down"></i></b>
-								</a>
-								<div id="user-dd">
-									<div>
-										<img src="./view/base/images/user-avatar.jpg" alt="">
-										<div><p><?=$_SESSION['user']['ho_ten']?></p><p style="font-size: 0.7rem;margin-top: 0px;"><?=$_SESSION['user']['email']?></p></div>
-									</div>
-									<a class="nav-link" href="#" style="border-bottom: 1px solid #eee;">Quản Lí Tài Khoản</a>
-									<a class="nav-link" href="index.php?act=dang-xuat">Đăng Xuất</a>
-								</div>
+                <a id="user-btn" class="nav-link" href="#"><b><?=$_SESSION['user']['tai_khoan']?>&nbsp;<i
+                      class="fa fa-caret-down"></i></b>
+                </a>
+                <div id="user-dd">
+                  <div>
+                    <img src="./view/base/images/user-avatar.jpg" alt="">
+                    <div>
+                      <p><?=$_SESSION['user']['ho_ten']?></p>
+                      <p style="font-size: 0.7rem;margin-top: 0px;"><?=$_SESSION['user']['email']?></p>
+                    </div>
+                  </div>
+                  <a class="nav-link" href="#" style="border-bottom: 1px solid #eee;">Quản Lí Tài Khoản</a>
+                  <a class="nav-link" href="index.php?act=dang-xuat">Đăng Xuất</a>
+                </div>
               </div>
               <?php endif ?>
             </nav>
