@@ -20,11 +20,11 @@
     <div class="hvrbox-layer_top">
       <div class="container">
         <div class="overlay-text text-left">
-          <h3>Visual Basic Essential Training</h3>
+          <h3><?=$chiTietKhoaHoc['ten_khoa_hoc'] ?></h3>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Visual Basic Essential Training</li>
+              <li class="breadcrumb-item"><a href="#">Khóa Học</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><?=$chiTietKhoaHoc['ten_khoa_hoc'] ?></li>
             </ol>
           </nav>
         </div>
@@ -110,19 +110,19 @@
               <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
-                    aria-controls="overview" aria-selected="true"> <i class="far fa-file-alt"></i> Overview</a>
+                    aria-controls="overview" aria-selected="true"> <i class="far fa-file-alt"></i>Tổng Quan</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab"
-                    aria-controls="curriculum" aria-selected="false"><i class="fas fa-cube"></i> Curriculum</a>
+                    aria-controls="curriculum" aria-selected="false"><i class="fas fa-cube"></i>Lộ Trình</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
-                    aria-selected="false"><i class="far fa-comment"></i> Review</a>
+                    aria-selected="false"><i class="far fa-comment"></i>Bình Luận</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id="instructor-tab" data-toggle="tab" href="#instructor" role="tab"
-                    aria-controls="instructor" aria-selected="false"><i class="far fa-user"></i> Instructor</a>
+                    aria-controls="instructor" aria-selected="false"><i class="far fa-user"></i>Giảng Viên</a>
                 </li>
               </ul>
 
@@ -260,18 +260,18 @@
         <div class="col-md-4">
           <div class="course-details-sidebar">
             <div class="course-feature">
-              <h2>Course Features</h2>
+              <h2>Thông Tin</h2>
               <ul>
-                <li><i class="far fa-file"></i> Lectures <span> 7 </span></li>
-                <li><i class="far fa-clock"></i> Duration <span> 60H </span></li>
-                <li><i class="far fa-user"></i> Students <span> 45 </span></li>
-                <li><i class="fas fa-certificate"></i> Certificate <span> Yes </span></li>
-                <li><i class="far fa-lightbulb"></i> Skill <span> Beginner </span></li>
-                <li><i class="far fa-bookmark"></i> Category <span> Design </span></li>
+                <li><i class="far fa-file"></i> Bài học <span> 7 </span></li>
+                <li><i class="far fa-clock"></i> Thời lượng <span> 60H </span></li>
+                <li><i class="far fa-user"></i> Học viên <span> 45 </span></li>
+                <li><i class="fas fa-certificate"></i> Chứng chỉ <span> Yes </span></li>
+                <li><i class="far fa-lightbulb"></i>Cấp bậc<span> Beginner </span></li>
+                <li><i class="far fa-bookmark"></i> Danh mục <span> <?=$chiTietKhoaHoc['ten_danh_muc'] ?> </span></li>
               </ul>
             </div>
             <div class="footer-social-link">
-              <h2>Share via</h2>
+              <h2>Chia sẻ qua</h2>
               <ul>
                 <li><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>
                 <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
@@ -291,7 +291,7 @@
       <div class="col-md-12">
         <div class="row">
           <div class="title-left">
-            <h2>Related Courses</h2>
+            <h2>Khóa Học Liên Quan</h2>
           </div>
         </div>
       </div>

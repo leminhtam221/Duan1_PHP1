@@ -43,7 +43,7 @@
   }
 
   function loadKhoaHocChiTiet($idKhoaHoc){
-    $sql = "SELECT * FROM khoa_hoc WhERE id='$idKhoaHoc'";
+    $sql = "SELECT * FROM khoa_hoc, danh_muc WhERE danh_muc.id=id_danh_muc and khoa_hoc.id='$idKhoaHoc' ";
     return find($sql);
   }
 ?>
