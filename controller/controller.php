@@ -11,6 +11,9 @@
     case 'khoa-hoc':
       include "./controller/courses.php";
       break;
+    case 'khoa-hoc-chi-tiet':
+      include "./controller/course-detail.php";
+      break;
     case 'dang-nhap':
       include "./controller/signin.php";
       break;

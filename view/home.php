@@ -591,19 +591,3 @@
 
   </div>
 </div>
-
-<div class="cta-1x">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="cta-content">
-          <h3>Bạn Đã Sẵn Sàng?</h3>
-          <p>Tìm môn học mà bạn đam mê bằng cách duyệt qua các loại khóa học trực tuyến của chúng tôi. Khởi đầu học tập
-            với các khóa học hàng đầu được xây dựng với các chuyên gia trong ngành.</p>
-          <a href="#" class="btn-small">Bắt Đầu Dạy</a>
-          <a href="#" class="btn-small">Bắt Đầu Học</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
