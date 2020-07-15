@@ -1,3 +1,19 @@
+<style>
+.pb-cmnt-textarea {
+  resize: none;
+  padding: 20px;
+  height: 130px;
+  width: 100%;
+  border: 1px solid #F2F2F2;
+}
+
+.post__form {
+  padding: 14px;
+  border: 1px solid #00aeef;
+}
+</style>
+
+
 <div class="page-banner">
   <div class="hvrbox">
     <img src="view/base/images/video-bg.png" alt="Mountains" class="hvrbox-layer_bottom">
@@ -89,14 +105,15 @@
                     aria-controls="curriculum" aria-selected="false"><i class="fas fa-cube"></i> Curriculum</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="instructor-tab" data-toggle="tab" href="#instructor" role="tab"
-                    aria-controls="instructor" aria-selected="false"><i class="far fa-user"></i> Instructor</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
                     aria-selected="false"><i class="far fa-comment"></i> Review</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="instructor-tab" data-toggle="tab" href="#instructor" role="tab"
+                    aria-controls="instructor" aria-selected="false"><i class="far fa-user"></i> Instructor</a>
+                </li>
               </ul>
+
               <div class="tab-content course-menu-tab" id="myTabContent">
                 <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                   <div class="learning-system">
@@ -161,60 +178,65 @@
 
                 </div>
                 <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
-                  <div class="learning-system">
-                    <h4>What Will I Learn?</h4>
-                    <p>Learn cutting-edge deep reinforcement learning algorithms—from Deep Q-Networks (DQN) to Deep
-                      Deterministic Policy Gradients (DDPG). Apply these concepts to train agents to walk, drive, or
-                      perform other complex tasks.</p>
-                    <ul>
-                      <li>
-                        <div class="single-way">
-                          <h4>Visual learning tips</h4>
-                          <p>Graphic designers create visual concepts that inspire, and transform. Learn how to use
-                            industry-leading software to build innovative.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="single-way">
-                          <h4>How improve visual design</h4>
-                          <p>Remember skills can be developed with practice. Design crash course through interactive
-                            tutorials. Follow design and read design books. Start using tools like Canva and pair it
-                            with SocialPilot. </p>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="single-way">
-                          <h4>Value of visual design</h4>
-                          <p>Graphic design is process of visual communication problem solving using one or more of
-                            typography, photography and illustration. The field is considered a subset of visual.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="single-way">
-                          <h4>Difference Between Visual Design and Graphic Design</h4>
-                          <p>User interface (UI) designers are responsible for the “look and feel” of a website, app, or
-                            other product. In other words, they're the ones who add colors, pair typefaces, and set
-                            layouts. </p>
-                        </div>
-                      </li>
-                    </ul>
+                  Noi dung khoa hoc
+                </div>
+                <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                  <!-- ==================== -->
+                  <div class="post mb-5">
+                    <div class="row">
+                      <div class="col-12">
+                        <form class="post__form" action="index.php?act=binh-luan" method="POST">
+                          <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
+                          <div class="form-footer d-flex justify-content-end">
+                            <!-- <button class="btn btn-primary" type="button">Post</button> -->
+                            <button class="btn btn-primary" type="submit">Post</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
                   </div>
-                  <div class="requirements">
-                    <h4>Requirements</h4>
-                    <ul>
-                      <li><i class="fas fa-check"></i> Understand what visual learning is for and how it is used.</li>
-                      <li><i class="fas fa-check"></i> Need knowledge of photoshop and basic knowledge of indesign.</li>
-                      <li><i class="fas fa-check"></i> Preferable to have experience with PS, Sketch, Indesign and Adobe
-                        XD.</li>
-                      <li><i class="fas fa-check"></i> Preferable to understand word embeddings.</li>
-                    </ul>
+                  <!-- ==================== -->
+
+                  <div class="blog-author instructor-profile">
+                    <div class="media">
+                      <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
+                      <div class="media-body">
+                        <h5>Dr. Stavens Madison</h5>
+                        <p>He attended and graduated from medical school in 1976, having over 42 years of diverse
+                          experience, especially in Cardiovascular Disease (Cardiology).</p>
+                      </div>
+                    </div>
                   </div>
-                  <div class="description">
-                    <h4>Description</h4>
-                    <p>Your ability to use type is one of the things that differentiates graphic design from other
-                      visual professions. A big part of graphic design is understanding typography, developing your
-                      knowledge of typefaces, and how to apply them in your design. This will be a constant study
-                      throughout your career.</p>
+                  <div class="blog-author instructor-profile">
+                    <div class="media">
+                      <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
+                      <div class="media-body">
+                        <h5>Dr. Stavens Madison</h5>
+                        <p>He attended and graduated from medical school in 1976, having over 42 years of diverse
+                          experience, especially in Cardiovascular Disease (Cardiology).</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="blog-author instructor-profile">
+                    <div class="media">
+                      <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
+                      <div class="media-body">
+                        <h5>Dr. Stavens Madison</h5>
+                        <p>He attended and graduated from medical school in 1976, having over 42 years of diverse
+                          experience, especially in Cardiovascular Disease (Cardiology).</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="blog-author instructor-profile">
+                    <div class="media">
+                      <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
+                      <div class="media-body">
+                        <h5>Dr. Stavens Madison</h5>
+                        <p>He attended and graduated from medical school in 1976, having over 42 years of diverse
+                          experience, especially in Cardiovascular Disease (Cardiology).</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
@@ -237,30 +259,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                  <div class="review-bar">
-                    <div class="progress mb-3">
-                      <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                        aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                    <div class="progress mb-3">
-                      <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25"
-                        aria-valuemin="0" aria-valuemax="100">50%</div>
-                    </div>
-                    <div class="progress mb-3">
-                      <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25"
-                        aria-valuemin="0" aria-valuemax="100">75%</div>
-                    </div>
-                    <div class="progress mb-3">
-                      <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25"
-                        aria-valuemin="0" aria-valuemax="100">80%</div>
-                    </div>
-                    <div class="progress mb-3">
-                      <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="25"
-                        aria-valuemin="0" aria-valuemax="100">45%</div>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
 

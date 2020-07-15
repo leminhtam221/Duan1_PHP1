@@ -186,12 +186,12 @@
                     <div class="hvrbox-text">
                       <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
                           class="fas fa-play"></i></a>
-                      <a href="course-single.html">Preview Course</a>
+                      <a href="index.php?act=khoa-hoc-chi-tiet">Preview Course</a>
                     </div>
                   </div>
                 </div>
                 <div class="single-course-content">
-                  <a href="course-single.html">Learn Photoshop With Eyal Complete Course</a>
+                  <a href="index.php?act=khoa-hoc-chi-tiet">Learn Photoshop With Eyal Complete Course</a>
                   <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
                   <h3>
                     <i class="fas fa-star"></i>

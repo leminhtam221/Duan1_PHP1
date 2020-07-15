@@ -6,6 +6,7 @@ include "./model/danh-muc.php";
 include './model/user.php';
 include "./model/courses.php";
 include "./model/giang-vien.php";
+include "./model/binh-luan.php";
 
 
 // INCLUDE controller
