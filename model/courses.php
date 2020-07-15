@@ -1,5 +1,5 @@
 <?php
-  function loadKhoaHocTheoDanhMuc($idDanhMuc, $keyWord="", $trang){
+  function loadKhoaHocTheoDanhMuc($idDanhMuc, $keyWord="", $trang=1){
     $soLuong = 6;
     $trang -= 1;
     $from = $trang * $soLuong;
@@ -40,5 +40,10 @@
       $phanTrang.= ' <li '.$cls.'><a class="page-link" href="'.$link.'">'.$i.'</a></li>';
     }
     return $phanTrang;
+  }
+
+  function loadKhoaHocChiTiet($idKhoaHoc){
+    $sql = "SELECT * FROM khoa_hoc WhERE id='$idKhoaHoc'";
+    return find($sql);
   }
 ?>

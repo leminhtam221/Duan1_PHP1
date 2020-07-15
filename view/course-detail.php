@@ -37,15 +37,25 @@
   <div class="container">
     <div class="course-info-1x course-info-2x">
       <div class="row">
+        <div class="col-md-12 my-4">
+          <div class="course-heading">
+            <h2 class="course-heading-name">
+              <?=$chiTietKhoaHoc['ten_khoa_hoc'] ?>
+            </h2>
+          </div>
+        </div>
+
         <div class="col-md-4">
           <div class="course-info-left">
-            <div class="media">
-              <img src="view/base/images/testimonial-1.jpg" alt="Image">
-              <div class="media-body">
-                <h3>Sara Tylor</h3>
-                <p>Visual Instructor</p>
-              </div>
-            </div>
+            <?php
+              echo '<div class="media">
+                      <img src="view/base/images/testimonial-1.jpg" alt="Image">
+                      <div class="media-body">
+                        <h3>'.$giangVien['ho_ten'].'</h3>
+                        <p>Visual Instructor</p>
+                      </div>
+                    </div>';
+            ?>
           </div>
         </div>
         <div class="col-md-3">
@@ -73,7 +83,9 @@
         </div>
         <div class="col-md-3">
           <div class="course-info-right">
-            <h3><del>$59</del>$169</h3>
+            <?php
+              echo '<h3><del>'.$chiTietKhoaHoc['don_gia'].'</del>'.$chiTietKhoaHoc['khuyen_mai'].'đ</h3>'
+            ?>
             <a href="#" class="btn-small">Buy Now</a>
           </div>
         </div>
@@ -166,13 +178,14 @@
                   </div>
                   <div class="description">
                     <h4>Description</h4>
-                    <p>Your ability to use type is one of the things that differentiates graphic design from other
-                      visual professions. A big part of graphic design is understanding typography, developing your
-                      knowledge of typefaces, and how to apply them in your design. This will be a constant study
-                      throughout your career.</p>
+                    <?php
+                      echo '<p>'.$chiTietKhoaHoc['mo_ta'].'</p>';
+                    ?>
                   </div>
                   <div class="price">
-                    <h5><del>$169</del><span>$139</span></h5>
+                    <?php
+                      echo '<h5><del>'.$chiTietKhoaHoc['don_gia'].'</del><span>'.$chiTietKhoaHoc['khuyen_mai'].' đ</span></h5>';
+                    ?>
                     <a href="#" class="btn-small">Buy Now</a>
                   </div>
 
@@ -241,22 +254,24 @@
                 </div>
                 <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
                   <div class="blog-author instructor-profile">
-                    <div class="media">
-                      <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
-                      <div class="media-body">
-                        <h5>Dr. Stavens Madison</h5>
-                        <p>He attended and graduated from medical school in 1976, having over 42 years of diverse
-                          experience, especially in Cardiovascular Disease (Cardiology).</p>
-                        <div class="social-link">
-                          <ul>
-                            <li class="facebook"><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>
-                            <li class="pinterest"><a href="#"> <i class="fab fa-pinterest"></i> </a></li>
-                            <li class="instagram"><a href="#"> <i class="fab fa-instagram"></i> </a></li>
-                            <li class="twitter"><a href="#"> <i class="fab fa-twitter"></i> </a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    <?php
+                      echo '<div class="media">
+                            <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
+                            <div class="media-body">
+                              <h5>'. $giangVien['ho_ten'].'</h5>
+                              <p>He attended and graduated from medical school in 1976, having over 42 years of diverse
+                                experience, especially in Cardiovascular Disease (Cardiology).</p>
+                                <div class="social-link">
+                                <ul>
+                                  <li class="facebook"><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>
+                                  <li class="pinterest"><a href="#"> <i class="fab fa-pinterest"></i> </a></li>
+                                  <li class="instagram"><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+                                  <li class="twitter"><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>';
+                    ?>
                   </div>
                 </div>
 

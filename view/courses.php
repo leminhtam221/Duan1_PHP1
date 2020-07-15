@@ -192,12 +192,12 @@
                                           <div class="hvrbox-text">
                                             <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
                                                 class="fas fa-play"></i></a><br>
-                                            <a href="index.php?act=khoa-hoc-chi-tiet">Preview Course</a>
+                                            <a href="index.php?act=khoa-hoc-chi-tiet&idKhoaHoc='.$khoaHoc['id'].'">Preview Course</a>
                                           </div>
                                         </div>
                                       </div>
                                       <div class="single-course-content">
-                                        <a href="index.php?act=khoa-hoc-chi-tiet">'.$khoaHoc['ten_khoa_hoc'].'</a>
+                                        <a href="index.php?act=khoa-hoc-chi-tiet&idKhoaHoc='.$khoaHoc['id'].'">'.$khoaHoc['ten_khoa_hoc'].'</a>
                                         <p>'.$tenGiangVien.' <span><del>'.$khoaHoc['don_gia'].' đ</del> <b>'.$khoaHoc['khuyen_mai'].' đ</b></span></p>
                                         <h3>
                                           <i class="fas fa-star"></i>
@@ -245,16 +245,16 @@
                                   <div class="hvrbox-text">
                                     <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
                                         class="fas fa-play"></i></a><br>
-                                    <a href="index.php?act=khoa-hoc-chi-tiet">Preview Course</a>
+                                    <a href="index.php?act=khoa-hoc-chi-tiet&idKhoaHoc='.$khoaHoc['id'].'">Preview Course</a>
                                   </div>
                                 </div>
                               </div>
                             </div>
                             <div class="media-body">
-                              <h2><a href="index.php?act=khoa-hoc-chi-tiet">'.$khoaHoc['ten_khoa_hoc'].'</a></h2>
+                              <h2><a href="index.php?act=khoa-hoc-chi-tiet&idKhoaHoc='.$khoaHoc['id'].'">'.$khoaHoc['ten_khoa_hoc'].'</a></h2>
                               <h5>'.$tenGiangVien.'</h5>
                               <h4>'.$khoaHoc['khuyen_mai'].' đ<del>'.$khoaHoc['don_gia'].' đ</del></h4>
-                              <a href="index.php?act=khoa-hoc-chi-tiet" class="btn-bordered"> View Course </a>
+                              <a href="index.php?act=khoa-hoc-chi-tiet&idKhoaHoc='.$khoaHoc['id'].'" class="btn-bordered"> View Course </a>
                               <h3>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
