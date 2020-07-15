@@ -1,11 +1,20 @@
 <?php 
   if(isset($_GET['idKhoaHoc'])){
     $idKhoaHoc = $_GET['idKhoaHoc'];
-    $chiTietKhoaHoc = loadKhoaHocChiTiet($idKhoaHoc);
     
-
-    $idGiangVien = $chiTietKhoaHoc['id_giang_vien'];
-    $giangVien = layThongTinGiangVien($idGiangVien);
   }
 
+  if(isset($_POST['submit-comment'])){
+      $commentContent = $_POST['commentContent'];
+      $idKhoaHoc = $_POST['idKhoaHoc'];
+      $idUser = $_POST['idUser'];
+      addComment($commentContent,$idKhoaHoc,$idUser);
+  }
+
+  $chiTietKhoaHoc = loadKhoaHocChiTiet($idKhoaHoc);
+  $idGiangVien = $chiTietKhoaHoc['id_giang_vien'];
+  $giangVien = layThongTinGiangVien($idGiangVien);
+  
+  $danhSachBinhLuan = loadComment($idKhoaHoc);
+  
   include './view/course-detail.php';

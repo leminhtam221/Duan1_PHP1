@@ -193,65 +193,42 @@
                 <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
                   Noi dung khoa hoc
                 </div>
+
                 <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                  <!-- ==================== -->
-                  <div class="post mb-5">
-                    <div class="row">
-                      <div class="col-12">
-                        <form class="post__form" action="index.php?act=binh-luan" method="POST">
-                          <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
-                          <div class="form-footer d-flex justify-content-end">
-                            <!-- <button class="btn btn-primary" type="button">Post</button> -->
-                            <button class="btn btn-primary" type="submit">Post</button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- ==================== -->
+                  <?php
+                    if(isset($_SESSION['user'])){
+                      $idUser = $_SESSION['user']['id'];
+                      echo ' <div class="post mb-5">
+                              <div class="row">
+                                <div class="col-12">
+                                  <form class="post__form" action="index.php?act=khoa-hoc-chi-tiet" method="POST">
+                                    <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea" name="commentContent" required></textarea>
+                                    <input type="hidden" name="idUser" value="'.$idUser.'">
+                                    <input type="hidden" name="idKhoaHoc" value="'.$idKhoaHoc.'">
+                                    <div class="form-footer d-flex justify-content-end">
+                                      <button class="btn btn-primary" type="submit" name="submit-comment">Post</button>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>';
+                    }
+                  ?> <?php
+                    foreach ($danhSachBinhLuan as $binhLuan) {
+                      $idUser = $binhLuan['id_user'];
+                      $tenUser = getNameUser($idUser);
+                      echo '<div class="blog-author instructor-profile">
+                              <div class="media">
+                                <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
+                                <div class="media-body">
+                                  <h5>'.$tenUser['ho_ten'].'</h5>
+                                  <p>'.$binhLuan['noi_dung'].'</p>
+                                </div>
+                              </div>
+                            </div>';
+                    }
+                  ?> </div>
 
-                  <div class="blog-author instructor-profile">
-                    <div class="media">
-                      <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
-                      <div class="media-body">
-                        <h5>Dr. Stavens Madison</h5>
-                        <p>He attended and graduated from medical school in 1976, having over 42 years of diverse
-                          experience, especially in Cardiovascular Disease (Cardiology).</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="blog-author instructor-profile">
-                    <div class="media">
-                      <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
-                      <div class="media-body">
-                        <h5>Dr. Stavens Madison</h5>
-                        <p>He attended and graduated from medical school in 1976, having over 42 years of diverse
-                          experience, especially in Cardiovascular Disease (Cardiology).</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="blog-author instructor-profile">
-                    <div class="media">
-                      <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
-                      <div class="media-body">
-                        <h5>Dr. Stavens Madison</h5>
-                        <p>He attended and graduated from medical school in 1976, having over 42 years of diverse
-                          experience, especially in Cardiovascular Disease (Cardiology).</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="blog-author instructor-profile">
-                    <div class="media">
-                      <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
-                      <div class="media-body">
-                        <h5>Dr. Stavens Madison</h5>
-                        <p>He attended and graduated from medical school in 1976, having over 42 years of diverse
-                          experience, especially in Cardiovascular Disease (Cardiology).</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
                   <div class="blog-author instructor-profile">
                     <?php

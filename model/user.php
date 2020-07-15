@@ -13,6 +13,9 @@ function getUser(){
    return $res;
 }
 
+function getNameUser($idUser){
+   $sql = "select ho_ten from user where id='$idUser'";
+   return find($sql);
+}
+
 ?>
-
-
