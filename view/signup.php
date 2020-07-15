@@ -25,7 +25,7 @@
 						<div class="sign-in-form">
 							<h3>Đăng Ký</h3>
 							<form method="post" id="signup-form">
-								<div class="row">
+								<class class="row">
 									<div class="col-md-6">	
 										<div class="single-input">
 											<i class="fas fa-envelope"></i>																  
@@ -75,7 +75,13 @@
 											    <input id="su-re-pwd" type="password" class="form-control blur-hdl" placeholder="Nhập lại mật khẩu">		<div id="su-re-pwd-err" class="err-text"></div>			    
 											</div>
 									  	</div>
-									</div> 		
+									</div> 	
+									<div class="col-md-4" style="margin-bottom: 20px;margin-top:-10px;">
+										<select name="type" class="form-control styleSelect" style="border-radius: 5px;height:50px;border: 1px solid #f0f0f0;color: #b1b1b1;">
+											<option selected="true" value="hocvien">Học viên</option>
+											<option value="giangvien">Giảng viên</option>
+										 </select>
+									</div>
 									<div class="col-md-12">
 										<div class="sign-in-btn sign-up-btn">																						
 											<p>Hoặc Tham Gia Bằng</p>
