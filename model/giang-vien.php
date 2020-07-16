@@ -19,4 +19,9 @@
     $sql = "insert into giang_vien(tai_khoan, mat_khau, email, ho_ten) values('$uname','$pwd','$email','$fname $lname')";
     execSQL($sql,0);
   }
+
+  function checkLoginGV($uname, $pwd){
+    $user = find("select * from giang_vien where tai_khoan='$uname' and mat_khau='$pwd' or email='$uname' and mat_khau='$pwd'");
+    return $user;
+ }
 ?>

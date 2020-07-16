@@ -4659,6 +4659,7 @@ ul.main-menu-nav li.dropdown a i {
 	color: red;
 	font-size: 0.7rem;
 	margin-bottom: 0px;
+	transition: 2s;
 }
 
 
