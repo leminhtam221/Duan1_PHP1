@@ -47,20 +47,20 @@
               <a class="nav-link" href="#">Kích Hoạt Khóa Học</a>
               <a class="nav-link" href="#">Tham Gia Dạy Học </a>
               <a class="nav-link" href="#">Khóa Học Của Tôi</a>
-              <?php if(!isset($_COOKIE['duan1_user'])): ?>
+              <?php if(!isset($_COOKIE['user_id'])): ?>
               <a class="nav-link" href="index.php?act=dang-ky">Đăng Ký</a>
               <a class="nav-link" href="index.php?act=dang-nhap">Đăng Nhập</a>
-              <?php elseif(isset($_COOKIE['duan1_user'])): ?>
+              <?php elseif(isset($_COOKIE['user_id'])): ?>
               <div class="menu">
-                <a id="user-btn" class="nav-link" href="#"><b><?=@$_COOKIE['duan1_user'][0]?>&nbsp;<i
+                <a id="user-btn" class="nav-link" href="#"><b><?=@$_COOKIE['user_id']?>&nbsp;<i
                       class="fa fa-caret-down"></i></b>
                 </a>
                 <div id="user-dd">
                   <div>
                     <img src="./view/base/images/user-avatar.jpg" alt="">
                     <div>
-                      <p><?=@$_COOKIE['duan1_user'][1]?></p>
-                      <p style="font-size: 0.7rem;margin-top: 0px;"><?=@$_COOKIE['duan1_user'][2]?></p>
+                      <p><?=@$_COOKIE['user_id']?></p>
+                      <p style="font-size: 0.7rem;margin-top: 0px;"><?=@$_COOKIE['user_id']?></p>
                     </div>
                   </div>
                   <a class="nav-link" href="#" style="border-bottom: 1px solid #eee;">Quản Lí Tài Khoản</a>

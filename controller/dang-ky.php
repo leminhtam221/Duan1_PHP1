@@ -10,9 +10,7 @@ if(isset($_POST['uname'])){
       lectureSignUp($_POST['uname'],$_POST['pwd'],$_POST['email'],$_POST['fname'],$_POST['lname']);
       $user = checkLoginGV($_POST['uname'],$_POST['pwd']);
    }
-   setcookie("duan1_user[0]",$user['tai_khoan'], time() + (86400 * 180), "/");
-   setcookie("duan1_user[1]",$user['ho_ten'], time() + (86400 * 180), "/");
-   setcookie("duan1_user[2]",$user['email'], time() + (86400 * 180), "/");
+   setcookie("user_id",$user_id, time() + (86400 * 180), "/");
    header("Location: index.php");
 }
 include './view/signup.php';
