@@ -1,12 +1,12 @@
 <?php 
-  if(isset($_GET['idKhoaHoc'])){
-    $idKhoaHoc = $_GET['idKhoaHoc'];
+  if(isset($_GET['id-khoa-hoc'])){
+    $idKhoaHoc = $_GET['id-khoa-hoc'];
     
   }
 
   if(isset($_POST['submit-comment'])){
       $commentContent = $_POST['commentContent'];
-      $idKhoaHoc = $_POST['idKhoaHoc'];
+      $idKhoaHoc = $_POST['id-khoa-hoc'];
       $idUser = $_POST['idUser'];
       addComment($commentContent,$idKhoaHoc,$idUser);
   }

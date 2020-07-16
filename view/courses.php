@@ -192,12 +192,12 @@
                                           <div class="hvrbox-text">
                                             <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
                                                 class="fas fa-play"></i></a><br>
-                                            <a href="index.php?act=khoa-hoc-chi-tiet&idKhoaHoc='.$khoaHoc['id'].'">Preview Course</a>
+                                            <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc='.$khoaHoc['id'].'">Preview Course</a>
                                           </div>
                                         </div>
                                       </div>
                                       <div class="single-course-content">
-                                        <a href="index.php?act=khoa-hoc-chi-tiet&idKhoaHoc='.$khoaHoc['id'].'">'.$khoaHoc['ten_khoa_hoc'].'</a>
+                                        <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc='.$khoaHoc['id'].'">'.$khoaHoc['ten_khoa_hoc'].'</a>
                                         <p>'.$tenGiangVien.' <span><del>'.$khoaHoc['don_gia'].' đ</del> <b>'.$khoaHoc['khuyen_mai'].' đ</b></span></p>
                                         <h3>
                                           <i class="fas fa-star"></i>
