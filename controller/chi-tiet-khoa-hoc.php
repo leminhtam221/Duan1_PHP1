@@ -6,7 +6,7 @@
 
   if(isset($_POST['submit-comment'])){
       $commentContent = $_POST['commentContent'];
-      $idKhoaHoc = $_POST['id-khoa-hoc'];
+      $idKhoaHoc = $_POST['idKhoaHoc'];
       $idUser = $_POST['idUser'];
       addComment($commentContent,$idKhoaHoc,$idUser);
   }

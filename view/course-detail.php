@@ -196,12 +196,12 @@
 
                 <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                   <?php
-                    if(isset($_SESSION['user'])){
-                      $idUser = $_SESSION['user']['id'];
+                    if(isset($_COOKIE['user_id'])||isset($_COOKIE['lecturer_id'])){
+                      $idUser = isset($_COOKIE['user_id'])?$_COOKIE['user_id']:$_COOKIE['lecturer_id'];
                       echo ' <div class="post mb-5">
                               <div class="row">
                                 <div class="col-12">
-                                  <form class="post__form" action="index.php?act=khoa-hoc-chi-tiet" method="POST">
+                                  <form class="post__form" action="" method="POST">
                                     <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea" name="commentContent" required></textarea>
                                     <input type="hidden" name="idUser" value="'.$idUser.'">
                                     <input type="hidden" name="idKhoaHoc" value="'.$idKhoaHoc.'">

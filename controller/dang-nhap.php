@@ -9,7 +9,7 @@ if(isset($_POST['uname'])&&isset($_POST['pwd'])){
       setcookie("user_id",$user['id'], time() + (86400 * 180), "/");
       header("Location: index.php");
    }elseif(isset($user1['id'])){
-      setcookie("user",$user1['id'], time() + (86400 * 180), "/");
+      setcookie("lecturer_id",$user1['id'], time() + (86400 * 180), "/");
       header("Location: index.php");
    }else{
       $signin_error = true;

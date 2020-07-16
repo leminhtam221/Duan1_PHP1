@@ -47,20 +47,32 @@
               <a class="nav-link" href="#">Kích Hoạt Khóa Học</a>
               <a class="nav-link" href="#">Tham Gia Dạy Học </a>
               <a class="nav-link" href="#">Khóa Học Của Tôi</a>
-              <?php if(!isset($_COOKIE['user_id'])): ?>
+              <?php if(!isset($_COOKIE['user_id'])&&!isset($_COOKIE['lecturer_id'])): ?>
               <a class="nav-link" href="index.php?act=dang-ky">Đăng Ký</a>
               <a class="nav-link" href="index.php?act=dang-nhap">Đăng Nhập</a>
-              <?php elseif(isset($_COOKIE['user_id'])): ?>
+              <?php elseif(isset($_COOKIE['user_id'])||isset($_COOKIE['lecturer_id'])): ?>
+              <?php
+                $log_id;
+                $table;
+                if(isset($_COOKIE['user_id'])){
+                  $log_id = $_COOKIE['user_id'];
+                  $table = 'user';
+                }else{
+                  $log_id = $_COOKIE['lecturer_id'];
+                  $table = 'giang_vien';
+                }
+                $logged = find("select * from $table where id=$log_id");
+              ?>
               <div class="menu">
-                <a id="user-btn" class="nav-link" href="#"><b><?=@$_COOKIE['user_id']?>&nbsp;<i
+                <a id="user-btn" class="nav-link" href="#"><b><?=@$logged['tai_khoan']?>&nbsp;<i
                       class="fa fa-caret-down"></i></b>
                 </a>
                 <div id="user-dd">
                   <div>
                     <img src="./view/base/images/user-avatar.jpg" alt="">
                     <div>
-                      <p><?=@$_COOKIE['user_id']?></p>
-                      <p style="font-size: 0.7rem;margin-top: 0px;"><?=@$_COOKIE['user_id']?></p>
+                      <p><?=@$logged['ho_ten']?></p>
+                      <p style="font-size: 0.7rem;margin-top: 0px;"><?=@$logged['email']?></p>
                     </div>
                   </div>
                   <a class="nav-link" href="#" style="border-bottom: 1px solid #eee;">Quản Lí Tài Khoản</a>
