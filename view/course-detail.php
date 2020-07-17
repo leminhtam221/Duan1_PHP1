@@ -11,6 +11,36 @@
   padding: 14px;
   border: 1px solid #00aeef;
 }
+
+.accordion__heading {
+  position: relative;
+  font-weight: 600;
+}
+
+.accordion__sub {
+  position: absolute;
+  right: 0;
+  font-weight: 400;
+}
+
+.lesson-list {
+  margin: 0 !important;
+  list-style: none;
+}
+
+.lesson-item {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.lesson-time {
+  position: absolute;
+  right: 0;
+}
+
+#accordion .card-header {
+  cursor: pointer;
+}
 </style>
 
 
@@ -191,7 +221,90 @@
 
                 </div>
                 <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
-                  Noi dung khoa hoc
+                  <div id="accordion">
+                    <div class="card my-2">
+                      <div class="card-header py-3" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        <h6 class="mb-0 accordion__heading">
+                          Chương 1: Giới thiệu khóa học
+                          <span class="accordion__sub">4 Bài</span>
+                        </h6>
+                      </div>
+
+                      <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+                        <div class="card-body">
+                          <ul class="lesson-list">
+                            <li class="lesson-item">
+                              Bài 1: Giới thiệu bài học
+                              <span class="lesson-time">00:48</span>
+                            </li>
+                            <li class="lesson-item">
+                              Bài 2: Các phần mềm cần thiết
+                              <span class="lesson-time">05:48</span>
+                            </li>
+                            <li class="lesson-item">
+                              Bài 3: Cài đặt môi trường
+                              <span class="lesson-time">06:48</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card my-2">
+                      <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo">
+                        <h6 class="mb-0 accordion__heading">
+                          Chương 1: Giới thiệu khóa học
+                          <span class="accordion__sub">4 Bài</span>
+                        </h6>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+                        <div class="card-body">
+                          <ul class="lesson-list">
+                            <li class="lesson-item">
+                              Bài 1: Giới thiệu bài học
+                              <span class="lesson-time">00:48</span>
+                            </li>
+                            <li class="lesson-item">
+                              Bài 2: Các phần mềm cần thiết
+                              <span class="lesson-time">05:48</span>
+                            </li>
+                            <li class="lesson-item">
+                              Bài 3: Cài đặt môi trường
+                              <span class="lesson-time">06:48</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card my-2">
+                      <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree">
+                        <h6 class="mb-0 accordion__heading">
+                          Chương 1: Giới thiệu khóa học
+                          <span class="accordion__sub">4 Bài</span>
+                        </h6>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+                        <div class="card-body">
+                          <ul class="lesson-list">
+                            <li class="lesson-item">
+                              Bài 1: Giới thiệu bài học
+                              <span class="lesson-time">00:48</span>
+                            </li>
+                            <li class="lesson-item">
+                              Bài 2: Các phần mềm cần thiết
+                              <span class="lesson-time">05:48</span>
+                            </li>
+                            <li class="lesson-item">
+                              Bài 3: Cài đặt môi trường
+                              <span class="lesson-time">06:48</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
