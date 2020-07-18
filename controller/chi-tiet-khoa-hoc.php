@@ -16,5 +16,8 @@
   $giangVien = layThongTinGiangVien($idGiangVien);
   
   $danhSachBinhLuan = loadComment($idKhoaHoc);
+
+  $danhSachChuongKhoaHoc = loadChuongTheoKhoaHoc($idKhoaHoc);
+  // $danhSachVideo = loadVideoTheoChuongHoc($idChuong);
   
   include './view/course-detail.php';

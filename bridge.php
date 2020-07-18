@@ -7,6 +7,8 @@ include './model/user.php';
 include "./model/courses.php";
 include "./model/giang-vien.php";
 include "./model/binh-luan.php";
+include "./model/chuong.php";
+include "./model/video.php";
 
 
 // INCLUDE controller
