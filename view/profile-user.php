@@ -20,7 +20,7 @@
               <div class="portlet-title tabbable-line">
                 <div class="caption caption-md">
                   <i class="icon-globe theme-font hide"></i>
-                  <span class="caption-subject font-blue-madison bold uppercase">Thông tin tài khoản</span>
+                  <h5 class="uppercase bold">Thông tin tài khoản</h5>
                 </div>
               </div>
               <div class="portlet-body">
@@ -30,19 +30,19 @@
                     <div role="tabpanel" class="tab-pane active" id="home">
                       <form>
                         <div class="form-group">
-                          <label for="inputName">Họ tên</label>
+                          <label for="inputName" class="heading">Họ tên</label>
                           <input type="text" class="form-control" id="inputName" placeholder="Họ tên">
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email</label>
+                          <label for="exampleInputEmail1" class="heading">Email</label>
                           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                         </div>
                         <div class="form-group">
-                          <label for="phoneNumber">Số điện thoại</label>
+                          <label for="phoneNumber" class="heading">Số điện thoại</label>
                           <input type="text" class="form-control" id="phoneNumber" placeholder="Số điện thoại">
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputPassword1">Mật khẩu</label>
+                          <label for="exampleInputPassword1" class="heading">Mật khẩu</label>
                           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu">
                         </div>
 

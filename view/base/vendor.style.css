@@ -7,6 +7,9 @@
   width: 300px;
   margin-right: 20px;
 }
+.heading {
+  font-weight: 700;
+}
 
 .profile-content {
   overflow: hidden;
