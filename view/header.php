@@ -52,7 +52,7 @@
               <a class="nav-link" href="index.php?act=dang-nhap">Đăng Nhập</a>
               <?php elseif(isset($_COOKIE['user_id'])||isset($_COOKIE['lecturer_id'])): ?>
               <?php
-                $log_id;
+                $log_id;           
                 $table;
                 if(isset($_COOKIE['user_id'])){
                   $log_id = $_COOKIE['user_id'];
@@ -75,7 +75,8 @@
                       <p style="font-size: 0.7rem;margin-top: 0px;"><?=@$logged['email']?></p>
                     </div>
                   </div>
-                  <a class="nav-link" href="index.php?act=profile-user" style="border-bottom: 1px solid #eee;">Quản Lí
+                  <a class="nav-link" href="index.php?act=profile-user&idUser=<?=$log_id?>"
+                    style="border-bottom: 1px solid #eee;">Quản Lí
                     Tài Khoản</a>
                   <a class="nav-link" href="index.php?act=dang-xuat">Đăng Xuất</a>
                 </div>

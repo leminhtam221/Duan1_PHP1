@@ -18,4 +18,14 @@ function getNameUser($idUser){
    return find($sql);
 }
 
+function loadThongTinUser($idUser){
+   $sql = "SELECT * FROM user WHERE id='$idUser'";
+   return find($sql);
+}
+
+function capNhatThongTinUser($name, $email, $phoneNumber, $password, $idUser){
+   $sql = "UPDATE user SET ho_ten = '$name', email = '$email', sdt = '$phoneNumber', mat_khau = '$password' WHERE id = '$idUser'";
+   execSQL($sql,1);
+}
+
 ?>

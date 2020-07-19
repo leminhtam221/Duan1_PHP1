@@ -33,8 +33,8 @@ function find($query){
 }
 
 /* hàm exec 
-* INSERT UPDATE $c = 0
-* DELETE $c = 1
+* INSERT DELETE $c = 0
+* UPDATE $c = 1
 */
 function execSQL($sql,$c){
    $conn = connection();

@@ -10,8 +10,8 @@
               <div class="profile-userpic">
                 <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-responsive" alt=""> </div>
               <div class="profile-usertitle">
-                <div class="profile-usertitle-name"> Lê Minh Tâm </div>
-                <div class="profile-usertitle-job"> Học viên </div>
+                <div class="profile-usertitle-name"> <?=$thongTinUser['ho_ten'] ?> </div>
+                <div class="profile-usertitle-job"> <?=$userType ?> </div>
               </div>
             </div>
           </div>
@@ -28,25 +28,29 @@
                   <!-- Tab panes -->
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
-                      <form>
+                      <form action="index.php?act=profile-user&idUser=<?=$idUser ?>" method="POST">
                         <div class="form-group">
                           <label for="inputName" class="heading">Họ tên</label>
-                          <input type="text" class="form-control" id="inputName" placeholder="Họ tên">
+                          <input type="text" class="form-control" name="name" id="inputName"
+                            value="<?=$thongTinUser['ho_ten'] ?>" required>
                         </div>
                         <div class="form-group">
                           <label for="exampleInputEmail1" class="heading">Email</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                          <input type="email" class="form-control" name="email" id="exampleInputEmail1"
+                            value="<?=$thongTinUser['email'] ?>" required>
                         </div>
                         <div class="form-group">
                           <label for="phoneNumber" class="heading">Số điện thoại</label>
-                          <input type="text" class="form-control" id="phoneNumber" placeholder="Số điện thoại">
+                          <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
+                            value="<?=$thongTinUser['sdt'] ?>" required>
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword1" class="heading">Mật khẩu</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu">
+                          <input type="password" class="form-control" name="password" id="exampleInputPassword1"
+                            value="<?=$thongTinUser['mat_khau'] ?>" required>
                         </div>
 
-                        <button type="submit" class="btn btn-success">Cập nhật</button>
+                        <button type="submit" class="btn btn-success" name="submit-profile">Cập nhật</button>
                       </form>
                     </div>
                   </div>

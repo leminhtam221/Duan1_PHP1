@@ -24,4 +24,9 @@
     $user = find("select * from giang_vien where tai_khoan='$uname' and mat_khau='$pwd' or email='$uname' and mat_khau='$pwd'");
     return $user;
  }
+
+ function capNhatThongTinGV($name, $email, $phoneNumber, $password, $idUser){
+  $sql = "UPDATE giang_vien SET ho_ten = '$name', email = '$email', sdt = '$phoneNumber', mat_khau = '$password' WHERE id = '$idUser'";
+  execSQL($sql,1);
+ }
 ?>
