@@ -75,7 +75,8 @@
                       <p style="font-size: 0.7rem;margin-top: 0px;"><?=@$logged['email']?></p>
                     </div>
                   </div>
-                  <a class="nav-link" href="#" style="border-bottom: 1px solid #eee;">Quản Lí Tài Khoản</a>
+                  <a class="nav-link" href="index.php?act=profile-user" style="border-bottom: 1px solid #eee;">Quản Lí
+                    Tài Khoản</a>
                   <a class="nav-link" href="index.php?act=dang-xuat">Đăng Xuất</a>
                 </div>
               </div>
