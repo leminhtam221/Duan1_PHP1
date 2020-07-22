@@ -46,7 +46,7 @@
             <nav class="nav">
               <a class="nav-link" href="#">Kích Hoạt Khóa Học</a>
               <a class="nav-link" href="#">Tham Gia Dạy Học </a>
-              <a class="nav-link" href="#">Khóa Học Của Tôi</a>
+              <a class="nav-link" href="index.php?act=my-courses">Khóa Học Của Tôi</a>
               <?php if(!isset($_COOKIE['user_id'])&&!isset($_COOKIE['lecturer_id'])): ?>
               <a class="nav-link" href="index.php?act=dang-ky">Đăng Ký</a>
               <a class="nav-link" href="index.php?act=dang-nhap">Đăng Nhập</a>
