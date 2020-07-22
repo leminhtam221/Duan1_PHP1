@@ -1,6 +1,6 @@
 <?php
-  if(isset($_GET['idDanhMuc'])){
-    $idDanhMuc = $_GET['idDanhMuc'];
+  if(isset($_GET['id-danh-muc'])){
+    $idDanhMuc = $_GET['id-danh-muc'];
   }else{
     $idDanhMuc = 0;
   }

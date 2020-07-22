@@ -67,14 +67,6 @@
   <div class="container">
     <div class="course-info-1x course-info-2x">
       <div class="row">
-        <div class="col-md-12 my-4">
-          <div class="course-heading">
-            <h2 class="course-heading-name">
-              <?=$chiTietKhoaHoc['ten_khoa_hoc'] ?>
-            </h2>
-          </div>
-        </div>
-
         <div class="col-md-4">
           <div class="course-info-left">
             <?php
@@ -114,9 +106,9 @@
         <div class="col-md-3">
           <div class="course-info-right">
             <?php
-              echo '<h3><del>'.$chiTietKhoaHoc['don_gia'].'</del>'.$chiTietKhoaHoc['khuyen_mai'].'đ</h3>'
+              echo '<h3 style="font-size: 1.25rem;margin-top: 1rem;"><del>'.$chiTietKhoaHoc['don_gia'].'</del>'.$chiTietKhoaHoc['khuyen_mai'].'</h3>'
             ?>
-            <a href="#" class="btn-small">Buy Now</a>
+            <a style="padding-left: 1rem;padding-right: 1rem;" href="#" class="btn-small"><i class="fas fa-cart-plus"></i></a>
           </div>
         </div>
 
@@ -216,7 +208,7 @@
                     <?php
                       echo '<h5><del>'.$chiTietKhoaHoc['don_gia'].'</del><span>'.$chiTietKhoaHoc['khuyen_mai'].' đ</span></h5>';
                     ?>
-                    <a href="#" class="btn-small">Buy Now</a>
+                    <a href="#" style="padding-left: 1rem;padding-right: 1rem" class="btn-small">Thêm Vào Giỏ Hàng</a>
                   </div>
 
                 </div>

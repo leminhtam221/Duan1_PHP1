@@ -3,6 +3,7 @@
 require_once './../model/DB.php';
 require_once './../model/user.php';
 require_once './../model/giang-vien.php';
+require_once './../model/cart.php';
 
 if(isset($_POST['utemp'])){
    $data1 = getUser();

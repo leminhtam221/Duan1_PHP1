@@ -1,3 +1,14 @@
+<div class="alert alert-success alert-e" id="alert-2">
+  <strong>Success!</strong> Added to your cart.
+</div>
+<script>
+  document.getElementById('').addEventListener('click', ()=>{
+    document.getElementById('alert-2').classList.add('alert-2');
+    setTimeout(()=>{
+      document.getElementById('div').classList.remove('alert-2');
+    },3100);
+  })
+</script>
 <div class="cta-1x">
   <div class="container">
     <div class="row">
@@ -6,8 +17,8 @@
           <h3>Bạn Đã Sẵn Sàng?</h3>
           <p>Tìm môn học mà bạn đam mê bằng cách duyệt qua các loại khóa học trực tuyến của chúng tôi. Khởi đầu học tập
             với các khóa học hàng đầu được xây dựng với các chuyên gia trong ngành.</p>
-          <a href="#" class="btn-small">Bắt Đầu Dạy</a>
-          <a href="#" class="btn-small">Bắt Đầu Học</a>
+          <a style="z-index: 10" href="#" class="btn-small">Bắt Đầu Dạy</a>
+          <a style="z-index: 10" href="#" class="btn-small">Bắt Đầu Học</a>
         </div>
       </div>
     </div>

@@ -64,7 +64,7 @@
                 $logged = find("select * from $table where id=$log_id");
               ?>
               <div class="menu">
-                <a id="user-btn" class="nav-link" href="#"><b><?=@$logged['tai_khoan']?>&nbsp;<i
+                <a style="cursor:pointer" id="user-btn" class="nav-link"><b><?=@$logged['tai_khoan']?>&nbsp;<i
                       class="fa fa-caret-down"></i></b>
                 </a>
                 <div id="user-dd">
@@ -107,35 +107,35 @@
 
                 <ul class="navbar-nav ml-auto main-menu-nav">
 
-                  <li class="nav-item active">
+                  <li class="nav-item <?=!isset($_GET['act'])||$_GET['act']=='trang-chu'?'active':''?>">
                     <a class="nav-link" href="index.php?act=trang-chu">
                       Trang Chủ <span class="sr-only">(current)</span>
                     </a>
                   </li>
 
-                  <li class="nav-item">
+                  <li class="nav-item <?=@$_GET['act']=='khoa-hoc'||$_GET['act']=='chi-tiet-khoa-hoc'?'active':''?>">
                     <a class="nav-link" href="index.php?act=khoa-hoc">
                       Khóa Học
                     </a>
                   </li>
 
-                  <li class="nav-item">
+                  <li class="nav-item <?=@$_GET['act']=='thong-tin'?'active':''?>">
                     <a class="nav-link" href="index.php?act=thong-tin">Thông Tin</a>
                   </li>
 
-                  <li class="nav-item">
+                  <li class="nav-item <?=@$_GET['act']=='bai-viet'?'active':''?>">
                     <a class="nav-link" href="index.php?act=bai-viet">
                       Blog
                     </a>
                   </li>
 
-                  <li class="nav-item">
+                  <li class="nav-item <?=@$_GET['act']=='lien-he'?'active':''?>">
                     <a class="nav-link" href="index.php?act=lien-he">Liên Hệ</a>
                   </li>
 
                   <li class="nav-item begin">
-                    <a class="nav-link btn-cart" href="#"><img src="./view/base/images/cart-icon.png" alt="">
-                      <span>1</span>
+                    <a class="nav-link btn-cart" href="index.php?act=gio-hang"><img src="./view/base/images/cart-icon.png" alt="">
+                      <?=isset($_COOKIE['cart'])?'<span>'.$_COOKIE['cart'].'</span>':''?>
                     </a>
                   </li>
 

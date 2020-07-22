@@ -44,7 +44,7 @@
                       <?php
                         foreach ($danhSachDanhMuc as $danhMuc) {
                           echo '<li>
-                                  <a href="index.php?act=khoa-hoc&idDanhMuc='.$danhMuc['id'].'">
+                                  <a href="index.php?act=khoa-hoc&id-danh-muc='.$danhMuc['id'].'">
                                     <img src="view/base/images/arrow-right.png" alt="Image"> '.$danhMuc['ten_danh_muc'].'
                                     <span>30</span>
                                   </a>
@@ -198,7 +198,11 @@
                                       </div>
                                       <div class="single-course-content">
                                         <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc='.$khoaHoc['id'].'">'.$khoaHoc['ten_khoa_hoc'].'</a>
-                                        <p>'.$tenGiangVien.' <span><del>'.$khoaHoc['don_gia'].' đ</del> <b>'.$khoaHoc['khuyen_mai'].' đ</b></span></p>
+                                        <p>'.$tenGiangVien.' <div class="d-flex justify-content-end"><span><del>'.$khoaHoc['don_gia'].' đ</del> <b>'.$khoaHoc['khuyen_mai'].' đ</b></span></p></div>
+                                        <div class="d-flex justify-content-between" style="margin-top:0.5rem" aria-label="Basic example">
+                                          <a value="'.$khoaHoc['id'].'" style="cursor:pointer;background-color:#fb3958;color:#fff;border:0" class="btn"><i class="fa fa-cart-plus"></i></a>
+                                          <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc='.$khoaHoc['id'].'" style="background-color:#02b3e4;color:#fff;border:0" class="btn">Mua ngay</a>
+                                        </div>
                                         <h3>
                                           <i class="fas fa-star"></i>
                                           <i class="fas fa-star"></i>
