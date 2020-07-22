@@ -36,7 +36,7 @@
       }else{
         $cls = 'class="page-item"';
       }
-      $link = "index.php?act=khoa-hoc&idDanhMuc=".$idDanhMuc."&trang=".$i;
+      $link = "index.php?act=khoa-hoc&id-danh-muc=".$idDanhMuc."&trang=".$i;
       $phanTrang.= ' <li '.$cls.'><a class="page-link" href="'.$link.'">'.$i.'</a></li>';
     }
     return $phanTrang;

@@ -1,7 +1,6 @@
 <?php 
   if(isset($_GET['id-khoa-hoc'])){
     $idKhoaHoc = $_GET['id-khoa-hoc'];
-    
   }
 
   if(isset($_POST['submit-comment'])){
@@ -18,6 +17,5 @@
   $danhSachBinhLuan = loadComment($idKhoaHoc);
 
   $danhSachChuongKhoaHoc = loadChuongTheoKhoaHoc($idKhoaHoc);
-  // $danhSachVideo = loadVideoTheoChuongHoc($idChuong);
   
   include './view/course-detail.php';
