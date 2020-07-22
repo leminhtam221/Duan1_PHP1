@@ -1,0 +1,77 @@
+/* =========course-detail */
+.pb-cmnt-textarea {
+  resize: none;
+  padding: 20px;
+  height: 130px;
+  width: 100%;
+  border: 1px solid #f2f2f2;
+}
+
+.post__form {
+  padding: 14px;
+  border: 1px solid #00aeef;
+}
+
+.accordion__heading {
+  position: relative;
+  font-weight: 600;
+}
+
+.accordion__sub {
+  position: absolute;
+  right: 0;
+  font-weight: 400;
+}
+
+.lesson-list {
+  margin: 0 !important;
+  padding: 0;
+  list-style: none;
+}
+
+.lesson-item {
+  position: relative;
+  margin-bottom: 10px;
+}
+.lession-title {
+  width: 80%;
+}
+.lesson-time {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#accordion .card-header {
+  cursor: pointer;
+}
+/* ============================== */
+
+/* =================.my-course-detail================== */
+.active-courses {
+  text-align: center;
+  display: inline-block;
+  width: 80%;
+  background-color: #5c9cfe;
+  color: white !important;
+  border-radius: 10px;
+}
+.background-body {
+  background-color: #f9fafc;
+}
+.my-courses-left {
+  background: white;
+  padding: 14px;
+}
+.my-courses-heading {
+  color: #232731;
+  font-weight: 600;
+  margin-bottom: 14px;
+  font-size: 26px;
+}
+
+.video-show {
+  width: 100%;
+  height: 538px;
+}
+/* =================.my-course-detail================== */

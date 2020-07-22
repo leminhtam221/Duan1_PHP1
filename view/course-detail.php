@@ -1,48 +1,4 @@
-<style>
-.pb-cmnt-textarea {
-  resize: none;
-  padding: 20px;
-  height: 130px;
-  width: 100%;
-  border: 1px solid #F2F2F2;
-}
-
-.post__form {
-  padding: 14px;
-  border: 1px solid #00aeef;
-}
-
-.accordion__heading {
-  position: relative;
-  font-weight: 600;
-}
-
-.accordion__sub {
-  position: absolute;
-  right: 0;
-  font-weight: 400;
-}
-
-.lesson-list {
-  margin: 0 !important;
-  list-style: none;
-}
-
-.lesson-item {
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.lesson-time {
-  position: absolute;
-  right: 0;
-}
-
-#accordion .card-header {
-  cursor: pointer;
-}
-</style>
-
+<link rel="stylesheet" href="view/base/main.style.css">
 
 <div class="page-banner">
   <div class="hvrbox">
@@ -241,7 +197,7 @@
                                      
                                     foreach ($danhSachVideo as $video) {
                                       echo '<li class="lesson-item">
-                                              '.$video['ten_video'].'
+                                              <p class="lession-title">'.$video['ten_video'].'</p>
                                               <span class="lesson-time">00:48</span>
                                             </li>';
                                     }
