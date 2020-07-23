@@ -9,7 +9,8 @@ include "./model/giang-vien.php";
 include "./model/binh-luan.php";
 include "./model/chuong.php";
 include "./model/video.php";
-
+include "./model/don-hang.php";
+include "./model/chi-tiet-don-hang.php";
 
 // INCLUDE controller
 include "./controller/controller.php";

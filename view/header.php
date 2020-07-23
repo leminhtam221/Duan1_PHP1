@@ -46,7 +46,20 @@
             <nav class="nav">
               <a class="nav-link" href="#">Kích Hoạt Khóa Học</a>
               <a class="nav-link" href="#">Tham Gia Dạy Học </a>
-              <a class="nav-link" href="index.php?act=my-courses">Khóa Học Của Tôi</a>
+              <?php if(isset($_COOKIE['user_id'])||isset($_COOKIE['lecturer_id'])): ?>
+              <?php
+                $log_id;           
+                if(isset($_COOKIE['user_id'])){
+                  $log_id = $_COOKIE['user_id'];
+                }else{
+                  $log_id = $_COOKIE['lecturer_id'];
+                }
+              ?>
+              <a class="nav-link" href="index.php?act=my-courses&id-user=<?=$log_id?>">Khóa Học Của Tôi</a>
+              <?php else: ?>
+              <a class="nav-link" href="index.php?act=dang-nhap">Khóa Học Của Tôi</a>
+              <?php endif ?>
+
               <?php if(!isset($_COOKIE['user_id'])&&!isset($_COOKIE['lecturer_id'])): ?>
               <a class="nav-link" href="index.php?act=dang-ky">Đăng Ký</a>
               <a class="nav-link" href="index.php?act=dang-nhap">Đăng Nhập</a>
@@ -134,7 +147,8 @@
                   </li>
 
                   <li class="nav-item begin">
-                    <a class="nav-link btn-cart" href="index.php?act=gio-hang"><img src="./view/base/images/cart-icon.png" alt="">
+                    <a class="nav-link btn-cart" href="index.php?act=gio-hang"><img
+                        src="./view/base/images/cart-icon.png" alt="">
                       <?=isset($_COOKIE['cart'])?'<span>'.$_COOKIE['cart'].'</span>':''?>
                     </a>
                   </li>

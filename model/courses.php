@@ -46,4 +46,9 @@
     $sql = "SELECT * FROM khoa_hoc, danh_muc WhERE danh_muc.id=id_danh_muc and khoa_hoc.id='$idKhoaHoc' ";
     return find($sql);
   }
+
+  function loadKhoaHocTheoGiangVien($idGiangVien){
+    $sql = "SELECT * FROM khoa_hoc WHERE id_giang_vien = '$idGiangVien'";
+    return findMultiple($sql);
+  }
 ?>

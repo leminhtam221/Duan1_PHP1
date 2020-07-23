@@ -9,8 +9,8 @@
           <div class="profile-userpic">
             <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-responsive" alt=""> </div>
           <div class="profile-usertitle">
-            <div class="profile-usertitle-name"> Le Minh Tam </div>
-            <div class="profile-usertitle-job"> Hoc Vien </div>
+            <div class="profile-usertitle-name"> <?=$thongTinUser['ho_ten'] ?> </div>
+            <div class="profile-usertitle-job"> <?=$userType?> </div>
           </div>
           <?php
             if(isset($_COOKIE['user_id'])){
@@ -37,69 +37,32 @@
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
               <h2 class="my-courses-heading">Khóa học của tôi</h2>
               <div class="row">
-                <div class="col-md-4">
-                  <div class="single-course">
-                    <div class="hvrbox">
-                      <a href="index.php?act=my-course-detail">
-                        <img src="./view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                      </a>
-                    </div>
-                    <div class="single-course-content">
-                      <a href="index.php?act=my-course-detail">Learn Photoshop With Eyal Complete Course</a>
-                      <p>Nir Eyal</p>
-                      <h3>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i> (4)
-                        <span>Enroll: 128</span>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="single-course">
-                    <div class="hvrbox">
-                      <a href="#">
-                        <img src="./view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                      </a>
-                    </div>
-                    <div class="single-course-content">
-                      <a href="#">Learn Photoshop With Eyal Complete Course</a>
-                      <p>Nir Eyal</p>
-                      <h3>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i> (4)
-                        <span>Enroll: 128</span>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="single-course">
-                    <div class="hvrbox">
-                      <a href="#">
-                        <img src="./view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                      </a>
-                    </div>
-                    <div class="single-course-content">
-                      <a href="#">Learn Photoshop With Eyal Complete Course</a>
-                      <p>Nir Eyal</p>
-                      <h3>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i> (4)
-                        <span>Enroll: 128</span>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
+                <?php
+                foreach ($danhSachKhoaHoc as $khoaHoc) {
+                  $tenGiangVien = layTenGiangVien($khoaHoc['id_giang_vien']);
+                  echo '<div class="col-md-4">
+                          <div class="single-course">
+                            <div class="hvrbox">
+                              <a href="index.php?act=my-course-detail">
+                                <img src="./view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                              </a>
+                            </div>
+                            <div class="single-course-content">
+                              <a href="index.php?act=my-course-detail">'.$khoaHoc['ten_khoa_hoc'].'</a>
+                              <p>'.$tenGiangVien['ho_ten'].'</p>
+                              <h3>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i> (4)
+                                <span>Enroll: 128</span>
+                              </h3>
+                            </div>
+                          </div>
+                        </div>';
+                }
+              ?>
               </div>
             </div>
 
