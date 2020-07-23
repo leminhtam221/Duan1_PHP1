@@ -16,6 +16,10 @@ function addToCart($id){
 			$cart_str = join($cart, ',');
 			setcookie('cart',$cart_str,time() + (86400 * 180), "/");
 			unset($cart);
+			echo true;
+		}
+		else{
+			echo false;
 		}
 	}
 }

@@ -21,5 +21,4 @@ if(isset($_POST['utemp'])){
 
 if(isset($_POST['prodid'])){
    addToCart($_POST['prodid']);
-   echo rowCount();
 }

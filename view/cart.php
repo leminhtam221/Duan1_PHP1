@@ -69,6 +69,9 @@
   </div>
 </div>
   <div class="container" style="margin-top: 4rem !important;margin-bottom: 4rem !important;">
+  <?php if(!isset($myCart)): ?>
+  <h3>Bạn chưa có sản phẩm nào trong giỏ hàng!</h3>
+  <?php else: ?>
   <h3>Giỏ Hàng Của Bạn</h3>
 	 <table id="cart" class="table table-hover table-condensed mt-2">
 		<thead>
@@ -84,7 +87,7 @@
 		  <tr>
 			 <td data-th="Product">
 				<div class="row">
-				  <div class="col-sm-3 hidden-xs"><img src="./view/base/images/<?=$item['hinh_anh']?>" alt="..." class="img-responsive" /></div>
+				  <div class="col-sm-3 hidden-xs"><img src="./view/base/images/<?=@$item['hinh_anh']?>" alt="..." class="img-responsive" /></div>
 				  <div class="col-sm-9 d-flex align-items-center">
 					 <h4 class="nomargin"><?=$item['ten_khoa_hoc']?></h4>
 				  </div>
@@ -109,4 +112,5 @@
 		  </tr>
 		</tfoot>
 	 </table>
+   <?php endif ?>
   </div>
