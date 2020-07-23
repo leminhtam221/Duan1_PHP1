@@ -23,7 +23,7 @@
   <div class="container">
     <div class="course-info-1x course-info-2x">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
           <div class="course-info-left">
             <?php
               echo '<div class="media">
@@ -59,12 +59,11 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <div class="course-info-right">
             <?php
               echo '<h3 style="font-size: 1.25rem;margin-top: 1rem;"><del>'.$chiTietKhoaHoc['don_gia'].'</del>'.$chiTietKhoaHoc['khuyen_mai'].'</h3>'
             ?>
-            <a style="padding-left: 1rem;padding-right: 1rem;" href="#" class="btn-small"><i class="fas fa-cart-plus"></i></a>
           </div>
         </div>
 
@@ -282,6 +281,12 @@
               </ul>
             </div>
             <div class="footer-social-link">
+              <style>
+                #add-cart{color: #02b3e4;border-color:#02b3e4;cursor:pointer}
+                #add-cart:hover{color: #fff;background-color:#02b3e4}
+              </style>
+                  <button id="add-cart" type="button" class="btn btn-outline-primary w-100">Thêm Vào Giỏ Hàng</button>
+              <a href="#" class="btn btn-primary w-100 mt-2 mb-4" style="background-color: #02b3e4;border-color:#02b3e4;">Mua Ngay</a>
               <h2>Chia sẻ qua</h2>
               <ul>
                 <li><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>

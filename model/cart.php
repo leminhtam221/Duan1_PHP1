@@ -25,7 +25,7 @@ function getCart(){
 	$items=[];
 	$cart = explode(',',$_COOKIE['cart']);
 	foreach ($cart as $item) {
-		$sql = "select * from khoa_hoc where id=$item";
+		$sql = "select khoa_hoc.id, ten_khoa_hoc, hinh_anh, don_gia, khuyen_mai, ho_ten from khoa_hoc inner join giang_vien on id_giang_vien=giang_vien.id where khoa_hoc.id=$item";
 		$temp=find($sql);
 		array_push($items, $temp);
 	}

@@ -149,7 +149,7 @@
                   <li class="nav-item begin">
                     <a class="nav-link btn-cart" href="index.php?act=gio-hang"><img
                         src="./view/base/images/cart-icon.png" alt="">
-                      <?=isset($_COOKIE['cart'])?'<span>'.$_COOKIE['cart'].'</span>':''?>
+                      <?=isset($_COOKIE['cart'])?'<span id="cart-counter">'.rowCount().'</span>':''?>
                     </a>
                   </li>
 

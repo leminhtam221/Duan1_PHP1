@@ -49,7 +49,7 @@
 }
 </style>
 
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <div class="page-banner">
   <div class="hvrbox">
     <img src="./view/base/images/bn.jpg" alt="Mountains" class="hvrbox-layer_bottom">
@@ -80,24 +80,25 @@
 		  </tr>
 		</thead>
 		<tbody>
+      <?php foreach ($myCart as $item): ?>
 		  <tr>
 			 <td data-th="Product">
 				<div class="row">
-				  <div class="col-sm-3 hidden-xs"><img src="./view/base/images/book.png" alt="..." class="img-responsive" /></div>
+				  <div class="col-sm-3 hidden-xs"><img src="./view/base/images/<?=$item['hinh_anh']?>" alt="..." class="img-responsive" /></div>
 				  <div class="col-sm-9 d-flex align-items-center">
-					 <h4 class="nomargin">Lập trình hướng đối tượng</h4>
+					 <h4 class="nomargin"><?=$item['ten_khoa_hoc']?></h4>
 				  </div>
 				</div>
 			 </td>
-			 <td data-th="Price">Nguyễn Minh Trí</td>
+			 <td data-th="Price"><?=@$item['ho_ten']?></td>
 			 <td data-th="Quantity">
-				200,000đ
+       <?=$item['don_gia']?>
 			 </td>
 			 <td class="actions" data-th="">
-				<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-				<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+				<button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
 			 </td>
 		  </tr>
+      <?php endforeach ?>
 		</tbody>
 		<tfoot>
 		  <tr>

@@ -18,3 +18,8 @@ if(isset($_POST['utemp'])){
    
    echo $isExist;
 }
+
+if(isset($_POST['prodid'])){
+   addToCart($_POST['prodid']);
+   echo rowCount();
+}

@@ -1,14 +1,6 @@
 <div class="alert alert-success alert-e" id="alert-2">
   <strong>Success!</strong> Added to your cart.
 </div>
-<script>
-document.getElementById('').addEventListener('click', () => {
-  document.getElementById('alert-2').classList.add('alert-2');
-  setTimeout(() => {
-    document.getElementById('div').classList.remove('alert-2');
-  }, 3100);
-})
-</script>
 <div class="cta-1x">
   <div class="container">
     <div class="row">

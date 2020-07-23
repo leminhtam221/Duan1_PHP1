@@ -29,6 +29,8 @@
   <script src="./view/base/js/signin.js"></script>
    <!-- Signup script -->
    <script src="./view/base/js/signup.js"></script>
+    <!-- Cart script -->
+    <script src="./view/base/js/cart.js"></script>
  </body>
 
  </html>

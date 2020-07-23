@@ -3783,7 +3783,7 @@ ul.main-menu-nav li.dropdown a i {
 }
 .course-details-1x .course-details-sidebar .course-feature ul {
 	background: #fff;
-	margin: 0 30px 50px 30px;
+	margin: 0 30px 30px 30px;
 	padding: 0;
 }
 .course-details-1x .course-details-sidebar .course-feature ul li {
@@ -4662,7 +4662,7 @@ ul.main-menu-nav li.dropdown a i {
 
 div.alert-e{
 	position: fixed;
-	top: 10px;
+	top: -3rem;
 	left: 50%;
 	transform: translateX(-50%);
 	padding: 0.3rem 0.8rem !important;
@@ -4677,15 +4677,15 @@ div.alert-e{
 		top: -50px;
 	}
 	20%{
-		top: 10%;
+		top: 7%;
 		opacity: 1;
 	}
 	80%{
-		top: 10%;
+		top: 7%;
 		opacity: 1;
 	}
 	100%{
-		top: 10%;
+		top: 7%;
 		opacity: 0;
 	}
 }
