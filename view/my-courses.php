@@ -35,7 +35,14 @@
           <div class="tab-content" id="v-pills-tabContent">
 
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-              <h2 class="my-courses-heading">Khóa học của tôi</h2>
+              <?php
+                $count = count($danhSachKhoaHoc);
+                if($count == 0){
+                  echo '<h2 class="my-courses-heading">Bạn chưa có khóa học nào</h2>';
+                }else{
+                  echo '<h2 class="my-courses-heading">Khóa học của tôi</h2>';
+                }
+              ?>
               <div class="row">
                 <?php
                 foreach ($danhSachKhoaHoc as $khoaHoc) {
@@ -48,7 +55,7 @@
                               </a>
                             </div>
                             <div class="single-course-content">
-                              <a href="index.php?act=my-course-detail">'.$khoaHoc['ten_khoa_hoc'].'</a>
+                              <a href="index.php?act=my-course-detail&id-khoa-hoc='.$khoaHoc['id'].'">'.$khoaHoc['ten_khoa_hoc'].'</a>
                               <p>'.$tenGiangVien['ho_ten'].'</p>
                               <h3>
                                 <i class="fas fa-star"></i>

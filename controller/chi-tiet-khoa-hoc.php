@@ -11,6 +11,7 @@
   }
 
   $chiTietKhoaHoc = loadKhoaHocChiTiet($idKhoaHoc);
+  echo $chiTietKhoaHoc['id'];
   $idGiangVien = $chiTietKhoaHoc['id_giang_vien'];
   $giangVien = layThongTinGiangVien($idGiangVien);
   
@@ -18,4 +19,5 @@
 
   $danhSachChuongKhoaHoc = loadChuongTheoKhoaHoc($idKhoaHoc);
   
+  $tenDanhMuc = layTenDanhMuc($chiTietKhoaHoc['id_danh_muc']);
   include './view/course-detail.php';

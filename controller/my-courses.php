@@ -27,6 +27,5 @@
   }else{
     $danhSachKhoaHoc = loadKhoaHocTheoGiangVien($idUser);
   }
-  
   include "./view/my-courses.php";
 ?>

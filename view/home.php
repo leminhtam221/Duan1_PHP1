@@ -184,7 +184,7 @@
                   <img src="./view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
                   <div class="hvrbox-layer_top hvrbox-text">
                     <div class="hvrbox-text">
-                      <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
+                      <a href="https://www.youtube.com/watch?v=bsSbT-VfQ7w" class="btn-circle video"><i
                           class="fas fa-play"></i></a>
                       <a href="">Preview Course</a>
                     </div>

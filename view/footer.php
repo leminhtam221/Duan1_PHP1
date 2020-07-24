@@ -1,4 +1,4 @@
-<div class="alert alert-success alert-e" id="alert-2">
+<!-- <div class="alert alert-success alert-e" id="alert-2">
   <strong>Success!</strong> Added to your cart.
 </div>
 <script>
@@ -8,7 +8,7 @@ document.getElementById('').addEventListener('click', () => {
     document.getElementById('div').classList.remove('alert-2');
   }, 3100);
 })
-</script>
+</script> -->
 <div class="cta-1x">
   <div class="container">
     <div class="row">

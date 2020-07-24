@@ -35,6 +35,7 @@
 }
 .lession-title {
   width: 80%;
+  display: inline-block;
 }
 .lesson-time {
   position: absolute;
@@ -48,6 +49,9 @@
 /* ============================== */
 
 /* =================.my-course-detail================== */
+.my-course-detail {
+  margin-bottom: 200px;
+}
 .active-courses {
   text-align: center;
   display: inline-block;

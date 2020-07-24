@@ -64,7 +64,8 @@
             <?php
               echo '<h3 style="font-size: 1.25rem;margin-top: 1rem;"><del>'.$chiTietKhoaHoc['don_gia'].'</del>'.$chiTietKhoaHoc['khuyen_mai'].'</h3>'
             ?>
-            <a style="padding-left: 1rem;padding-right: 1rem;" href="#" class="btn-small"><i class="fas fa-cart-plus"></i></a>
+            <a style="padding-left: 1rem;padding-right: 1rem;" href="#" class="btn-small"><i
+                class="fas fa-cart-plus"></i></a>
           </div>
         </div>
 
@@ -278,7 +279,7 @@
                 <li><i class="far fa-user"></i> Học viên <span> 45 </span></li>
                 <li><i class="fas fa-certificate"></i> Chứng chỉ <span> Yes </span></li>
                 <li><i class="far fa-lightbulb"></i>Cấp bậc<span> Beginner </span></li>
-                <li><i class="far fa-bookmark"></i> Danh mục <span> <?=$chiTietKhoaHoc['ten_danh_muc'] ?> </span></li>
+                <li><i class="far fa-bookmark"></i> Danh mục <span> <?=$tenDanhMuc['ten_danh_muc'] ?> </span></li>
               </ul>
             </div>
             <div class="footer-social-link">
