@@ -277,16 +277,25 @@
                 <li><i class="far fa-user"></i> Học viên <span> 45 </span></li>
                 <li><i class="fas fa-certificate"></i> Chứng chỉ <span> Yes </span></li>
                 <li><i class="far fa-lightbulb"></i>Cấp bậc<span> Beginner </span></li>
-                <li><i class="far fa-bookmark"></i> Danh mục <span> <?=$chiTietKhoaHoc['ten_danh_muc'] ?> </span></li>
+                <li><i class="far fa-bookmark"></i> Danh mục <span> <?=$tenDanhMuc['ten_danh_muc'] ?> </span></li>
               </ul>
             </div>
             <div class="footer-social-link">
               <style>
-                #add-cart{color: #02b3e4;border-color:#02b3e4;cursor:pointer}
-                #add-cart:hover{color: #fff;background-color:#02b3e4}
+              #add-cart {
+                color: #02b3e4;
+                border-color: #02b3e4;
+                cursor: pointer
+              }
+
+              #add-cart:hover {
+                color: #fff;
+                background-color: #02b3e4
+              }
               </style>
-                  <button id="add-cart" type="button" class="btn btn-outline-primary w-100">Thêm Vào Giỏ Hàng</button>
-              <a href="#" class="btn btn-primary w-100 mt-2 mb-4" style="background-color: #02b3e4;border-color:#02b3e4;">Mua Ngay</a>
+              <button id="add-cart" type="button" class="btn btn-outline-primary w-100">Thêm Vào Giỏ Hàng</button>
+              <a href="#" class="btn btn-primary w-100 mt-2 mb-4"
+                style="background-color: #02b3e4;border-color:#02b3e4;">Mua Ngay</a>
               <h2>Chia sẻ qua</h2>
               <ul>
                 <li><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>

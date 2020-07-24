@@ -43,12 +43,14 @@
   }
 
   function loadKhoaHocChiTiet($idKhoaHoc){
-    $sql = "SELECT * FROM khoa_hoc, danh_muc WhERE danh_muc.id=id_danh_muc and khoa_hoc.id='$idKhoaHoc' ";
+    // $sql = "SELECT * FROM khoa_hoc, danh_muc WhERE danh_muc.id=id_danh_muc and khoa_hoc.id='$idKhoaHoc' ";
+    $sql = "SELECT * FROM khoa_hoc WhERE id='$idKhoaHoc' ";
     return find($sql);
   }
 
   function loadKhoaHocTheoGiangVien($idGiangVien){
     $sql = "SELECT * FROM khoa_hoc WHERE id_giang_vien = '$idGiangVien'";
+    $sql .= " ORDER BY id DESC";
     return findMultiple($sql);
   }
 ?>
