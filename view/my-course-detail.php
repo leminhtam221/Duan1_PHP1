@@ -21,8 +21,7 @@
           
                     <div id="collapse'.$idChuong.'" class="collapse">
                       <div class="card-body">
-                        <ul class="lesson-list">';
-                                     
+                        <ul class="lesson-list" id="'.$idChuong.'">';
                         foreach ($danhSachVideo as $video) {
                           echo '<li class="lesson-item">
                                   <a href="#id-video='.$video['id'].'" class="lession-title">'.$video['ten_video'].'</a>
@@ -32,7 +31,8 @@
             echo  '     </ul>
                       </div>';
                       if(isset($_COOKIE['lecturer_id'])){
-                        echo '<button class="btn btn-primary ml-3 mb-3">Thêm video</button>';
+                        echo '<button class="btn btn-primary ml-3 mb-3" onclick="themVideo('.$idChuong.')" data-toggle="modal" data-target="#cruVideoModal">Thêm video</button>';
+                        echo '<button class="btn btn-danger ml-3 mb-3" onclick="suaChuongHoc('.$idChuong.')" data-toggle="modal" data-target="#cruCourseModal">Sửa chương học</button>';
                       }
             echo  '  </div>
                   </div>';              
@@ -41,13 +41,22 @@
           </div>
 
           <?php if (isset($_COOKIE['lecturer_id'])): ?>
-          <button class="btn btn-success">Thêm chương học</button>
+          <button class="btn btn-success" id="themModal" data-toggle="modal" data-target="#cruCourseModal">Thêm chương
+            học</button>
           <?php endif ?>
         </div>
       </div>
       <div class="col-md-9">
         <div class="course-content">
           <div id="video-content">
+            <?php
+            $url = $videoIntro['link'];
+            preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+            $youtubeId = $match[1];
+            
+            echo '<iframe class="video-show" src="https://www.youtube.com/embed/'.$youtubeId.'" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            ?>
           </div>
         </div>
       </div>
@@ -55,24 +64,67 @@
   </div>
 </div>
 
-<script src="./view/base/js/jquery.min.js"></script>
-<script>
-$(".lesson-list").on("click", "a", function() {
-  let href = $(this).attr("href");
-  let idVideo = href.substring(href.lastIndexOf('=') + 1);
-  $.ajax({
-    type: "GET",
-    url: "controller/ajax/my-course-detail.php",
-    data: {
-      idVideo
-    },
-    success: function(response) {
-      let href = response;
-      let idVideo = href.substring(href.lastIndexOf('/') + 1);
-      let iframeTag = `<iframe class="video-show" src="https://www.youtube.com/embed/${idVideo}" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-      $('#video-content').html(iframeTag);
-    }
-  });
-});
-</script>
+
+<!-- Modal CRU Course -->
+<div class="modal fade" id="cruCourseModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title">Thêm chương học</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Tên chương học</label>
+          <input type="text" class="form-control" id="tenChuong" autocomplete="off">
+          <input type="hidden" class="form-control" id="idKhoaHoc" value="<?=$idKhoaHoc ?>">
+          <input type="hidden" id="idChuongHoc">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        <button type="buton" class="btn btn-primary" id="submitCourse">Thêm</button>
+        <button type="buton" class="btn btn-primary" id="updateCourse">Cập nhật</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal CRU Video -->
+<div class="modal fade" id="cruVideoModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Thêm video</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" class="form-control" id="idKhoaHoc" value="<?=$idKhoaHoc ?>">
+        <input type="hidden" class="form-control" id="idGiangVien" value="<?=$idUser ?>">
+        <input type="hidden" class="form-control" id="idChuong" value="">
+        <div class="form-group">
+          <label>Tên video</label>
+          <input type="text" id="tenVideo" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Link</label>
+          <input type="text" id="link" class="form-control" autocomplete="off">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" id="submitVideo">Thêm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./view/base/ajax/my-course-detail.js"></script>
