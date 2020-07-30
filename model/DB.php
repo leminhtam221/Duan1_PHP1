@@ -45,3 +45,9 @@ function execSQL($sql,$c){
       $conn->exec($sql);
    }
 }
+
+function counter($table){
+   $sql = "select count(*) as sl from $table";
+   $quantity = find($sql);
+   return $quantity;
+}

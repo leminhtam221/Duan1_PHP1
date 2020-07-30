@@ -4,6 +4,5 @@
   }
 
   $danhSachChuongKhoaHoc = loadChuongTheoKhoaHoc($idKhoaHoc);
-
   include "./view/my-course-detail.php";
 ?>
