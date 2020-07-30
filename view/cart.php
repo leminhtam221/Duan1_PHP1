@@ -108,8 +108,9 @@
 		<tfoot>
 		  <tr>
 			 <td style="text-align: left;"><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i>&nbsp;Quay Lại</a></td>
-			 <td class="hidden-xs"></td>
+			 
 			 <td class="hidden-xs text-center"><strong>Tổng: 200,000đ</strong></td>
+			 <td><a href="#" class="btn btn-outline-success btn-block">Làm Mới</a></td>
 			 <td><a href="#" class="btn btn-success btn-block">Đặt Hàng&nbsp;<i class="fa fa-angle-right"></i></a></td>
 		  </tr>
 		</tfoot>
