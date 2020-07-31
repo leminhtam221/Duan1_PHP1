@@ -53,4 +53,9 @@
     $sql .= " ORDER BY id DESC";
     return findMultiple($sql);
   }
+
+  function themKhoaHoc($tenKhoaHoc,$clip,$hinhAnh,$moTa,$idDanhMuc,$donGia,$khuyenMai,$idUser){
+    $sql = "INSERT INTO khoa_hoc(ten_khoa_hoc,clip,hinh_anh,mo_ta,id_danh_muc,don_gia,khuyen_mai,id_giang_vien) VALUES('$tenKhoaHoc','$clip','$hinhAnh','$moTa','$idDanhMuc','$donGia','$khuyenMai','$idUser')";
+    execSQL($sql,0);
+  }
 ?>

@@ -45,6 +45,12 @@
               ?>
               <div class="row">
                 <?php
+                $idUser;
+                if(isset($_COOKIE['user_id'])){
+                  $idUser = $_COOKIE['user_id'];
+                }else{
+                  $idUser = $_COOKIE['lecturer_id'];
+                }
                 foreach ($danhSachKhoaHoc as $khoaHoc) {
                   $tenGiangVien = layTenGiangVien($khoaHoc['id_giang_vien']);
                   echo '<div class="col-md-4">
@@ -55,7 +61,7 @@
                               </a>
                             </div>
                             <div class="single-course-content">
-                              <a href="index.php?act=my-course-detail&id-khoa-hoc='.$khoaHoc['id'].'">'.$khoaHoc['ten_khoa_hoc'].'</a>
+                              <a href="index.php?act=my-course-detail&id-khoa-hoc='.$khoaHoc['id'].'&id-user='.$idUser.'">'.$khoaHoc['ten_khoa_hoc'].'</a>
                               <p>'.$tenGiangVien['ho_ten'].'</p>
                               <h3>
                                 <i class="fas fa-star"></i>
@@ -76,25 +82,22 @@
             <?php if (isset($_COOKIE['lecturer_id'])): ?>
             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
               <div class="portlet light bordered">
-                <div class="portlet-title tabbable-line">
-                  <div class="caption caption-md">
-                    <i class="icon-globe theme-font hide"></i>
-                    <h5 class="uppercase bold">Thông tin tài khoản</h5>
-                  </div>
-                </div>
                 <div class="portlet-body">
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
-                      <form action="" method="POST">
+                      <form action="index.php?act=my-courses&id-user=<?=$idUser?>" method="POST">
                         <div class="form-group">
                           <label class="heading">Tên khóa học</label>
                           <input type="text" class="form-control" name="tenkhoahoc">
                         </div>
                         <div class="form-group">
                           <label class="heading">Danh mục</label>
-                          <select class="form-control" name="idcatalog">
-                            <option value="">Công nghệ thông tin</option>
-                            <option value="">Thiết kế đồ họa</option>
+                          <select class="form-control" name="danhmuc">
+                            <?php
+                              foreach ($danhSachDanhMuc as $danhMuc) {
+                                echo '<option value="'.$danhMuc['id'].'">'.$danhMuc['ten_danh_muc'].'</option>';
+                              }
+                            ?>
                           </select>
                         </div>
                         <div class="form-group">
@@ -118,7 +121,7 @@
                           <input type="text" class="form-control" name="khuyenmai">
                         </div>
 
-                        <button type="submit" class="btn btn-success" name="">Thêm khóa học</button>
+                        <button type="submit" class="btn btn-success" name="submit-add-courses">Thêm khóa học</button>
                       </form>
                     </div>
                   </div>
