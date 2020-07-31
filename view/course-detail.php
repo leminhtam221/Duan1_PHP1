@@ -187,7 +187,7 @@
                                     <ul class="lesson-list">';
                                      
                                     foreach ($danhSachVideo as $video) {
-                                      echo '<li class="lesson-item">
+                                      echo '<li class="lesson-item mb-0">
                                               <p class="lession-title">'.$video['ten_video'].'</p>
                                               <span class="lesson-time">00:48</span>
                                             </li>';
@@ -202,105 +202,73 @@
                   </div>
                 </div>
 
-                <div class="tab-pane fade blog-single-1x" id="review" role="tabpanel" aria-labelledby="review-tab">
-                  <?php
-                    if(isset($_COOKIE['user_id'])||isset($_COOKIE['lecturer_id'])){
-                      $idUser = isset($_COOKIE['user_id'])?$_COOKIE['user_id']:$_COOKIE['lecturer_id'];
-                      echo ' <div class="post mb-5">
-                              <div class="row">
-                                <div class="col-12">
-                                  <form class="post__form" action="" method="POST">
-                                    <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea" name="commentContent" required></textarea>
-                                    <input type="hidden" name="idUser" value="'.$idUser.'">
-                                    <input type="hidden" name="idKhoaHoc" value="'.$idKhoaHoc.'">
-                                    <div class="form-footer d-flex justify-content-end">
-                                      <button class="btn btn-primary" type="submit" name="submit-comment">Post</button>
-                                    </div>
-                                  </form>
-                                </div>
-                              </div>
-                            </div>';
-                    }
-                  ?>
-                  <?php
-                    foreach ($danhSachBinhLuan as $binhLuan) {
-                      $idUser = $binhLuan['id_user'];
-                      $tenUser = getNameUser($idUser);
-                      echo '<div class="blog-author instructor-profile">
-                              <div class="media">
-                                <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
-                                <div class="media-body">
-                                  <h5>'.$tenUser['ho_ten'].'</h5>
-                                  <p>'.$binhLuan['noi_dung'].'</p>
-                                </div>
-                              </div>
-                            </div>';
-                    }
-                  ?>
+                <div class="tab-pane fade blog-single-1x py-0" style="" id="review" role="tabpanel"
+                  aria-labelledby="review-tab">
+
                   <div class="blog-single-left-content">
 
 
-<div class="comment-form">
-  <h3>Post A Comment</h3>
-  <form>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Name" aria-label="Name">
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <input type="email" class="form-control" placeholder="Email">
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="form-group">
-          <textarea class="form-control" placeholder="Write something here"></textarea>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <a href="#" class="btn-small"> Post Comment </a>
-      </div>
-    </div>
+                    <div class="comment-form mt-2">
+                      <h3>Post A Comment</h3>
+                      <form>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <textarea class="form-control" placeholder="Write something here"></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <a href="#" class="btn-small"> Post Comment </a>
+                          </div>
+                        </div>
 
-  </form>
-</div>
+                      </form>
+                    </div>
 
-<div class="comment-section">
-  <h3>2 Comment</h3>
+                    <div class="comment-section">
+                      <h3>2 Comment</h3>
 
-  <div class="media">
-    <a href="#"><img src="./view/base/images/speaker-2.png" alt="Generic placeholder image"></a>
-    <div class="media-body">
-      <p>Do you run a growing online store or have a ton of videos a your website? More
-        importantly, do you know how this affects needs?</p>
-      <h4>4 November - 2013</h4>
-      <h5>Micheal King <span><a href="#">Reply <i class="fas fa-reply"></i> </a></span></h5>
+                      <div class="media">
+                        <a href="#"><img src="./view/base/images/speaker-2.png" alt="Generic placeholder image"></a>
+                        <div class="media-body">
+                          <p>Do you run a growing online store or have a ton of videos a your website? More
+                            importantly, do you know how this affects needs?</p>
+                          <h4>4 November - 2013</h4>
+                          <h5>Micheal King <span><a href="#">Reply <i class="fas fa-reply"></i> </a></span></h5>
 
-      <div class="media">
-        <a href="#"><img src="images/speaker-5.png" alt="Generic placeholder image"></a>
-        <div class="media-body">
-          <p>Do you run a growing online store or have a videos your website? More importantl!</p>
-          <h4>4 November - 2013</h4>
-          <h5>Jim Brown <span><a href="#"> Reply <i class="fas fa-reply"></i></a></span></h5>
-        </div>
-      </div>
-    </div>
-  </div>
+                          <div class="media">
+                            <a href="#"><img src="images/speaker-5.png" alt="Generic placeholder image"></a>
+                            <div class="media-body">
+                              <p>Do you run a growing online store or have a videos your website? More importantl!</p>
+                              <h4>4 November - 2013</h4>
+                              <h5>Jim Brown <span><a href="#"> Reply <i class="fas fa-reply"></i></a></span></h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-  <div class="media">
-    <a href="#"><img src="images/speaker-4.png" alt="Generic placeholder image"></a>
-    <div class="media-body">
-      <p>Do you run a growing online store or have a ton of videos a your website? More
-        importantly, do you know how this affects needs?</p>
-      <h4>4 November - 2013</h4>
-      <h5>Micheal King <span><a href="#">Reply <i class="fas fa-reply"></i> </a></span></h5>
-    </div>
-  </div>
+                      <div class="media">
+                        <a href="#"><img src="images/speaker-4.png" alt="Generic placeholder image"></a>
+                        <div class="media-body">
+                          <p>Do you run a growing online store or have a ton of videos a your website? More
+                            importantly, do you know how this affects needs?</p>
+                          <h4>4 November - 2013</h4>
+                          <h5>Micheal King <span><a href="#">Reply <i class="fas fa-reply"></i> </a></span></h5>
+                        </div>
+                      </div>
 
-</div>
-</div>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
@@ -346,16 +314,16 @@
             </div>
             <div class="footer-social-link">
               <style>
-              #add-cart {
-                color: #02b3e4;
-                border-color: #02b3e4;
-                cursor: pointer
-              }
+                #add-cart {
+                  color: #02b3e4;
+                  border-color: #02b3e4;
+                  cursor: pointer
+                }
 
-              #add-cart:hover {
-                color: #fff;
-                background-color: #02b3e4
-              }
+                #add-cart:hover {
+                  color: #fff;
+                  background-color: #02b3e4
+                }
               </style>
               <button id="add-cart" type="button" class="btn btn-outline-primary w-100">Thêm Vào Giỏ Hàng</button>
               <a href="#" class="btn btn-primary w-100 mt-2 mb-4"

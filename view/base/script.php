@@ -30,7 +30,7 @@
  <!-- Signup script -->
  <script src="./view/base/js/signup.js"></script>
  <!-- Cart script -->
- <script src="./view/base/js/cart.js"></script>
+ <script defer src="./view/base/js/cart.js"></script>
  </body>
 
  </html>
