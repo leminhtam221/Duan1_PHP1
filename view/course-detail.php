@@ -202,8 +202,8 @@
                   </div>
                 </div>
 
-                <div class="tab-pane fade blog-single-1x" id="review" role="tabpanel" aria-labelledby="review-tab">
-                  <?php
+                <div class="tab-pane fade blog-single-1x p-0" id="review" role="tabpanel" aria-labelledby="review-tab">
+                  <!-- <?php
                     if(isset($_COOKIE['user_id'])||isset($_COOKIE['lecturer_id'])){
                       $idUser = isset($_COOKIE['user_id'])?$_COOKIE['user_id']:$_COOKIE['lecturer_id'];
                       echo ' <div class="post mb-5">
@@ -236,71 +236,51 @@
                               </div>
                             </div>';
                     }
-                  ?>
+                  ?> -->
                   <div class="blog-single-left-content">
+                    <?php if(isset($_COOKIE['user_id'])): ?>
+                    <?php
+                      $idUser = isset($_COOKIE['user_id']);
+                    ?>
+                    <div class="comment-form m-0">
+                      <h3>Post A Comment</h3>
+                      <form action="" method="POST">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <input type="hidden" name="idUser" value="<?=$idUser?>">
+                            <div class="form-group">
+                              <textarea class="form-control" placeholder="Write something here"
+                                name="commentContent"></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <button class="btn-small" type="submit" name="submit-comment"> Post Comment
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <?php endif ?>
 
-
-<div class="comment-form">
-  <h3>Post A Comment</h3>
-  <form>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Name" aria-label="Name">
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <input type="email" class="form-control" placeholder="Email">
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="form-group">
-          <textarea class="form-control" placeholder="Write something here"></textarea>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <a href="#" class="btn-small"> Post Comment </a>
-      </div>
-    </div>
-
-  </form>
-</div>
-
-<div class="comment-section">
-  <h3>2 Comment</h3>
-
-  <div class="media">
-    <a href="#"><img src="./view/base/images/speaker-2.png" alt="Generic placeholder image"></a>
-    <div class="media-body">
-      <p>Do you run a growing online store or have a ton of videos a your website? More
-        importantly, do you know how this affects needs?</p>
-      <h4>4 November - 2013</h4>
-      <h5>Micheal King <span><a href="#">Reply <i class="fas fa-reply"></i> </a></span></h5>
-
-      <div class="media">
-        <a href="#"><img src="images/speaker-5.png" alt="Generic placeholder image"></a>
-        <div class="media-body">
-          <p>Do you run a growing online store or have a videos your website? More importantl!</p>
-          <h4>4 November - 2013</h4>
-          <h5>Jim Brown <span><a href="#"> Reply <i class="fas fa-reply"></i></a></span></h5>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="media">
-    <a href="#"><img src="images/speaker-4.png" alt="Generic placeholder image"></a>
-    <div class="media-body">
-      <p>Do you run a growing online store or have a ton of videos a your website? More
-        importantly, do you know how this affects needs?</p>
-      <h4>4 November - 2013</h4>
-      <h5>Micheal King <span><a href="#">Reply <i class="fas fa-reply"></i> </a></span></h5>
-    </div>
-  </div>
-
-</div>
-</div>
+                    <div class="comment-section">
+                      <h3>2 Comment</h3>
+                      <?php foreach($danhSachBinhLuan as $binhLuan): ?>
+                      <?php
+                        $idUser = $binhLuan['id_user'];
+                        $tenUser = getNameUser($idUser);  
+                      ?>
+                      <div class="media">
+                        <a href="#"><img src="./view/base/images/speaker-4.png" alt="Generic placeholder image"></a>
+                        <div class="media-body">
+                          <p><?=$binhLuan['noi_dung']?></p>
+                          <h4>4 November - 2013</h4>
+                          <h5><?=$tenUser['ho_ten']?> <span><a href="#">Reply <i class="fas fa-reply"></i> </a></span>
+                          </h5>
+                        </div>
+                      </div>
+                      <?php endforeach; ?>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
