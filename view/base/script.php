@@ -1,5 +1,5 @@
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
- <!-- <script src="./view/base/js/jquery.min.js"></script> -->
+ <script src="./view/base/js/jquery.min.js"></script>
  <script src="./view/base/js/popper.min.js"></script>
  <!-- Include all compiled plugins (below), or include individual files as needed -->
  <script src="./view/base/js/bootstrap.min.js"></script>
@@ -31,6 +31,9 @@
  <script src="./view/base/js/signup.js"></script>
  <!-- Cart script -->
  <script src="./view/base/js/cart.js"></script>
+ <!-- Ajax -->
+ <script src="./view/base/ajax/my-course-detail.js"></script>
+ <script src="./view/base/ajax/course-detail.js"></script>
  </body>
 
  </html>

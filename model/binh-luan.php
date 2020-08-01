@@ -5,8 +5,8 @@
     return findMultiple($sql);
   }
 
-  function addComment($commentContent,$idKhoaHoc,$idUser){
-    $sql = "INSERT INTO binh_luan(noi_dung,id_khoa_hoc,id_user) VALUES ('$commentContent', '$idKhoaHoc','$idUser')";
+  function addComment($commentContent, $ngayTao, $idKhoaHoc, $idUser){
+    $sql = "INSERT INTO binh_luan(noi_dung,ngay_tao,id_khoa_hoc,id_user) VALUES ('$commentContent','$ngayTao','$idKhoaHoc','$idUser')";
     execSQL($sql,0);
   }
 ?>

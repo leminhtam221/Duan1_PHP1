@@ -30,9 +30,6 @@
   <link href="./view/base/css/color-switcher.css" rel="stylesheet">
   <!-- Responsive CSS -->
   <link href="./view/base/css/responsive.css" rel="stylesheet">
-
-  <script src="./view/base/js/jquery.min.js"></script>
-
 </head>
 
 <body>

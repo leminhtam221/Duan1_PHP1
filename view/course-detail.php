@@ -202,41 +202,52 @@
                   </div>
                 </div>
 
-                <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                  <?php
-                    if(isset($_COOKIE['user_id'])||isset($_COOKIE['lecturer_id'])){
-                      $idUser = isset($_COOKIE['user_id'])?$_COOKIE['user_id']:$_COOKIE['lecturer_id'];
-                      echo ' <div class="post mb-5">
-                              <div class="row">
-                                <div class="col-12">
-                                  <form class="post__form" action="" method="POST">
-                                    <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea" name="commentContent" required></textarea>
-                                    <input type="hidden" name="idUser" value="'.$idUser.'">
-                                    <input type="hidden" name="idKhoaHoc" value="'.$idKhoaHoc.'">
-                                    <div class="form-footer d-flex justify-content-end">
-                                      <button class="btn btn-primary" type="submit" name="submit-comment">Post</button>
-                                    </div>
-                                  </form>
-                                </div>
-                              </div>
-                            </div>';
-                    }
-                  ?>
-                  <?php
-                    foreach ($danhSachBinhLuan as $binhLuan) {
-                      $idUser = $binhLuan['id_user'];
-                      $tenUser = getNameUser($idUser);
-                      echo '<div class="blog-author instructor-profile">
-                              <div class="media">
-                                <img src="view/base/images/speaker-1.png" alt="Generic placeholder image">
-                                <div class="media-body">
-                                  <h5>'.$tenUser['ho_ten'].'</h5>
-                                  <p>'.$binhLuan['noi_dung'].'</p>
-                                </div>
-                              </div>
-                            </div>';
-                    }
-                  ?>
+                <div class="tab-pane fade blog-single-1x p-0" id="review" role="tabpanel" aria-labelledby="review-tab">
+                  <div class="blog-single-left-content">
+                    <?php if(isset($_COOKIE['user_id'])): ?>
+                    <?php
+                      $idUser = isset($_COOKIE['user_id']);
+                    ?>
+                    <div class="comment-form m-0">
+                      <h3>Post A Comment</h3>
+                      <form>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <input type="hidden" id="idUser" value="<?=$idUser?>">
+                            <input type="hidden" id="idKhoaHoc" value="<?=$idKhoaHoc?>">
+                            <div class="form-group">
+                              <textarea class="form-control" placeholder="Write something here"
+                                id="commentContent"></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <a href="#" class="btn-small" id="sumitComment"> Post Comment
+                            </a>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <?php endif ?>
+
+                    <div class="comment-section" id="comment-section">
+                      <h3>2 Comment</h3>
+                      <?php foreach($danhSachBinhLuan as $binhLuan): ?>
+                      <?php
+                        $idUser = $binhLuan['id_user'];
+                        $tenUser = getNameUser($idUser);  
+                      ?>
+                      <div class="media">
+                        <a href="#"><img src="./view/base/images/speaker-4.png" alt="Generic placeholder image"></a>
+                        <div class="media-body">
+                          <p><?=$binhLuan['noi_dung']?></p>
+                          <h4><?=$binhLuan['ngay_tao']?></h4>
+                          <h5><?=$tenUser['ho_ten']?> <span><a href="#">Reply <i class="fas fa-reply"></i> </a></span>
+                          </h5>
+                        </div>
+                      </div>
+                      <?php endforeach; ?>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">

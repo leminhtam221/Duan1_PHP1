@@ -126,5 +126,3 @@
     </div>
   </div>
 </div>
-
-<script src="./view/base/ajax/my-course-detail.js"></script>

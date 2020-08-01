@@ -24,6 +24,7 @@ $("#themModal").click(function (e) {
   $("#submitCourse").css("display", "block");
   $("#updateCourse").css("display", "none");
   $("#modal-title").html("Thêm khóa học");
+  $("#tenChuong").val("");
 });
 
 $("#submitCourse").click(function (e) {
@@ -41,7 +42,6 @@ $("#submitCourse").click(function (e) {
       data: {idKhoaHoc, tenChuongHoc, themChuong},
       success: function (response) {
         $("#accordion").html(response);
-        $("#tenChuong").val("");
       },
     });
 
@@ -83,8 +83,6 @@ $("#updateCourse").click(function (e) {
       data: {idChuong, idKhoaHoc, tenChuongHoc, capNhatChuong},
       success: function (response) {
         $("#accordion").html(response);
-        $("#tenChuong").val("");
-        // alert(response);
       },
     });
 
@@ -114,9 +112,6 @@ $("#submitVideo").click(function (e) {
       data: {idKhoaHoc, idGiangVien, idChuong, tenVideo, link},
       success: function (response) {
         $("#" + idChuong).html(response);
-
-        $("#tenVideo").val("");
-        $("#link").val("");
       },
     });
 

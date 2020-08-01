@@ -31,9 +31,9 @@
 
           <div class="slider-feature">
             <ul>
-              <li><img src="./view/base/images/book.png" alt="Mountains"> 2502 Khóa Học</li>
-              <li><img src="./view/base/images/cap.png" alt="Mountains"> 32052 Học Viên</li>
-              <li><img src="./view/base/images/man.png" alt="Mountains"> 459 Giảng Viên</li>
+              <li><img src="./view/base/images/book.png" alt="Mountains"> <?=@$soLuongKhoaHoc['sl']?> Khóa Học</li>
+              <li><img src="./view/base/images/cap.png" alt="Mountains"> <?=@$soLuongHocVien['sl']?> Học Viên</li>
+              <li><img src="./view/base/images/man.png" alt="Mountains"> <?=@$soLuongGiangVien['sl']?> Giảng Viên</li>
             </ul>
           </div>
         </div>
@@ -51,7 +51,7 @@
             <img src="./view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
             <div class="hvrbox-layer_top">
               <div class="hvrbox-text">
-                <a href="#">Design Introduction</a>
+                <a href="#">sdvsvsv</a>
                 <h5>800 Course</h5>
                 <a href="#" class="btn-small">View Details</a>
               </div>
