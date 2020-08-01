@@ -187,7 +187,7 @@
                                     <ul class="lesson-list">';
                                      
                                     foreach ($danhSachVideo as $video) {
-                                      echo '<li class="lesson-item">
+                                      echo '<li class="lesson-item mb-0">
                                               <p class="lession-title">'.$video['ten_video'].'</p>
                                               <span class="lesson-time">00:48</span>
                                             </li>';

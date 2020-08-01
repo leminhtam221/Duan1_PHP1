@@ -16,6 +16,7 @@ $("#sumitComment").click(function (e) {
       success: function (response) {
         console.log(response);
         $("#comment-section").html(response);
+        $("#commentContent").val("");
       },
     });
   }

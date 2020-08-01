@@ -4670,7 +4670,7 @@ div.alert-e{
 	z-index: 999999999;
 }
 .alert-2{
-	animation: alert-2 2s ease-out;
+	animation: alert-2 1.5s ease-out;
 }
 @keyframes alert-2 {
 	0%{
@@ -4680,7 +4680,7 @@ div.alert-e{
 		top: 7%;
 		opacity: 1;
 	}
-	80%{
+	50%{
 		top: 7%;
 		opacity: 1;
 	}

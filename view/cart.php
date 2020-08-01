@@ -1,290 +1,205 @@
-<style>
-	th, td{
-		text-align: center;
-	}
-	.table>tbody>tr>td,
-.table>tfoot>tr>td {
-  vertical-align: middle;
-}
-
-@media screen and (max-width: 600px) {
-  table#cart tbody td .form-control {
-    width: 20%;
-    display: inline !important;
-  }
-  .actions .btn {
-    width: 36%;
-    margin: 1.5em 0;
-  }
-  .actions .btn-info {
-    float: left;
-  }
-  .actions .btn-danger {
-    float: right;
-  }
-  table#cart thead {
-    display: none;
-  }
-  table#cart tbody td {
-    display: block;
-    padding: .6rem;
-    min-width: 320px;
-  }
-  table#cart tbody tr td:first-child {
-    background: #333;
-    color: #fff;
-  }
-  table#cart tbody td:before {
-    content: attr(data-th);
-    font-weight: bold;
-    display: inline-block;
-    width: 8rem;
-  }
-  table#cart tfoot td {
-    display: block;
-  }
-  table#cart tfoot td .btn {
-    display: block;
-  }
-}
-</style>
-
-  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
-  <div class="page-banner">
-  <div class="hvrbox">
-    <img src="./view/base/images/bn.jpg" alt="Mountains" class="hvrbox-layer_bottom">
-    <div class="hvrbox-layer_top">
-      <div class="container">
-        <div class="overlay-text text-left">
-          <h3>Giỏ Hàng</h3>
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Giỏ Hàng</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  <div class="container" style="margin-top: 4rem !important;margin-bottom: 4rem !important;">
-  <div class="row">
-  <div class="col-8">
-  <?php if(!isset($myCart)): ?>
-  <h3>Bạn chưa có sản phẩm nào trong giỏ hàng!</h3>
-  <?php else: ?>
-  <h3>Giỏ Hàng Của Bạn</h3>
-	 <table id="cart" class="table table-hover table-condensed mt-2">
-		<thead>
-		  <tr>
-			 <th style="width:50%">Khóa Học</th>
-			 <th style="width:25%;">Giảng Viên</th>
-			 <th style="width:15%;">Đơn Giá</th>
-			 <th style="width:10%"></th>
-		  </tr>
-		</thead>
-		<tbody>
-      <?php foreach ($myCart as $item): ?>
-		  <tr>
-			 <td data-th="Product">
-				<div class="row">
-				  <div class="col-sm-3 hidden-xs"><img src="./view/base/images/<?=@$item['hinh_anh']?>" alt="..." class="img-responsive" /></div>
-				  <div class="col-sm-9 d-flex align-items-center">
-					 <h4 class="nomargin"><?=$item['ten_khoa_hoc']?></h4>
-				  </div>
+<!--Section: Block Content-->
+<div class="page-banner">
+	<div class="hvrbox">
+		<img src="./view/base/images/bn.jpg" alt="Mountains" class="hvrbox-layer_bottom">
+		<div class="hvrbox-layer_top">
+			<div class="container">
+				<div class="overlay-text text-left">
+					<h3>Giỏ Hàng</h3>
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Giỏ Hàng</li>
+						</ol>
+					</nav>
 				</div>
-			 </td>
-			 <td data-th="Price"><?=@$item['ho_ten']?></td>
-			 <td data-th="Quantity">
-       <?=$item['don_gia']?>
-			 </td>
-			 <td class="actions" data-th="">
-				<button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-			 </td>
-		  </tr>
-      <?php endforeach ?>
-		</tbody>
-		<tfoot>
-		  <tr>
-			 <td style="text-align: left;"><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i>&nbsp;Quay Lại</a></td>
-			 <td class="hidden-xs"></td>
-			 <td class="hidden-xs text-center"><strong>Tổng: 200,000đ</strong></td>
-			 <td><a href="#" class="btn btn-success btn-block">Đặt Hàng&nbsp;<i class="fa fa-angle-right"></i></a></td>
-		  </tr>
-		</tfoot>
-	 </table>
-   <?php endif ?>
-   </div>
-   <div class="col-4">
-   <div class="container-fluid">
-			
-			<h4 class="my-4">
-					Billing Address
-			</h4>
-			
-			<form>
-				<div class="form-row">
-					<div class="col-md-6 form-group">
-						<label for="firstname">First Name</label>
-						<input type="text" class="form-control" id="firstname" placeholder="First Name">
-						<div class="invalid-feedback">
-							Valid first name is required.
-						</div>
-					</div>
-
-					<div class="col-md-6 form-group">
-						<label for="lastname">Last Name</label>
-						<input type="text" class="form-control" id="lastname" placeholder="Last Name">
-						<div class="invalid-feedback">
-							Valid last name is required.
-						</div>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="username">Username</label>
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text">@</span>
-							</div>	
-							<input type="text" class="form-control" id="username" placeholder="Username" required>
-							<div class="invalid-feedback">
-								Your username is required.
-							</div>
-						</div>
-				</div>
-
-				<div class="form-group">
-						<label for="email">Email</label>
-						<input type="email" class="form-control" id="email" placeholder="you@example.com" required>
-				</div>
-
-				<div class="form-group">
-					<label for="adress">Address</label>
-					<input type="text" class="form-control" id="adress" placeholder="1234 Main Street" required>
-					<div class="invalid-feedback">
-						Please enter your shipping address.
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="address2">Address 2
-						<span class="text-muted">(Optional)</span>
-					</label>
-					<input type="text" class="form-control" id="adress2" placeholder="Flat No">
-				</div>
-
-				<div class="row">
-					<div class="col-md-4 form-group">
-						<label for="country">Country</label>
-						<select type="text" class="form-control" id="country">
-							<option value>Choose...</option>
-							<option>United Kingdom</option>
-						</select>
-						<div class="invalid-feedback">
-							Please select a valid country.
-						</div>
-					</div>
-
-					<div class="col-md-4 form-group">
-						<label for="city">City</label>
-						<select type="text" class="form-control" id="city">
-							<option value>Choose...</option>
-							<option>London</option>
-						</select>
-						<div class="invalid-feedback">
-							Please provide a valid city.
-						</div>
-					</div>
-						
-					<div class="col-md-4 form-group">
-						<label for="postcode">Postcode</label>
-						<select type="text" class="form-control" id="postcode">
-							<option value>Choose...</option>
-							<option>NW6 2LS</option>
-						</select>
-						<div class="invalid-feedback">
-							Postcode required.
-						</div>
-					</div>
-				</div>
-
-				<hr>
-				
-				<div class="form-check">
-					<input type="checkbox" class="form-check-input" id="shipping-adress"> 
-						Shipping address is the same as my billing address
-					<label for="shipping-adress" class="form-check-label"></label>
-				</div>
-
-				<div class="form-check">
-					<input type="checkbox" class="form-check-input" id="same-adress">
-						Save this information for next time
-					<label for="same-adress" class="form-check-label"></label>					
-					</div>
-
-				<hr>
-
-				<h4 class="mb-4">Payment</h4>
-				
-				<div class="form-check">
-					<input type="radio" class="form-check-input" id="credit" name="payment-method" checked required>
-					<label for="credit" class="form-check-label">Credit Card</label>
-				</div>
-
-				<div class="form-check">
-					<input type="radio" class="form-check-input" id="debit" name="payment-method" required>
-					<label for="debit" class="form-check-label">Debit Card</label>
-				</div>
-
-				<div class="form-check">
-					<input type="radio" class="form-check-input" id="paypal" name="payment-method"  required>
-					<label for="paypal" class="form-check-label">PayPal</label>
-				</div>
-			
-				<div class="row mt-4">
-					<div class="col-md-6 form-group">
-							<label for="card-name">Name on card</label>
-							<input type="text" class="form-control" id="card-name" placeholder required>
-							<div class="invalid-feedback">
-								Name on card is required
-							</div>
-						</div>
-
-						<div class="col-md-6 form-group">
-							<label for="card-no">Card Number</label>
-							<input type="text" class="form-control" id="card-no" placeholder required>
-							<div class="invalid-feedback">
-								Credit card number is required
-							</div>
-						</div>
-				</div>
-
-				<div class="form-row">
-					<div class="col-md-5 form-group">
-							<label for="expiration">Expire Date</label>
-							<input type="text" class="form-control" id="card-name" placeholder required>
-							<div class="invalid-feedback">
-								Expiration date required
-							</div>
-						</div>
-					
-
-					<div class="col-md-5 form-group">
-							<label for="ccv-no">Security Number</label>
-							<input type="text" class="form-control" id="sec-no" placeholder required>
-							<div class="invalid-feedback">
-								Security code required
-							</div>
-					</div>
-				</div>
-
-					<hr class="mb-4">
-				
-					<button class="btn btn-primary bt-lg btn-block" type="submit">Continue to Checkout</button>
-			</form>
+			</div>
 		</div>
-   </div>
-   </div>
-  </div>
+	</div>
+</div>
+<section class="container my-5">
+
+	<!--Grid row-->
+	<div class="row">
+
+		<!--Grid column-->
+		<div class="col-lg-8">
+
+			<!-- Card -->
+			<div class="card wish-list mb-3 border-0" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.07);">
+				<div class="card-body" id='cart'>
+
+					<h5 class="mb-4">Giỏ Hàng Của Bạn (<span id="cart-counter2"><?=rowCount()?></span> khóa học)</h5>
+					<?php $i = 0; ?>
+					<?php if(isset($myCart)): ?>
+					<?php foreach($myCart as $item):?>
+					<div class="row mb-4">
+						<div class="col-md-5 col-lg-3 col-xl-3">
+							<div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+								<img class="img-fluid w-100" src="./view/upload/<?=$item['hinh_anh']?>" alt="Sample">
+							</div>
+						</div>
+						<div class="col-md-7 col-lg-9 col-xl-9">
+							<div>
+								<div class="d-flex justify-content-between">
+									<div>
+										<h5><?=$item['ten_khoa_hoc']?></h5>
+										<p class="mb-3 mt-4 text-muted text-uppercase small">Giảng viên: <?=$item['ho_ten']?></p>
+										<p class="mb-3  text-uppercase small">Danh mục: <?=$item['ten_danh_muc']?></p>
+									</div>
+								</div>
+								<div class="d-flex justify-content-between align-items-center">
+									<div>
+										<a onmouseover="this.style.color='red'" onclick="onHdlBtnDel2(this)"
+											onmouseout="this.style.color='#454545'" style="cursor: pointer" type="button"
+											class="card-link-secondary small text-uppercase mr-3" data-id="<?=$item['id']?>"><i
+												class="fas fa-trash-alt mr-1"></i> Xóa
+											item </a>
+										<a href="#" type="button" class="card-link-secondary small text-uppercase"><i
+												class="fas fa-heart mr-1"></i> Thêm vào wish list </a>
+									</div>
+									<p class="mb-0"><span><strong class="itemPrice"><?=$item['don_gia']?></strong></span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php 
+						$i++;
+						if($i!=rowCount()){ echo '<hr class="mb-4">';}
+					?>
+					<?php endforeach ?>
+					<p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding
+						items to your cart does not mean booking them.</p>
+					<?php else: ?>
+					<a href="#" type="button" class="card-link-secondary "><i class="fa fa-home mr-1"></i>
+						Trở lại trang chủ </a>
+					<?php endif ?>
+				</div>
+			</div>
+			<!-- Card -->
+
+			<!-- Card -->
+			<?php if(isset($myCart)): ?>
+			<div class="card mb-3 border-0 " id="expectTimeEl" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.07);">
+				<div class="card-body">
+
+					<h5 class="mb-4">Dự kiến giao hàng</h5>
+
+					<p class="mb-0" id="expectTime">
+
+					</p>
+					<script>
+						var getExpectTime = () => {
+							var d = new Date()
+							var dayWillShipping = new Date(d.getTime() + 432000000)
+							var weekday = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy']
+							var day = weekday[dayWillShipping.getDay()] + ', ngày ' + dayWillShipping.getDate() + ' tháng ' + (dayWillShipping.getMonth() + 1) + ' năm ' + dayWillShipping.getFullYear()
+							return day
+						}
+						document.getElementById('expectTime').innerHTML = getExpectTime();
+					</script>
+				</div>
+			</div>
+			<!-- Card -->
+
+			<!-- Card -->
+			<div class="card mb-3 border-0" id="payment" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.07);">
+				<div class="card-body">
+
+					<h5 class="mb-4">We accept</h5>
+
+					<img class="mr-2" width="45px"
+						src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+						alt="Visa">
+					<img class="mr-2" width="45px"
+						src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+						alt="American Express">
+					<img class="mr-2" width="45px"
+						src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+						alt="Mastercard">
+					<img class="mr-2" width="45px"
+						src="https://z9t4u9f6.stackpathcdn.com/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.png"
+						alt="PayPal acceptance mark">
+				</div>
+			</div>
+			<!-- Card -->
+			<?php endif ?>
+
+		</div>
+		<!--Grid column-->
+
+		<!--Grid column-->
+		<div class="col-lg-4">
+
+			<!-- Card -->
+			<div class="card mb-3 border-0" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.07);">
+				<div class="card-body">
+
+					<h5 class="mb-3">Chi Tiết</h5>
+
+					<ul class="list-group  list-group-flush m-0 p-0">
+						<li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+							Khóa học
+							<span id="totalPrice"></span>
+							<script>
+								window.addEventListener('load', () => {
+									var totalPrice = 0;
+									var itemsPrice = document.getElementsByClassName('itemPrice')
+									for (i of itemsPrice) {
+										i.innerHTML = new Intl.NumberFormat().format(i.innerHTML) + ' đ'
+										totalPrice += Number(i.innerHTML.replace(/\D/g, ''))
+									}
+									document.getElementById('totalPrice').innerHTML = new Intl.NumberFormat().format(totalPrice) + ' đ'
+								})
+							</script>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+							Phí vận chuyển
+							<span>Gratis</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center border-bottom-0 px-0 mb-3">
+							<div>
+								<strong>Tổng tiền</strong>
+							</div>
+							<span><strong>$53.98</strong></span>
+						</li>
+					</ul>
+
+					<a href="index.php?act=thanh-toan"><button type="button"
+							class="btn btn-primary btn-block waves-effect waves-light" style="cursor:pointer">Thanh
+							Toán</button></a>
+				</div>
+			</div>
+			<!-- Card -->
+
+			<!-- Card -->
+			<div class="card mb-3 border-0" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.07);">
+				<div class="card-body">
+
+					<a class="dark-grey-text d-flex justify-content-between" data-toggle="collapse" href="#collapseExample1"
+						aria-expanded="false" aria-controls="collapseExample1">
+						Coupon khuyến mãi
+						<span><i class="fas fa-chevron-down pt-1"></i></span>
+					</a>
+
+					<div class="collapse" id="collapseExample1">
+						<div class="mt-3">
+							<div class="md-form md-outline mb-0">
+								<input type="text" id="discount-code1" class="form-control font-weight-light"
+									placeholder="Enter discount code">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card -->
+
+		</div>
+		<!--Grid column-->
+
+	</div>
+	<!--Grid row-->
+
+</section>
+
+<!--Section: Block Content-->
