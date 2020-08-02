@@ -1,7 +1,7 @@
 <?php
-  require_once "./../../model/DB.php";
-  require_once "./../../model/binh-luan.php";
-  require_once "./../../model/user.php";
+  require_once "./../model/DB.php";
+  require_once "./../model/binh-luan.php";
+  require_once "./../model/user.php";
 
   if(isset($_POST['idKhoaHoc']) && isset($_POST['commentContent'])){
     $idKhoaHoc = $_POST['idKhoaHoc'];

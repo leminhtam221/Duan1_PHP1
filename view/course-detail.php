@@ -76,7 +76,19 @@
       <div class="row">
         <div class="col-md-8">
           <div class="course-details-left">
-            <div class="course-video">
+            <?php
+              if($chiTietKhoaHoc['hinh_anh'] == ""){
+                $img = 'view/base/images/default-image.jpg';
+              }else{
+                if(file_exists('upload/courses/'.$chiTietKhoaHoc['hinh_anh'].'')){
+                  $img = 'upload/courses/'.$chiTietKhoaHoc['hinh_anh'].'';
+                }else{
+                  $img = 'view/base/images/default-image.jpg';
+                }
+              }
+            ?>
+            <div class="course-video"
+              style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(<?=$img?>);background-position:center;background-size: cover">
               <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
                   class="fas fa-play"></i></a>
               <h3>Preview Course</h3>

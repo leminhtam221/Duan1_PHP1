@@ -4,7 +4,7 @@ $(".lesson-list").on("click", "a", function () {
   let idVideo = href.substring(href.lastIndexOf("=") + 1);
   $.ajax({
     type: "POST",
-    url: "controller/ajax/my-course-detail.php",
+    url: "ajax/my-course-detail.php",
     data: {
       idVideo,
     },
@@ -38,7 +38,7 @@ $("#submitCourse").click(function (e) {
   } else {
     $.ajax({
       type: "POST",
-      url: "controller/ajax/my-course-detail.php",
+      url: "ajax/my-course-detail.php",
       data: {idKhoaHoc, tenChuongHoc, themChuong},
       success: function (response) {
         $("#accordion").html(response);
@@ -59,7 +59,7 @@ function suaChuongHoc(idChuong) {
 
   $.ajax({
     type: "POST",
-    url: "controller/ajax/my-course-detail.php",
+    url: "ajax/my-course-detail.php",
     data: {idChuong, layThongTinChuong},
     success: function (response) {
       $("#tenChuong").val(response);
@@ -79,7 +79,7 @@ $("#updateCourse").click(function (e) {
   } else {
     $.ajax({
       type: "POST",
-      url: "controller/ajax/my-course-detail.php",
+      url: "ajax/my-course-detail.php",
       data: {idChuong, idKhoaHoc, tenChuongHoc, capNhatChuong},
       success: function (response) {
         $("#accordion").html(response);
@@ -108,7 +108,7 @@ $("#submitVideo").click(function (e) {
   } else {
     $.ajax({
       type: "POST",
-      url: "controller/ajax/my-course-detail.php",
+      url: "ajax/my-course-detail.php",
       data: {idKhoaHoc, idGiangVien, idChuong, tenVideo, link},
       success: function (response) {
         $("#" + idChuong).html(response);

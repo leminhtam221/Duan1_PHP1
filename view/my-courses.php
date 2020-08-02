@@ -53,11 +53,20 @@
                 }
                 foreach ($danhSachKhoaHoc as $khoaHoc) {
                   $tenGiangVien = layTenGiangVien($khoaHoc['id_giang_vien']);
+                  if($khoaHoc['hinh_anh'] == ""){
+                    $img = 'view/base/images/default-image.jpg';
+                  }else{
+                    if(file_exists('upload/courses/'.$khoaHoc['hinh_anh'].'')){
+                      $img = 'upload/courses/'.$khoaHoc['hinh_anh'].'';
+                    }else{
+                      $img = 'view/base/images/default-image.jpg';
+                    }
+                  }
                   echo '<div class="col-md-4">
                           <div class="single-course">
                             <div class="hvrbox">
                               <a href="index.php?act=my-course-detail">
-                                <img src="./view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                                <img src="'.$img.'" class="hvrbox-layer_bottom">
                               </a>
                             </div>
                             <div class="single-course-content">
@@ -85,14 +94,15 @@
                 <div class="portlet-body">
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
-                      <form action="index.php?act=my-courses&id-user=<?=$idUser?>" method="POST">
+                      <form id="formId">
+                        <input type="hidden" id="idGiangVien" value="<?=$idUser?>">
                         <div class="form-group">
                           <label class="heading">Tên khóa học</label>
-                          <input type="text" class="form-control" name="tenkhoahoc">
+                          <input type="text" class="form-control" id="tenKhoaHoc">
                         </div>
                         <div class="form-group">
                           <label class="heading">Danh mục</label>
-                          <select class="form-control" name="danhmuc">
+                          <select class="form-control" id="danhMuc">
                             <?php
                               foreach ($danhSachDanhMuc as $danhMuc) {
                                 echo '<option value="'.$danhMuc['id'].'">'.$danhMuc['ten_danh_muc'].'</option>';
@@ -100,28 +110,39 @@
                             ?>
                           </select>
                         </div>
-                        <div class="form-group">
-                          <label class="heading">Hình ảnh</label>
-                          <input type="text" class="form-control" name="hinhanh">
-                        </div>
-                        <div class="form-group">
-                          <label class="heading">Clip</label>
-                          <input type="text" class="form-control" name="clip">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="heading">Hình ảnh</label>
+                              <input type="file" class="form-control" id="hinhAnh">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="heading">Clip</label>
+                              <input type="text" class="form-control" id="clip" autocomplete="off">
+                            </div>
+                          </div>
                         </div>
                         <div class="form-group">
                           <label class="heading">Mô tả</label>
-                          <input type="text" class="form-control" name="mota">
+                          <textarea class="form-control" id="moTa" rows="3"></textarea>
                         </div>
-                        <div class="form-group">
-                          <label class="heading">Đơn giá</label>
-                          <input type="text" class="form-control" name="dongia">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="heading">Đơn giá</label>
+                              <input type="text" class="form-control" id="donGia">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="heading">Khuyến mãi</label>
+                              <input type="text" class="form-control" id="khuyenMai">
+                            </div>
+                          </div>
                         </div>
-                        <div class="form-group">
-                          <label class="heading">Khuyến mãi</label>
-                          <input type="text" class="form-control" name="khuyenmai">
-                        </div>
-
-                        <button type="submit" class="btn btn-success" name="submit-add-courses">Thêm khóa học</button>
+                        <button type="button" class="btn btn-success" id="submitAddCourses">Thêm khóa học</button>
                       </form>
                     </div>
                   </div>

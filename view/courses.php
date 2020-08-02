@@ -184,10 +184,19 @@
                         <?php foreach ($danhSachKhoaHoc as $khoaHoc) {
                             $tenGiangVien = layTenGiangVien($khoaHoc['id_giang_vien']);
                             $tenGiangVien =  $tenGiangVien['ho_ten'];
+                            if($khoaHoc['hinh_anh'] == ""){
+                              $img = 'view/base/images/default-image.jpg';
+                            }else{
+                              if(file_exists('upload/courses/'.$khoaHoc['hinh_anh'].'')){
+                                $img = 'upload/courses/'.$khoaHoc['hinh_anh'].'';
+                              }else{
+                                $img = 'view/base/images/default-image.jpg';
+                              }
+                            }
                             echo '<div class="col-md-4 tile">
                                     <div class="single-course">
                                       <div class="hvrbox">
-                                        <img src="view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                                        <img src="'.$img.'" class="hvrbox-layer_bottom">
                                         <div class="hvrbox-layer_top hvrbox-text">
                                           <div class="hvrbox-text">
                                             <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i

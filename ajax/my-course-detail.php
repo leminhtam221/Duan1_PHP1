@@ -1,8 +1,8 @@
 <?php
-  require_once "./../../model/DB.php";
-  require_once "./../../model/video.php";
-  require_once "./../../model/chuong.php";
-  require_once "./../../model/video.php";
+  require_once "./../model/DB.php";
+  require_once "./../model/video.php";
+  require_once "./../model/chuong.php";
+  require_once "./../model/video.php";
 
   if(isset($_POST['idVideo'])){
     $idVideo = $_POST['idVideo'];

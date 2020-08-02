@@ -11,7 +11,7 @@ $("#sumitComment").click(function (e) {
   } else {
     $.ajax({
       type: "POST",
-      url: "controller/ajax/course-detail.php",
+      url: "ajax/course-detail.php",
       data: {idUser, idKhoaHoc, commentContent, ngayTao},
       success: function (response) {
         console.log(response);

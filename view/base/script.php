@@ -32,6 +32,7 @@
  <!-- Cart script -->
  <script src="./view/base/js/cart.js"></script>
  <!-- Ajax -->
+ <script src="./view/base/ajax/my-courses.js"></script>
  <script src="./view/base/ajax/my-course-detail.js"></script>
  <script src="./view/base/ajax/course-detail.js"></script>
  </body>
