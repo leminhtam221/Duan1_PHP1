@@ -114,7 +114,7 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label class="heading">Hình ảnh</label>
-                              <input type="file" class="form-control" id="hinhAnh">
+                              <input type="file" class="form-control" id="hinhAnh" accept=".jpg,.png,.jpeg">
                             </div>
                           </div>
                           <div class="col-md-6">

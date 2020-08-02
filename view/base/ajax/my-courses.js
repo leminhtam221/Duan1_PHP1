@@ -12,17 +12,14 @@ $("#submitAddCourses").click(function (e) {
 
   if (hinhAnh !== "") {
     hinhAnh = $("#hinhAnh")[0].files[0].name;
-    checkFileImage = hinhAnh.substring(hinhAnh.lastIndexOf(".") + 1);
   }
 
   let arr = [];
   arr.push(idUser, tenKhoaHoc, danhMuc, hinhAnh, clip, moTa, donGia, khuyenMai);
   arr = arr.filter((item) => item !== "");
 
-  if (arr.length < 8) {
+  if (arr.length < 1) {
     alert("Vui lòng nhập đầy đủ thông tin");
-  } else if (checkFileImage !== "jpg" && checkFileImage !== "png" && checkFileImage !== "jpeg") {
-    alert("Hình ảnh không hợp lệ");
   } else {
     /*=============Upload hình ảnh=============*/
     let fd = new FormData();
@@ -35,7 +32,9 @@ $("#submitAddCourses").click(function (e) {
       data: fd,
       contentType: false,
       processData: false,
-      success: function (response) {},
+      success: function (response) {
+        alert(response);
+      },
     });
 
     /*=============Lưu thông tin database=============*/

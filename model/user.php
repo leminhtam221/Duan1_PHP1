@@ -28,4 +28,9 @@ function capNhatThongTinUser($name, $email, $phoneNumber, $password, $idUser){
    execSQL($sql,1);
 }
 
+function capNhatAvatarUser($idUser, $avatar){
+   $sql = "UPDATE user SET avatar = '$avatar' WHERE id = '$idUser'";
+   execSQL($sql,1);
+}
+
 ?>

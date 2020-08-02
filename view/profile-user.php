@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="view/base/vendor.style.css">
+<link rel="stylesheet" href="view/base/main.style.css">
 
 <div class="background-body">
   <div class="container py-5">
@@ -8,7 +9,28 @@
           <div class="col-md-4">
             <div class="portlet light profile-sidebar-portlet bordered">
               <div class="profile-userpic">
-                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-responsive" alt=""> </div>
+                <?php
+                  if($thongTinUser['avatar'] == ""){
+                    $img = 'view/base/images/user-avatar.jpg';
+                  }else{
+                    if(file_exists('upload/avatar/'.$thongTinUser['avatar'].'')){
+                      $img = 'upload/avatar/'.$thongTinUser['avatar'].'';
+                    }else{
+                      $img = 'view/base/images/user-avatar.jpg';
+                    }
+                  }
+                ?>
+                <img src="<?=$img?>" class="img-responsive" id="avatarImg">
+
+                <div class="mt-4">
+                  <button class="btn btn-primary" id="buttonUploadAvatar">
+                    <label for="inputUpload" class="text-change-avatar">Thay đổi avatar</label>
+                  </button>
+                  <button class="btn btn-primary" id="buttonSaveAvatar">Cập nhật</button>
+                  <button class="btn btn-danger" id="buttonDeleteAvatar">Hủy</button>
+                </div>
+                <input type="file" id="inputUpload" class="d-none" accept=".jpg,.png,.jpeg,.webp">
+              </div>
               <div class="profile-usertitle">
                 <div class="profile-usertitle-name"> <?=$thongTinUser['ho_ten'] ?> </div>
                 <div class="profile-usertitle-job"> <?=$userType ?> </div>
@@ -29,6 +51,7 @@
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
                       <form action="index.php?act=profile-user&idUser=<?=$idUser ?>" method="POST">
+                        <input type="hidden" id="idUser" value="<?=$idUser ?>">
                         <div class="form-group">
                           <label for="inputName" class="heading">Họ tên</label>
                           <input type="text" class="form-control" name="name" id="inputName"

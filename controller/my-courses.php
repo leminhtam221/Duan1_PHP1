@@ -29,18 +29,5 @@
   }
 
   $danhSachDanhMuc = loadDanhMuc();
-
-  // if(isset($_POST['submit-add-courses'])){
-  //   $tenKhoaHoc = $_POST['tenkhoahoc'];
-  //   $idDanhMuc = $_POST['danhmuc'];
-  //   $hinhAnh = $_POST['hinhanh'];
-  //   $clip = $_POST['clip'];
-  //   $moTa = $_POST['mota'];
-  //   $donGia = $_POST['dongia'];
-  //   $khuyenMai = $_POST['khuyenmai'];
-  //   // themKhoaHoc($tenKhoaHoc,$clip,$hinhAnh,$moTa,$idDanhMuc,$donGia,$khuyenMai,$idUser);
-
-  //   $danhSachKhoaHoc = loadKhoaHocTheoGiangVien($idUser);
-  // }
   include "./view/my-courses.php";
 ?>

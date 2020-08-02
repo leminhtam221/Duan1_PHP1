@@ -29,4 +29,9 @@
   $sql = "UPDATE giang_vien SET ho_ten = '$name', email = '$email', sdt = '$phoneNumber', mat_khau = '$password' WHERE id = '$idUser'";
   execSQL($sql,1);
  }
+
+ function capNhatAvatarGiangVien($idUser, $avatar){
+  $sql = "UPDATE giang_vien SET avatar = '$avatar' WHERE id = '$idUser'";
+  execSQL($sql,1);
+}
 ?>
