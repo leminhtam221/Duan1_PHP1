@@ -11,18 +11,19 @@
   }
 
   if(isset($_COOKIE['user_id'])){
-    $danhSachIdKhoaHoc = [];
     $danhSachKhoaHoc = [];
-    $danhSachDonHang = loadDonHangDaThanhToan($idUser);
-    foreach ($danhSachDonHang as $donHang) {
-      $arrayChiTietDonHang = loadChiTietDonHang($donHang['id']);
-      foreach ($arrayChiTietDonHang as $chiTietDonHang) {
-        array_push($danhSachIdKhoaHoc, $chiTietDonHang['id_khoa_hoc']);
+
+    $danhSachIdKhoaHoc = $thongTinUser['id_khoa_hoc_da_kich_hoat'];
+
+    if(!empty($danhSachIdKhoaHoc)){
+      $danhSachIdKhoaHoc =  explode(" ",$danhSachIdKhoaHoc);
+      $count = count($danhSachIdKhoaHoc);
+
+      for ($i = $count - 1; $i >= 0 ; $i--) { 
+        $idKhoaHoc = $danhSachIdKhoaHoc[$i];
+        $chiTietKhoaHoc = loadKhoaHocChiTiet($idKhoaHoc);
+        array_push($danhSachKhoaHoc, $chiTietKhoaHoc);
       }
-    }
-    foreach ($danhSachIdKhoaHoc as $idKhoaHoc) {
-      $chiTietKhoaHoc = loadKhoaHocChiTiet($idKhoaHoc);
-      array_push($danhSachKhoaHoc, $chiTietKhoaHoc);
     }
   }else{
     $danhSachKhoaHoc = loadKhoaHocTheoGiangVien($idUser);

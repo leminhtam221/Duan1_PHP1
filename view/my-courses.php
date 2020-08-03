@@ -36,8 +36,7 @@
 
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
               <?php
-                $count = count($danhSachKhoaHoc);
-                if($count == 0){
+                if(empty($danhSachKhoaHoc)){
                   echo '<h2 class="my-courses-heading">Bạn chưa có khóa học nào</h2>';
                 }else{
                   echo '<h2 class="my-courses-heading">Khóa học của tôi</h2>';

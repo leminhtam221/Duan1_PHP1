@@ -33,4 +33,9 @@ function capNhatAvatarUser($idUser, $avatar){
    execSQL($sql,1);
 }
 
+function themMaKhoaHocDaKichHoat($idUser, $idKhoaHoc){
+   $sql = "UPDATE user SET id_khoa_hoc_da_kich_hoat = '$idKhoaHoc' WHERE id = '$idUser'";
+   execSQL($sql,1);
+}
+
 ?>
