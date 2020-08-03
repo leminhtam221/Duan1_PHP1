@@ -43,7 +43,7 @@
         <div class="row">
           <div class="col-md-12">
             <nav class="nav">
-              <a class="nav-link" href="#">Kích Hoạt Khóa Học</a>
+              <a class="nav-link" href="index.php?act=kich-hoat-khoa-hoc">Kích Hoạt Khóa Học</a>
               <a class="nav-link" href="#">Tham Gia Dạy Học </a>
               <?php if(isset($_COOKIE['user_id'])||isset($_COOKIE['lecturer_id'])): ?>
               <?php

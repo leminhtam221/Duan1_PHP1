@@ -18,7 +18,7 @@ $("#submitAddCourses").click(function (e) {
   arr.push(idUser, tenKhoaHoc, danhMuc, hinhAnh, clip, moTa, donGia, khuyenMai);
   arr = arr.filter((item) => item !== "");
 
-  if (arr.length < 1) {
+  if (arr.length < 8) {
     alert("Vui lòng nhập đầy đủ thông tin");
   } else {
     /*=============Upload hình ảnh=============*/
@@ -32,9 +32,7 @@ $("#submitAddCourses").click(function (e) {
       data: fd,
       contentType: false,
       processData: false,
-      success: function (response) {
-        alert(response);
-      },
+      success: function (response) {},
     });
 
     /*=============Lưu thông tin database=============*/
