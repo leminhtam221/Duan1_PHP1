@@ -6,6 +6,5 @@
 
   $danhSachChuongKhoaHoc = loadChuongTheoKhoaHoc($idKhoaHoc);
   $videoIntro = loadVideoGioiThieu($idKhoaHoc);
-  
   include "./view/my-course-detail.php";
 ?>

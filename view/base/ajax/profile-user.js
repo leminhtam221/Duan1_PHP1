@@ -49,7 +49,7 @@ $("#buttonSaveAvatar").click(function (e) {
     data: {idUser, hinhAnh, updateAvatar},
     success: function (response) {
       const src = `upload/avatar/${response}`;
-      $("#avatarImg").attr("src", src);
+      $(".avatarImg").attr("src", src);
       alert("Cập nhật thành công");
 
       $("#buttonUploadAvatar").css("display", "inline-block");

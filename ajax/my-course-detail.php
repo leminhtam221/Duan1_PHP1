@@ -113,16 +113,9 @@
     $link = $_POST['link'];
 
     themVideo($tenVideo,$link,$idKhoaHoc,$idGiangVien,$idChuong);
-    $html = "";
+    $danhSachVideo = json_encode(loadVideoTheoChuongHoc($idChuong));
 
-    $danhSachVideo = loadVideoTheoChuongHoc($idChuong);
-    foreach ($danhSachVideo as $video) {
-      $html.= '<li class="lesson-item">
-                <a href="#id-video='.$video['id'].'" class="lession-title">'.$video['ten_video'].'</a>
-                <span class="lesson-time">00:48</span>
-              </li>';
-    }
-    echo $html;
+    echo $danhSachVideo;
   }
 
 ?>

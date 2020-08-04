@@ -50,12 +50,16 @@
         <div class="course-content">
           <div id="video-content">
             <?php
-            $url = $videoIntro['link'];
-            preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
-            $youtubeId = $match[1];
-            
-            echo '<iframe class="video-show" src="https://www.youtube.com/embed/'.$youtubeId.'" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            if(!empty($videoIntro)){
+              $url = $videoIntro['link'];
+              preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+              $youtubeId = $match[1];
+              
+              echo '<iframe class="video-show" src="https://www.youtube.com/embed/'.$youtubeId.'" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            }else{
+              echo '<h1 class="font-weight-bold ml-5">Khóa học chưa có video nào</h1>';
+            }
             ?>
           </div>
         </div>

@@ -7,7 +7,18 @@
       <div class="col-md-3">
         <div class="my-courses-left">
           <div class="profile-userpic">
-            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-responsive" alt=""> </div>
+            <?php
+              if($thongTinUser['avatar'] == ""){
+                $img = 'view/base/images/user-avatar.jpg';
+              }else{
+                if(file_exists('upload/avatar/'.$thongTinUser['avatar'].'')){
+                  $img = 'upload/avatar/'.$thongTinUser['avatar'].'';
+                }else{
+                  $img = 'view/base/images/user-avatar.jpg';
+                }
+              }
+            ?>
+            <img src="<?=$img?>" class="img-responsive avatarImg"> </div>
           <div class="profile-usertitle">
             <div class="profile-usertitle-name"> <?=$thongTinUser['ho_ten'] ?> </div>
             <div class="profile-usertitle-job"> <?=$userType?> </div>

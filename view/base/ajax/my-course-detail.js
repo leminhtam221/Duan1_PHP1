@@ -93,6 +93,8 @@ $("#updateCourse").click(function (e) {
 // ==============Thêm Video =======================
 function themVideo(idChuong) {
   $("#idChuong").val(idChuong);
+  const tenVideo = $("#tenVideo").val("");
+  const link = $("#link").val("");
 }
 
 $("#submitVideo").click(function (e) {
@@ -110,8 +112,22 @@ $("#submitVideo").click(function (e) {
       type: "POST",
       url: "ajax/my-course-detail.php",
       data: {idKhoaHoc, idGiangVien, idChuong, tenVideo, link},
+      dataType: "json",
       success: function (response) {
-        $("#" + idChuong).html(response);
+        const html = response.map((item) => {
+          return `<li class="lesson-item">
+                    <a href="#id-video=${item.id}" class="lession-title">${item.ten_video}</a>
+                    <span class="lesson-time">00:48</span>
+                  </li>`;
+        });
+        $("#" + idChuong).html(html);
+
+        let href = response[response.length - 1];
+        href = href.link;
+        const youtubeId = href.substring(href.lastIndexOf("/") + 1);
+        const iframeTag = `<iframe class="video-show" src="https://www.youtube.com/embed/${youtubeId}" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        $("#video-content").html(iframeTag);
       },
     });
 

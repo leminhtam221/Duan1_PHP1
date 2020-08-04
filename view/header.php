@@ -81,7 +81,18 @@
                 </a>
                 <div id="user-dd">
                   <div>
-                    <img src="./view/base/images/user-avatar.jpg" alt="">
+                    <?php
+                    if($logged['avatar'] == ""){
+                      $img = 'view/base/images/user-avatar.jpg';
+                    }else{
+                      if(file_exists('upload/avatar/'.$logged['avatar'].'')){
+                        $img = 'upload/avatar/'.$logged['avatar'].'';
+                      }else{
+                        $img = 'view/base/images/user-avatar.jpg';
+                      }
+                    }
+                  ?>
+                    <img class="avatarImg" src="<?=$img?>">
                     <div>
                       <p><?=@$logged['ho_ten']?></p>
                       <p style="font-size: 0.7rem;margin-top: 0px;"><?=@$logged['email']?></p>

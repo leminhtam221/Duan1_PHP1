@@ -29,6 +29,10 @@
   list-style: none;
 }
 
+.lesson-item:last-child {
+  margin: 0;
+}
+
 .lesson-item {
   position: relative;
   margin-bottom: 10px;

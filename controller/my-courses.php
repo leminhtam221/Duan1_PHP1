@@ -16,11 +16,11 @@
     $danhSachIdKhoaHoc = $thongTinUser['id_khoa_hoc_da_kich_hoat'];
 
     if(!empty($danhSachIdKhoaHoc)){
-      $danhSachIdKhoaHoc =  explode(" ",$danhSachIdKhoaHoc);
+      $danhSachIdKhoaHoc =  explode(",",$danhSachIdKhoaHoc);
       $count = count($danhSachIdKhoaHoc);
 
       for ($i = $count - 1; $i >= 0 ; $i--) { 
-        $idKhoaHoc = $danhSachIdKhoaHoc[$i];
+        $idKhoaHoc = trim($danhSachIdKhoaHoc[$i]);
         $chiTietKhoaHoc = loadKhoaHocChiTiet($idKhoaHoc);
         array_push($danhSachKhoaHoc, $chiTietKhoaHoc);
       }
