@@ -24,25 +24,32 @@
                         <ul class="lesson-list" id="'.$idChuong.'">';
                         foreach ($danhSachVideo as $video) {
                           echo '<li class="lesson-item">
-                                  <a href="#id-video='.$video['id'].'" class="lession-title">'.$video['ten_video'].'</a>
-                                  <div class="more" id="divDot'.$video['id'].'" onclick="dotClick('.$video['id'].')">
-                                    <button class="more-btn p-0">
-                                        <span class="more-dot"></span>
-                                        <span class="more-dot"></span>
-                                        <span class="more-dot"></span>
-                                    </button>
-                                    <div class="more-menu d-none">
-                                        <ul class="more-menu-items">
-                                          <li class="more-menu-item">
-                                            <button type="button" class="more-menu-btn" data-toggle="modal" data-target="#cruVideoModal" onclick="editVideo('.$video['id'].','.$idChuong.')">Sửa video</button>
-                                          </li>
-                                          <li class="more-menu-item">
-                                            <button type="button" class="more-menu-btn" onclick="deleteVideo('.$video['id'].','.$idChuong.')">Xóa video</button>
-                                          </li>
-                                        </ul>
-                                    </div>
+                                  <a href="#id-video='.$video['id'].'" class="lession-title">'.$video['ten_video'].'</a>';
+
+                                if(isset($_COOKIE['lecturer_id'])){
+                                  echo '<div class="more" id="divDot'.$video['id'].'" onclick="dotClick('.$video['id'].')">
+                                  <button class="more-btn p-0">
+                                      <span class="more-dot"></span>
+                                      <span class="more-dot"></span>
+                                      <span class="more-dot"></span>
+                                  </button>
+                                  <div class="more-menu d-none">
+                                      <ul class="more-menu-items">
+                                        <li class="more-menu-item">
+                                          <button type="button" class="more-menu-btn" data-toggle="modal" data-target="#cruVideoModal" onclick="editVideo('.$video['id'].','.$idChuong.')">Sửa video</button>
+                                        </li>
+                                        <li class="more-menu-item">
+                                          <button type="button" class="more-menu-btn" onclick="deleteVideo('.$video['id'].','.$idChuong.')">Xóa video</button>
+                                        </li>
+                                      </ul>
                                   </div>
+                                </div>
+                              </li>';
+                              }else{
+                                echo '<span class="lesson-time">07:45</span>
                                 </li>';
+                              }
+                                  
                         }
             echo  '     </ul>
                       </div>';
