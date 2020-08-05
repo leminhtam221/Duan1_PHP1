@@ -4,7 +4,7 @@
   require_once "./../model/chuong.php";
   require_once "./../model/video.php";
 
-  if(isset($_POST['idVideo'])){
+  if(isset($_POST['idVideo']) && isset($_POST['loadVideo'])){
     $idVideo = $_POST['idVideo'];
     $chiTietVideo = loadChiTietVideo($idVideo);
     echo $chiTietVideo['link'];
@@ -115,6 +115,35 @@
     themVideo($tenVideo,$link,$idKhoaHoc,$idGiangVien,$idChuong);
     $danhSachVideo = json_encode(loadVideoTheoChuongHoc($idChuong));
 
+    echo $danhSachVideo;
+  }
+
+  // Edit video
+  if(isset($_POST['idVideo']) && isset($_POST['editVideo'])){
+    $idVideo = $_POST['idVideo'];
+
+    $chiTietVideo = json_encode(loadChiTietVideo($idVideo));
+    echo $chiTietVideo;
+  }
+
+  if(isset($_POST['idVideo']) && isset($_POST['updateVideo'])){
+    $idChuong = $_POST['idChuong'];
+    $idVideo = $_POST['idVideo'];
+    $tenVideo = $_POST['tenVideo'];
+    $link = $_POST['link'];
+
+    capNhatVideo($idVideo,$tenVideo,$link);
+    $danhSachVideo = json_encode(loadVideoTheoChuongHoc($idChuong));
+
+    echo $danhSachVideo;
+  }
+
+  if(isset($_POST['idVideo']) && isset($_POST['deleteVideo'])){
+    $idChuong = $_POST['idChuong'];
+    $idVideo = $_POST['idVideo'];
+
+    xoaVideo($idVideo);
+    $danhSachVideo = json_encode(loadVideoTheoChuongHoc($idChuong));
     echo $danhSachVideo;
   }
 

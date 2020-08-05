@@ -25,7 +25,23 @@
                         foreach ($danhSachVideo as $video) {
                           echo '<li class="lesson-item">
                                   <a href="#id-video='.$video['id'].'" class="lession-title">'.$video['ten_video'].'</a>
-                                  <span class="lesson-time">00:48</span>
+                                  <div class="more" id="divDot'.$video['id'].'" onclick="dotClick('.$video['id'].')">
+                                    <button class="more-btn p-0">
+                                        <span class="more-dot"></span>
+                                        <span class="more-dot"></span>
+                                        <span class="more-dot"></span>
+                                    </button>
+                                    <div class="more-menu d-none">
+                                        <ul class="more-menu-items">
+                                          <li class="more-menu-item">
+                                            <button type="button" class="more-menu-btn" data-toggle="modal" data-target="#cruVideoModal" onclick="editVideo('.$video['id'].','.$idChuong.')">Sửa video</button>
+                                          </li>
+                                          <li class="more-menu-item">
+                                            <button type="button" class="more-menu-btn" onclick="deleteVideo('.$video['id'].','.$idChuong.')">Xóa video</button>
+                                          </li>
+                                        </ul>
+                                    </div>
+                                  </div>
                                 </li>';
                         }
             echo  '     </ul>
@@ -105,7 +121,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Thêm video</h5>
+        <h5 class="modal-title" id="modal-title-video">Thêm video</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -114,6 +130,7 @@
         <input type="hidden" class="form-control" id="idKhoaHoc" value="<?=$idKhoaHoc ?>">
         <input type="hidden" class="form-control" id="idGiangVien" value="<?=$idUser ?>">
         <input type="hidden" class="form-control" id="idChuong" value="">
+        <input type="hidden" class="form-control" id="idVideo" value="">
         <div class="form-group">
           <label>Tên video</label>
           <input type="text" id="tenVideo" class="form-control" autocomplete="off">
@@ -126,6 +143,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
         <button type="button" class="btn btn-primary" id="submitVideo">Thêm</button>
+        <button type="button" class="btn btn-primary" id="updateVideo">Cập nhật</button>
       </div>
     </div>
   </div>
