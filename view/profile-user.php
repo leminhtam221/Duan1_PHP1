@@ -8,17 +8,6 @@
           <div class="col-md-4">
             <div class="portlet light profile-sidebar-portlet bordered">
               <div class="profile-userpic">
-                <?php
-                  if($thongTinUser['avatar'] == ""){
-                    $img = 'view/base/images/user-avatar.jpg';
-                  }else{
-                    if(file_exists('upload/avatar/'.$thongTinUser['avatar'].'')){
-                      $img = 'upload/avatar/'.$thongTinUser['avatar'].'';
-                    }else{
-                      $img = 'view/base/images/user-avatar.jpg';
-                    }
-                  }
-                ?>
                 <img src="<?=$img?>" class="img-responsive" id="avatarImg">
 
                 <div class="mt-4">

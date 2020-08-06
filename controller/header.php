@@ -1,4 +1,5 @@
 <?php
+ /*=============Load thong bao===========*/
   if(isset($_COOKIE['user_id']) || isset($_COOKIE['lecturer_id'])){
     if(isset($_COOKIE['user_id'])){
       $idUser = $_COOKIE['user_id'];
@@ -8,6 +9,9 @@
       $danhSachThongBao = loadThongBaoGiangVien($idGiangVien);
     }
   }
+
+
+  /*=============Load thong tin dang nhap===========*/
   if(isset($_COOKIE['user_id']) || isset($_COOKIE['lecturer_id'])){
     $log_id;           
     $table;
@@ -19,6 +23,19 @@
       $table = 'giang_vien';
     }
     $logged = find("select * from $table where id=$log_id");
+
+     /*====Check avatar===*/
+    if($logged['avatar'] == ""){
+      $img = 'view/base/images/user-avatar.jpg';
+    }else{
+      if(file_exists('upload/avatar/'.$logged['avatar'].'')){
+        $img = 'upload/avatar/'.$logged['avatar'].'';
+      }else{
+        $img = 'view/base/images/user-avatar.jpg';
+      }
+    }
   }
+
+  
   include "./view/header.php";
 ?>

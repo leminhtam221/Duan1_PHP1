@@ -48,14 +48,6 @@
               <a class="nav-link" href="index.php?act=kich-hoat-khoa-hoc">Kích Hoạt Khóa Học</a>
               <a class="nav-link" href="#">Tham Gia Dạy Học </a>
               <?php if(isset($_COOKIE['user_id'])||isset($_COOKIE['lecturer_id'])): ?>
-              <?php
-                $log_id;           
-                if(isset($_COOKIE['user_id'])){
-                  $log_id = $_COOKIE['user_id'];
-                }else{
-                  $log_id = $_COOKIE['lecturer_id'];
-                }
-              ?>
               <a class="nav-link" href="index.php?act=my-courses&id-user=<?=$log_id?>">Khóa Học Của Tôi</a>
               <?php else: ?>
               <a class="nav-link" href="index.php?act=dang-nhap">Khóa Học Của Tôi</a>
@@ -71,17 +63,6 @@
                 </a>
                 <div id="user-dd">
                   <div>
-                    <?php
-                    if($logged['avatar'] == ""){
-                      $img = 'view/base/images/user-avatar.jpg';
-                    }else{
-                      if(file_exists('upload/avatar/'.$logged['avatar'].'')){
-                        $img = 'upload/avatar/'.$logged['avatar'].'';
-                      }else{
-                        $img = 'view/base/images/user-avatar.jpg';
-                      }
-                    }
-                  ?>
                     <img class="avatarImg" src="<?=$img?>">
                     <div>
                       <p><?=@$logged['ho_ten']?></p>
