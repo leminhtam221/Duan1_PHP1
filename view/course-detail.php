@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="view/base/main.style.css">
-
 <div class="page-banner">
   <div class="hvrbox">
     <img src="view/base/images/video-bg.png" alt="Mountains" class="hvrbox-layer_bottom">

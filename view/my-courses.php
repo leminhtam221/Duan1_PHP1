@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="view/base/vendor.style.css">
-<link rel="stylesheet" href="view/base/main.style.css">
 
 <div class="my-courses background-body py-4">
   <div class="container">

@@ -30,6 +30,8 @@
   <link href="./view/base/css/color-switcher.css" rel="stylesheet">
   <!-- Responsive CSS -->
   <link href="./view/base/css/responsive.css" rel="stylesheet">
+
+  <link href="./view/base/main.style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -62,19 +64,7 @@
               <?php if(!isset($_COOKIE['user_id'])&&!isset($_COOKIE['lecturer_id'])): ?>
               <a class="nav-link" href="index.php?act=dang-ky">Đăng Ký</a>
               <a class="nav-link" href="index.php?act=dang-nhap">Đăng Nhập</a>
-              <?php elseif(isset($_COOKIE['user_id'])||isset($_COOKIE['lecturer_id'])): ?>
-              <?php
-                $log_id;           
-                $table;
-                if(isset($_COOKIE['user_id'])){
-                  $log_id = $_COOKIE['user_id'];
-                  $table = 'user';
-                }else{
-                  $log_id = $_COOKIE['lecturer_id'];
-                  $table = 'giang_vien';
-                }
-                $logged = find("select * from $table where id=$log_id");
-              ?>
+              <?php else: ?>
               <div class="menu">
                 <a style="cursor:pointer" id="user-btn" class="nav-link"><b><?=@$logged['tai_khoan']?>&nbsp;<i
                       class="fa fa-caret-down"></i></b>
@@ -162,9 +152,28 @@
                       <span id="cart-counter"><?=rowCount()?></span>
                     </a>
                   </li>
+                  <li class="nav-item" id="notication-li">
+                    <div class="nav-link">
+                      <img src="./view/base/images/bell.png" class="notication-img">
+                      <span id="cart-counter"><?=rowCount()?></span>
 
+                      <div class="notification" id="notification">
+                        <?php if(isset($_COOKIE['user_id']) || isset($_COOKIE['user_id'])): ?>
+                        <?php foreach($danhSachThongBao as $thongBao){ ?>
+                        <a href="#" class="notification__item">
+                          <?=$thongBao['noi_dung'] ?>
+                          <?php
+                            if($thongBao['trang_thai'] == 1){
+                              echo '<div class="is-read"></div>';
+                            }
+                          ?>
+                        </a>
+                        <?php } ?>
+                        <?php endif ?>
+                      </div>
+                    </div>
+                  </li>
                 </ul>
-
               </div>
             </nav>
           </div>

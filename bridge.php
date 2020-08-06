@@ -12,6 +12,7 @@ include "./model/video.php";
 include "./model/cart.php";
 include "./model/don-hang.php";
 include "./model/chi-tiet-don-hang.php";
+include "./model/thong-bao.php";
 
 // INCLUDE controller
 include "./controller/controller.php";

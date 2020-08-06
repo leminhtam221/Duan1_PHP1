@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="view/base/main.style.css">
-
 <section class="form-active">
   <div class="container">
     <div class="row">

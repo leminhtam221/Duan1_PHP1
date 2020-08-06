@@ -1,15 +1,14 @@
 /* =============== Style dots ==================*/
-let isVisible = true;
+let isVisible = false;
 
 function dotClick(id) {
+  isVisible = !isVisible;
   if (isVisible) {
     $("#divDot" + id).addClass("show-more-menu");
     $(".more-menu").removeClass("d-none");
-    isVisible = false;
   } else {
     $(".more").removeClass("show-more-menu");
     $(".more-menu").addClass("d-none");
-    isVisible = true;
   }
 }
 

@@ -37,6 +37,7 @@
  <script src="./view/base/ajax/course-detail.js"></script>
  <script src="./view/base/ajax/profile-user.js"></script>
  <script src="./view/base/ajax/activate-courses.js"></script>
+ <script src="./view/base/ajax/notification.js"></script>
  </body>
 
  </html>

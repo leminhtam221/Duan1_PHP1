@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="view/base/main.style.css">
-
 <div class="my-course-detail background-body py-4">
   <div class="container-fluid">
     <div class="row">
