@@ -314,7 +314,7 @@
                 background-color: #02b3e4
               }
               </style>
-              <button id="add-cart" type="button" class="btn btn-outline-primary w-100">Thêm Vào Giỏ Hàng</button>
+              <button prodid="<?=@$idKhoaHoc?>" id="add-cart" type="button" class="btn btn-outline-primary w-100 btn-add">Thêm Vào Giỏ Hàng</button>
               <a href="#" class="btn btn-primary w-100 mt-2 mb-4"
                 style="background-color: #02b3e4;border-color:#02b3e4;">Mua Ngay</a>
               <h2>Chia sẻ qua</h2>

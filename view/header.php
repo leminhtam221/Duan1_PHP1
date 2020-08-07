@@ -32,6 +32,8 @@
   <link href="./view/base/css/responsive.css" rel="stylesheet">
 
   <link href="./view/base/main.style.css" rel="stylesheet">
+
+  <script src="./view/base/js/jquery.min.js"></script>
 </head>
 
 <body>

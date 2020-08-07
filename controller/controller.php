@@ -12,6 +12,6 @@
   }
   include "./controller/".$controller.".php";
 
-  include "./view/footer.php";
   include "./view/base/script.php";
+  include "./view/footer.php"; 
 ?>

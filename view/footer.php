@@ -1,6 +1,4 @@
-<div class="alert alert-success alert-e" id="alert-2">
-  <strong>Success!</strong> Added to your cart.
-</div>
+
 <div class="cta-1x">
   <div class="container">
     <div class="row">

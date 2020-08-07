@@ -23,6 +23,8 @@
  <script src="./view/base/js/jquery.magnific-popup.min.js"></script>
  <!-- Testimonial slider Script -->
  <script src="./view/base/slick/slick.min.js"></script>
+ <!-- sweet alert lib -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
  <!-- Custom script -->
  <script src="./view/base/js/custom.js"></script>
  <!-- Signin script -->

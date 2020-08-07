@@ -88,16 +88,6 @@
 					<p class="mb-0" id="expectTime">
 
 					</p>
-					<script>
-						var getExpectTime = () => {
-							var d = new Date()
-							var dayWillShipping = new Date(d.getTime() + 432000000)
-							var weekday = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy']
-							var day = weekday[dayWillShipping.getDay()] + ', ngày ' + dayWillShipping.getDate() + ' tháng ' + (dayWillShipping.getMonth() + 1) + ' năm ' + dayWillShipping.getFullYear()
-							return day
-						}
-						document.getElementById('expectTime').innerHTML = getExpectTime();
-					</script>
 				</div>
 			</div>
 			<!-- Card -->
@@ -141,27 +131,16 @@
 						<li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
 							Khóa học
 							<span id="totalPrice"></span>
-							<script>
-								window.addEventListener('load', () => {
-									var totalPrice = 0;
-									var itemsPrice = document.getElementsByClassName('itemPrice')
-									for (i of itemsPrice) {
-										i.innerHTML = new Intl.NumberFormat().format(i.innerHTML) + ' đ'
-										totalPrice += Number(i.innerHTML.replace(/\D/g, ''))
-									}
-									document.getElementById('totalPrice').innerHTML = new Intl.NumberFormat().format(totalPrice) + ' đ'
-								})
-							</script>
 						</li>
 						<li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
 							Phí vận chuyển
-							<span>Gratis</span>
+							<span id="shippingPrice">30.000 đ</span>
 						</li>
 						<li class="list-group-item d-flex justify-content-between align-items-center border-bottom-0 px-0 mb-3">
 							<div>
 								<strong>Tổng tiền</strong>
 							</div>
-							<span><strong>$53.98</strong></span>
+							<span><strong id="finalPrice"></strong></span>
 						</li>
 					</ul>
 
@@ -201,5 +180,10 @@
 	<!--Grid row-->
 
 </section>
+<script>
+	window.addEventListener('load', () => {
+		setTotalPrice();
+	})
+</script>
 
 <!--Section: Block Content-->
