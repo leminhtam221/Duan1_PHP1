@@ -40,6 +40,7 @@
  <script src="./view/base/ajax/profile-user.js"></script>
  <script src="./view/base/ajax/activate-courses.js"></script>
  <script src="./view/base/ajax/notification.js"></script>
+ <script src="./view/base/ajax/reset-password.js"></script>
  </body>
 
  </html>

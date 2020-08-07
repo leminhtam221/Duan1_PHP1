@@ -4,11 +4,11 @@
     <div class="hvrbox-layer_top">
       <div class="container">
         <div class="overlay-text text-left">
-          <h3>Sign In</h3>
+          <h3>Quên mật khẩu</h3>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Sign In</li>
+              <li class="breadcrumb-item active" aria-current="page">Quên mật khẩu</li>
             </ol>
           </nav>
         </div>
@@ -23,36 +23,23 @@
       <div class="row">
         <div class="col-md-4">
           <div class="sign-in-form">
-            <h3>Đăng Nhập</h3>
-            <?php if($signin_error==true): ?>
-            <div style="color: red;font-size: 0.8rem;transform: translateY(-30px);">* Sai tên tài khoản hoặc mật khẩu
-            </div>
-            <?php endif ?>
-            <form id="signin-form" method="post" action="">
+            <h3>Quên mật khẩu</h3>
+            <form>
               <div class="row">
                 <div class="col-md-12">
                   <div class="single-input">
                     <i class="fas fa-envelope"></i>
                     <div class="form-group">
-                      <input id="si-name" type="text" class="form-control" autocomplete="off"
-                        placeholder="Tên tài khoản hoặc E-mail" aria-label="Name" name="uname"
-                        value="<?=($signin_error==true)?$_POST['uname']:''?>">
-                      <div id="si-name-err" class="error-text"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="single-input">
-                    <i class="fas fa-key"></i>
-                    <div class="form-group">
-                      <input id="si-pwd" type="password" class="form-control" placeholder="Mật Khẩu" name="pwd">
+                      <input id="inputName" type="text" class="form-control" autocomplete="off"
+                        placeholder="Tên tài khoản hoặc E-mail" aria-label="Name" name="uname" value="">
+                      <div id="inputNameErr" class="error-text"></div>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="sign-in-btn">
-                    <span><a href="index.php?act=reset-password">Quên mật khẩu?</a></span>
-                    <a style="color:#fff;cursor:pointer;" id="btn-signin" class="btn-small">Đăng Nhập </a>
+                    <a href="#" class="btn-small" style="float:none" id="forgetPasswordLink">Lấy lại mật
+                      khẩu</a>
                     <p>Hoặc đăng nhập với</p>
                     <ul>
                       <li><a href=""> Facebook </a></li>
