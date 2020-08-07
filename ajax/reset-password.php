@@ -60,7 +60,7 @@
       //Recipients
       $mail->CharSet = 'UTF-8';
       $mail->setFrom('le.minhtam16082000@gmail.com', 'From admin Courcity');
-      $mail->addAddress('le.minhtam221@gmail.com');
+      $mail->addAddress($email);
    
       //Content
       $mail->isHTML(true);
