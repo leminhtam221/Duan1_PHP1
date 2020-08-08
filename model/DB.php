@@ -46,8 +46,11 @@ function execSQL($sql,$c){
    }
 }
 
-function counter($table){
-   $sql = "select count(*) as sl from $table";
+function counter($table, $sqlAdditional = ""){
+   $sql = "select count(*) as sl from $table ";
+   if($sqlAdditional != ""){
+      $sql .= "$sqlAdditional";
+   }
    $quantity = find($sql);
    return $quantity;
 }

@@ -36,6 +36,7 @@
     }
   }
 
+  $counter = counter("thong_bao", "WHERE trang_thai = 1");
   
   include "./view/header.php";
 ?>
