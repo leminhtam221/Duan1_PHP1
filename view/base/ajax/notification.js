@@ -11,6 +11,7 @@ $("#notication-li").click(function (e) {
   }
 
   /*====Seen notification====*/
+  const idPeople = $("#idPeople").html();
   let counterNumber = $("#counterNumber").html();
   counterNumber = parseInt(counterNumber);
 
@@ -19,7 +20,7 @@ $("#notication-li").click(function (e) {
     $.ajax({
       type: "POST",
       url: "ajax/notification.php",
-      data: {seenNotification},
+      data: {idPeople, seenNotification},
       success: function (response) {
         if (response) {
           $("#counterNumber").css("display", "none");

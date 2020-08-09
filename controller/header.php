@@ -18,9 +18,11 @@
     if(isset($_COOKIE['user_id'])){
       $log_id = $_COOKIE['user_id'];
       $table = 'user';
+      $counter = counter("thong_bao", "WHERE trang_thai = 1 AND id_user = ".$log_id."");
     }else{
       $log_id = $_COOKIE['lecturer_id'];
       $table = 'giang_vien';
+      $counter = counter("thong_bao", "WHERE trang_thai = 1 AND id_giang_vien = ".$log_id."");
     }
     $logged = find("select * from $table where id=$log_id");
 
@@ -36,7 +38,5 @@
     }
   }
 
-  $counter = counter("thong_bao", "WHERE trang_thai = 1");
-  
   include "./view/header.php";
 ?>

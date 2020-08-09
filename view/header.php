@@ -134,15 +134,16 @@
                     </a>
                   </li>
                   <li class="nav-item" id="notication-li">
+                    <div class="d-none" id="idPeople"><?=$log_id?></div>
                     <div class="nav-link">
                       <img src="./view/base/images/bell.png" class="notication-img">
 
+                      <?php if(isset($_COOKIE['user_id']) || isset($_COOKIE['user_id'])): ?>
                       <?php if($counter['sl'] > 0): ?>
                       <span class="counter-number" id="counterNumber"><?=$counter['sl']?></span>
                       <?php endif ?>
 
                       <div class="notification" id="notification">
-                        <?php if(isset($_COOKIE['user_id']) || isset($_COOKIE['user_id'])): ?>
                         <?php foreach($danhSachThongBao as $thongBao){ ?>
                         <a href="<?=$thongBao['url']?>" class="notification__item" id="notifiItem<?=$thongBao['id']?>"
                           onclick="seenDetailNotification(<?=$thongBao['id']?>)">
@@ -154,8 +155,8 @@
                           ?>
                         </a>
                         <?php } ?>
-                        <?php endif ?>
                       </div>
+                      <?php endif ?>
                     </div>
                   </li>
                 </ul>
