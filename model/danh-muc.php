@@ -1,6 +1,10 @@
 <?php
-  function loadDanhMuc(){
+  function loadDanhMuc($sqlAdditional = ""){
     $sql = "SELECT * FROM danh_muc";
+    $sql .= " order by sap_xep asc ";
+    if($sqlAdditional != ""){
+      $sql .= $sqlAdditional;
+    }
     return findMultiple($sql);
   }
 

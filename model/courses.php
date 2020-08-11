@@ -58,4 +58,19 @@
     $sql = "INSERT INTO khoa_hoc(ten_khoa_hoc,clip,hinh_anh,mo_ta,id_danh_muc,don_gia,khuyen_mai,id_giang_vien) VALUES('$tenKhoaHoc','$clip','$hinhAnh','$moTa','$idDanhMuc','$donGia','$khuyenMai','$idUser')";
     execSQL($sql,0);
   }
+
+  function loadKhoaHocNoiBat(){
+    $sql = "SELECT * FROM khoa_hoc WhERE 1";
+    $sql .= " order by luot_mua desc";
+    $sql .= " limit 8";
+    return findMultiple($sql);
+  }
+
+  function loadAllKhoaHocTheoDanhMuc($idDanhMuc){
+    $sql = "SELECT * FROM khoa_hoc WhERE 1";
+    if($idDanhMuc > 0){
+      $sql .= " AND id_danh_muc=".$idDanhMuc;
+    }
+    return findMultiple($sql);
+  }
 ?>

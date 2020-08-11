@@ -12,14 +12,18 @@ $("#submitAddCourses").click(function (e) {
 
   if (hinhAnh !== "") {
     hinhAnh = $("#hinhAnh")[0].files[0].name;
+  } else {
+    $("#hinhAnh").val("");
   }
 
   let arr = [];
-  arr.push(idUser, tenKhoaHoc, danhMuc, hinhAnh, clip, moTa, donGia, khuyenMai);
+  arr.push(idUser, tenKhoaHoc, danhMuc, clip, moTa, donGia, khuyenMai);
   arr = arr.filter((item) => item !== "");
 
-  if (arr.length < 8) {
+  if (arr.length < 7) {
     alert("Vui lòng nhập đầy đủ thông tin");
+  } else if (tenKhoaHoc.length < 25) {
+    alert("Tên khóa học phải từ 25 ký tự trở lên");
   } else {
     /*=============Upload hình ảnh=============*/
     let fd = new FormData();
