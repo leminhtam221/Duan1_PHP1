@@ -121,3 +121,9 @@
   </div>
 
 </footer>
+<script>
+  const Arr = document.getElementsByClassName('priCe')
+  for (let i of Arr) {
+    i.innerHTML = new Intl.NumberFormat().format(i.innerHTML) + ' đ';
+  }
+</script>

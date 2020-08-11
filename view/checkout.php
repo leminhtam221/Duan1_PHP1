@@ -4,11 +4,11 @@
     <div class="hvrbox-layer_top">
       <div class="container">
         <div class="overlay-text text-left">
-          <h3>Giỏ Hàng</h3>
+          <h3>Thanh Toán</h3>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Giỏ Hàng</li>
+              <li class="breadcrumb-item active" aria-current="page">Thanh Toán</li>
             </ol>
           </nav>
         </div>
@@ -16,168 +16,167 @@
     </div>
   </div>
 </div>
-<div class="container mb-5">
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-8" style="padding: 0 15px;">
 
-  <h4 class="my-4">
-    Billing Address
-  </h4>
+      <form method="POST" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.07);padding: 15px 20px;border-radius: .25rem;">
+        <h4 class="mb-5">
+          Thông Tin Đặt Hàng
+        </h4>
+        <div class="form-row">
+          <div class="col-md-6 form-group">
+            <label for="firstname">Tên</label>
+            <input type="text" class="form-control" id="firstname" placeholder="Tên">
+            <div class="invalid-feedback">
+              Vui lòng nhập...
+            </div>
+          </div>
 
-  <form>
-    <div class="form-row">
-      <div class="col-md-6 form-group">
-        <label for="firstname">First Name</label>
-        <input type="text" class="form-control" id="firstname" placeholder="First Name">
-        <div class="invalid-feedback">
-          Valid first name is required.
+          <div class="col-md-6 form-group">
+            <label for="lastname">Họ</label>
+            <input type="text" class="form-control" id="lastname" placeholder="Họ">
+            <div class="invalid-feedback">
+              Vui lòng nhập...
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="username">Số Điện Thoại</label>
+          <div class="input-group">
+            <input type="" class="form-control" id="username" placeholder="Số Điện Thoại" required>
+            <div class="invalid-feedback">
+              Vui lòng nhập...
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="adress">Địa Chỉ</label>
+          <input type="text" class="form-control" id="adress" placeholder="1234 đường số 1" required>
+          <div class="invalid-feedback">
+            Vui lòng nhập...
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address2">Địa Chỉ 2
+            <span class="text-muted">(Optional)</span>
+          </label>
+          <input type="text" class="form-control" id="adress2" placeholder="Flat No">
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 form-group">
+            <label for="country">Thành phố / tỉnh</label>
+            <select type="text" class="form-control" id="country">
+              <option value>Chọn...</option>
+              <option>United Kingdom</option>
+            </select>
+            <div class="invalid-feedback">
+              Vui lòng nhập...
+            </div>
+          </div>
+
+          <div class="col-md-4 form-group">
+            <label for="city">Quận / huyện</label>
+            <select type="text" class="form-control" id="city">
+              <option value>Chọn...</option>
+              <option>London</option>
+            </select>
+            <div class="invalid-feedback">
+              Vui lòng nhập...
+            </div>
+          </div>
+
+          <div class="col-md-4 form-group">
+            <label for="postcode">Phường / xã</label>
+            <select type="text" class="form-control" id="postcode">
+              <option value>Chọn...</option>
+              <option>NW6 2LS</option>
+            </select>
+            <div class="invalid-feedback">
+              Vui lòng nhập...
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+
+        <div class="form-check">
+          <label for="same-adress" class="form-check-label"></label>
+          <input type="checkbox" class="form-check-input" id="same-adress" style="transform: translateY(0.2rem);"
+            checked>
+          Save this information for next time
+        </div>
+
+        <button class="btn btn-primary bt-lg btn-block" type="submit">Đặt Hàng</button>
+      </form>
+    </div>
+    <div class="col-md-4">
+
+      <!-- Card -->
+      <div class="card mb-3 border-0" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.07);">
+        <div class="card-body">
+
+          <h5 class="mb-3">Đơn hàng của bạn</h5>
+
+          <ul class="list-group  list-group-flush m-0 p-0">
+            <?php if(isset($_COOKIE['cart'])): ?>
+            <?php foreach( $myCart as $i ): ?>
+            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+              <p style="display: block; width:100%;"><?=@$i['ten_khoa_hoc']?><span
+                  style="float: right; color: royalblue;"> &times; <i class="priCe"><?=@$i['khuyen_mai']?></i>
+                </span></p>
+            </li>
+            <?php endforeach ?>
+            <li class="list-group-item d-flex justify-content-between align-items-center border-bottom-0 px-0">
+              Phí vận chuyển
+              <span style="float: right; color: royalblue;"><i class="priCe">30000</i>
+              </span </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+              <div>
+                <strong>Tổng tiền</strong>
+              </div>
+              <span><strong class="priCe"><?=@$tong?></strong></span>
+            </li>
+            <?php endif ?>
+          </ul>
         </div>
       </div>
+      <!-- Card -->
 
-      <div class="col-md-6 form-group">
-        <label for="lastname">Last Name</label>
-        <input type="text" class="form-control" id="lastname" placeholder="Last Name">
-        <div class="invalid-feedback">
-          Valid last name is required.
+      <!-- Card -->
+      <div class="card mb-3 border-0" style="box-shadow: 0 10px 20px 0 rgba(0,0,0,0.07);">
+        <div class="card-body">
+
+          <a class="dark-grey-text d-flex justify-content-between" data-toggle="collapse" href="#collapseExample1"
+            aria-expanded="false" aria-controls="collapseExample1">
+            Coupon khuyến mãi
+            <span><i class="fas fa-chevron-down pt-1"></i></span>
+          </a>
+
+          <div class="collapse" id="collapseExample1">
+            <div class="mt-3">
+              <div class="md-form md-outline mb-0">
+                <input type="text" id="discount-code1" class="form-control font-weight-light"
+                  placeholder="Enter discount code">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <!-- Card -->
+
     </div>
-
-    <div class="form-group">
-      <label for="username">Username</label>
-      <div class="input-group">
-        <input type="text" class="form-control" id="username" placeholder="Username" required>
-        <div class="invalid-feedback">
-          Your username is required.
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
-    </div>
-
-    <div class="form-group">
-      <label for="adress">Address</label>
-      <input type="text" class="form-control" id="adress" placeholder="1234 Main Street" required>
-      <div class="invalid-feedback">
-        Please enter your shipping address.
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="address2">Address 2
-        <span class="text-muted">(Optional)</span>
-      </label>
-      <input type="text" class="form-control" id="adress2" placeholder="Flat No">
-    </div>
-
-    <div class="row">
-      <div class="col-md-4 form-group">
-        <label for="country">Country</label>
-        <select type="text" class="form-control" id="country">
-          <option value>Choose...</option>
-          <option>United Kingdom</option>
-        </select>
-        <div class="invalid-feedback">
-          Please select a valid country.
-        </div>
-      </div>
-
-      <div class="col-md-4 form-group">
-        <label for="city">City</label>
-        <select type="text" class="form-control" id="city">
-          <option value>Choose...</option>
-          <option>London</option>
-        </select>
-        <div class="invalid-feedback">
-          Please provide a valid city.
-        </div>
-      </div>
-
-      <div class="col-md-4 form-group">
-        <label for="postcode">Postcode</label>
-        <select type="text" class="form-control" id="postcode">
-          <option value>Choose...</option>
-          <option>NW6 2LS</option>
-        </select>
-        <div class="invalid-feedback">
-          Postcode required.
-        </div>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="shipping-adress">
-      Shipping address is the same as my billing address
-      <label for="shipping-adress" class="form-check-label"></label>
-    </div>
-
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="same-adress">
-      Save this information for next time
-      <label for="same-adress" class="form-check-label"></label>
-    </div>
-
-    <hr>
-
-    <h4 class="mb-4">Payment</h4>
-
-    <div class="form-check">
-      <input type="radio" class="form-check-input" id="credit" name="payment-method" checked required>
-      <label for="credit" class="form-check-label">Credit Card</label>
-    </div>
-
-    <div class="form-check">
-      <input type="radio" class="form-check-input" id="debit" name="payment-method" required>
-      <label for="debit" class="form-check-label">Debit Card</label>
-    </div>
-
-    <div class="form-check">
-      <input type="radio" class="form-check-input" id="paypal" name="payment-method" required>
-      <label for="paypal" class="form-check-label">PayPal</label>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-md-6 form-group">
-        <label for="card-name">Name on card</label>
-        <input type="text" class="form-control" id="card-name" placeholder required>
-        <div class="invalid-feedback">
-          Name on card is required
-        </div>
-      </div>
-
-      <div class="col-md-6 form-group">
-        <label for="card-no">Card Number</label>
-        <input type="text" class="form-control" id="card-no" placeholder required>
-        <div class="invalid-feedback">
-          Credit card number is required
-        </div>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="col-md-5 form-group">
-        <label for="expiration">Expire Date</label>
-        <input type="text" class="form-control" id="card-name" placeholder required>
-        <div class="invalid-feedback">
-          Expiration date required
-        </div>
-      </div>
-
-
-      <div class="col-md-5 form-group">
-        <label for="ccv-no">Security Number</label>
-        <input type="text" class="form-control" id="sec-no" placeholder required>
-        <div class="invalid-feedback">
-          Security code required
-        </div>
-      </div>
-    </div>
-
-    <hr class="mb-4">
-
-    <button class="btn btn-primary bt-lg btn-block" type="submit">Continue to Checkout</button>
-  </form>
+  </div>
 </div>
+<script>
+  $.getJSON("view/base/local.json", function (result) {
+    $.each(result, function (i, field) {
+      console.log(field)
+    });
+  });
+</script>
