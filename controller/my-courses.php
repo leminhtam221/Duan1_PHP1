@@ -1,13 +1,14 @@
 <?php
   if(isset($_GET['id-user'])){
-    $idUser = $_GET['id-user'];
-  }
-  if(isset($_COOKIE['user_id'])){
-    $thongTinUser = loadThongTinUser($idUser);
-    $userType = "Học viên";
-  }else{
-    $thongTinUser = layThongTinGiangVien($idUser);
-    $userType = "Giảng viên";
+    if(isset($_COOKIE['user_id'])){
+      $idUser = $_COOKIE['user_id'];
+      $thongTinUser = loadThongTinUser($idUser);
+      $userType = "Học viên";
+    }else{
+      $idUser = $_COOKIE['lecturer_id'];
+      $thongTinUser = layThongTinGiangVien($idUser);
+      $userType = "Giảng viên";
+    }
   }
   
   if($thongTinUser['avatar'] == ""){

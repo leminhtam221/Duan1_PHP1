@@ -43,12 +43,6 @@
               ?>
               <div class="row">
                 <?php
-                $idUser;
-                if(isset($_COOKIE['user_id'])){
-                  $idUser = $_COOKIE['user_id'];
-                }else{
-                  $idUser = $_COOKIE['lecturer_id'];
-                }
                 foreach ($danhSachKhoaHoc as $khoaHoc) {
                   $tenGiangVien = layTenGiangVien($khoaHoc['id_giang_vien']);
                   if($khoaHoc['hinh_anh'] == ""){
@@ -68,7 +62,7 @@
                               </a>
                             </div>
                             <div class="single-course-content">
-                              <a href="index.php?act=my-course-detail&id-khoa-hoc='.$khoaHoc['id'].'&id-user='.$idUser.'">'.$khoaHoc['ten_khoa_hoc'].'</a>
+                              <a href="index.php?act=my-course-detail&id-khoa-hoc='.$khoaHoc['id'].'&id-user='.$idUser.'" class="courses-title">'.$khoaHoc['ten_khoa_hoc'].'</a>
                               <p>'.$tenGiangVien['ho_ten'].'</p>
                               <h3>
                                 <i class="fas fa-star"></i>
@@ -76,7 +70,7 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i> (4)
-                                <span>Enroll: 128</span>
+                                <span>Ghi danh: '.$khoaHoc['luot_mua'].'</span>
                               </h3>
                             </div>
                           </div>

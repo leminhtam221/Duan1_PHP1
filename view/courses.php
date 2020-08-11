@@ -206,8 +206,9 @@
                                         </div>
                                       </div>
                                       <div class="single-course-content">
-                                        <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc='.$khoaHoc['id'].'">'.$khoaHoc['ten_khoa_hoc'].'</a>
-                                        <p>'.$tenGiangVien.' <div class="d-flex justify-content-end"><span><del>'.$khoaHoc['don_gia'].' đ</del> <b class="priCe">'.$khoaHoc['khuyen_mai'].'</b></span></p></div>
+                                        <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc='.$khoaHoc['id'].'" class="courses-title">'.$khoaHoc['ten_khoa_hoc'].'</a>
+                                        <p>'.$tenGiangVien.' </p>
+                                        <div class="d-flex justify-content-start my-2"><span><del class="mr-2">'.$khoaHoc['don_gia'].' đ</del> <b>'.$khoaHoc['khuyen_mai'].' đ</b></span></div>
                                         <div class="d-flex justify-content-between" style="margin-top:0.5rem" aria-label="Basic example">
                                           <a prodid="'.$khoaHoc['id'].'" style="cursor:pointer;background-color:#fb3958;color:#fff;border:0" class="btn btn-add"><i class="fa fa-cart-plus"></i></a>
                                           <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc='.$khoaHoc['id'].'" style="background-color:#02b3e4;color:#fff;border:0" class="btn">Mua ngay</a>
@@ -218,7 +219,7 @@
                                           <i class="fas fa-star"></i>
                                           <i class="fas fa-star"></i>
                                           <i class="fas fa-star"></i> (4)
-                                          <span>Enroll: 128</span>
+                                          <span>Ghi danh: '.$khoaHoc['luot_mua'].'</span>
                                         </h3>
                                       </div>
                                     </div>

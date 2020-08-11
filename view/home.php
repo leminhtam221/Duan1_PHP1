@@ -46,77 +46,46 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
+        <?php $danhMuc = $danhSachDanhMucNoiBat[0]; ?>
+        <?php
+        $counter = counter("khoa_hoc", 'where id_danh_muc='.$danhMuc['id'].'');
+        ?>
         <div class="category-left left-image">
           <div class="hvrbox">
-            <img src="./view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+            <img src="./view/base/images/<?=$danhMuc['hinh_anh']?>" alt="slide 1" class="hvrbox-layer_bottom">
             <div class="hvrbox-layer_top">
               <div class="hvrbox-text">
-                <a href="#">sdvsvsv</a>
-                <h5>800 Course</h5>
-                <a href="#" class="btn-small">View Details</a>
+                <a href="index.php?act=khoa-hoc&id-danh-muc=<?=$danhMuc['id']?>"><?=$danhMuc['ten_danh_muc']?></a>
+                <h5><?=$counter['sl']?> Khóa học</h5>
+                <a href="index.php?act=khoa-hoc&id-danh-muc=<?=$danhMuc['id']?>" class="btn-small">Xem chi tiết</a>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="col-md-6">
         <div class="row">
+          <?php for($i = 1; $i <= 4; $i++): ?>
+          <?php 
+          $danhMuc = $danhSachDanhMucNoiBat[$i];
+          $counter = counter("khoa_hoc", 'where id_danh_muc='.$danhMuc['id'].'');
+          ?>
           <div class="col-md-6">
             <div class="category-left right-image">
               <div class="hvrbox">
-                <img src="./view/base/images/5.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                <img src="./view/base/images/<?=$danhMuc['hinh_anh']?>" alt="slide 1" class="hvrbox-layer_bottom">
                 <div class="hvrbox-layer_top hvrbox-text">
                   <div class="hvrbox-text">
-                    <a href="#">Web Developement</a>
-                    <h5>700 Course</h5>
-                    <a href="#" class="btn-small">View Details</a>
+                    <a href="index.php?act=khoa-hoc&id-danh-muc=<?=$danhMuc['id']?>"><?=$danhMuc['ten_danh_muc']?></a>
+                    <h5><?=$counter['sl']?> Khóa học</h5>
+                    <a href="index.php?act=khoa-hoc&id-danh-muc=<?=$danhMuc['id']?>" class="btn-small">Xem chi tiết</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="category-left right-image">
-              <div class="hvrbox">
-                <img src="./view/base/images/2.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                <div class="hvrbox-layer_top hvrbox-text">
-                  <div class="hvrbox-text">
-                    <a href="#">Digital Marketing</a>
-                    <h5>350 Course</h5>
-                    <a href="#" class="btn-small">View Details</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="category-left right-image">
-              <div class="hvrbox">
-                <img src="./view/base/images/3.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                <div class="hvrbox-layer_top hvrbox-text">
-                  <div class="hvrbox-text">
-                    <a href="#">Busines</a>
-                    <h5>250 Course</h5>
-                    <a href="#" class="btn-small">View Details</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="category-left right-image">
-              <div class="hvrbox">
-                <img src="./view/base/images/4.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                <div class="hvrbox-layer_top hvrbox-text">
-                  <div class="hvrbox-text">
-                    <a href="#">Photography</a>
-                    <h5>180 Course</h5>
-                    <a href="#" class="btn-small">View Details</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php endfor ?>
         </div>
       </div>
       <div class="category-feature">
@@ -167,234 +136,72 @@
       <div class="col-md-12">
         <div id="filters" class="course-menu">
           <button class="filter active" data-filter="all">Tất Cả Khóa Học</button>
-          <button class="filter" data-rel="web" data-filter=".web">Websites</button>
-          <button class="filter" data-rel="design" data-filter=".design">Design</button>
-          <button class="filter" data-rel="bcards" data-filter=".bcards">Business</button>
-          <button class="filter" data-rel="photography" data-filter=".photography">Photography</button>
-          <button class="filter" data-rel="marketing" data-filter=".marketing">Marketing</button>
+          <?php foreach($danhSachDanhMucNoiBat as $danhMuc): ?>
+          <button class="filter" data-rel="filter<?=$danhMuc['id']?>"
+            data-filter=".filter<?=$danhMuc['id']?>"><?=$danhMuc['ten_danh_muc']?></button>
+          <?php endforeach; ?>
         </div>
       </div>
 
       <div class="col-md-12">
         <div class="all-course">
           <div class="row">
-            <div class="col-md-3 tile web">
+            <?php foreach($danhSachKhoaHocNoiBat as $khoaHoc): ?>
+            <?php
+              $tenGV = layTenGiangVien($khoaHoc['id_giang_vien']);
+              if($khoaHoc['hinh_anh'] == ""){
+                $img = 'view/base/images/default-image.jpg';
+              }else{
+                if(file_exists('upload/courses/'.$khoaHoc['hinh_anh'].'')){
+                  $img = 'upload/courses/'.$khoaHoc['hinh_anh'].'';
+                }else{
+                  $img = 'view/base/images/default-image.jpg';
+                }
+              }
+              $youtubeId = "";
+              if(!empty($khoaHoc['clip'])){
+                $url = $khoaHoc['clip'];
+                preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+                $youtubeId = $match[1];
+              }
+            ?>
+            <div class="col-md-3 tile filter<?=$khoaHoc['id_danh_muc']?>">
               <div class="single-course">
                 <div class="hvrbox">
-                  <img src="./view/base/images/1.jpg" alt="slide 1" class="hvrbox-layer_bottom">
+                  <img src="<?=$img?>" alt="slide 1" class="hvrbox-layer_bottom">
                   <div class="hvrbox-layer_top hvrbox-text">
                     <div class="hvrbox-text">
-                      <a href="https://www.youtube.com/watch?v=bsSbT-VfQ7w" class="btn-circle video"><i
+                      <a href="https://www.youtube.com/watch?v=<?=$youtubeId?>" class="btn-circle video"><i
                           class="fas fa-play"></i></a>
-                      <a href="">Preview Course</a>
+                      <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc=<?=$khoaHoc['id']?>">Preview Course</a>
                     </div>
                   </div>
                 </div>
                 <div class="single-course-content">
-                  <a href="">Learn Photoshop With Eyal Complete Course</a>
-                  <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
+                  <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc=<?=$khoaHoc['id']?>"
+                    class="courses-title"><?=$khoaHoc['ten_khoa_hoc']?></a>
+                  <p><?=$tenGV['ho_ten']?></p>
+                  <div class="d-flex justify-content-start my-2">
+                    <span>
+                      <del class="mr-2"><?=$khoaHoc['don_gia']?>đ</del>
+                      <b><?=$khoaHoc['khuyen_mai']?>đ</b>
+                    </span>
+                  </div>
                   <h3>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i> (4)
-                    <span>Enroll: 128</span>
+                    <span>Ghi danh: <?=$khoaHoc['luot_mua']?></span>
                   </h3>
                 </div>
               </div>
             </div>
-            <div class="col-md-3 tile design">
-              <div class="single-course">
-                <div class="hvrbox">
-                  <img src="./view/base/images/2.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                  <div class="hvrbox-layer_top hvrbox-text">
-                    <div class="hvrbox-text">
-                      <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                          class="fas fa-play"></i></a>
-                      <a href="course-single.html">Preview Course</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-course-content">
-                  <a href="course-single.html">Visual Basic Essential Training</a>
-                  <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                  <h3>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i> (4)
-                    <span>Enroll: 128</span>
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3 tile marketing">
-              <div class="single-course">
-                <div class="hvrbox">
-                  <img src="./view/base/images/3.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                  <div class="hvrbox-layer_top hvrbox-text">
-                    <div class="hvrbox-text">
-                      <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                          class="fas fa-play"></i></a>
-                      <a href="course-single.html">Preview Course</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-course-content">
-                  <a href="course-single.html">The Complete Developer Web Course</a>
-                  <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                  <h3>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i> (4)
-                    <span>Enroll: 128</span>
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3 tile design">
-              <div class="single-course">
-                <div class="hvrbox">
-                  <img src="./view/base/images/4.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                  <div class="hvrbox-layer_top hvrbox-text">
-                    <div class="hvrbox-text">
-                      <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                          class="fas fa-play"></i></a>
-                      <a href="course-single.html">Preview Course</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-course-content">
-                  <a href="course-single.html">Creating 3D environment in Blender</a>
-                  <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                  <h3>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i> (4)
-                    <span>Enroll: 128</span>
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3 tile marketing">
-              <div class="single-course">
-                <div class="hvrbox">
-                  <img src="./view/base/images/5.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                  <div class="hvrbox-layer_top hvrbox-text">
-                    <div class="hvrbox-text">
-                      <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                          class="fas fa-play"></i></a>
-                      <a href="course-single.html">Preview Course</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-course-content">
-                  <a href="course-single.html">Advanced CSS and Sass Flexbox Grid</a>
-                  <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                  <h3>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i> (4)
-                    <span>Enroll: 128</span>
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3 tile photography">
-              <div class="single-course">
-                <div class="hvrbox">
-                  <img src="./view/base/images/6.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                  <div class="hvrbox-layer_top hvrbox-text">
-                    <div class="hvrbox-text">
-                      <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                          class="fas fa-play"></i></a>
-                      <a href="course-single.html">Preview Course</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-course-content">
-                  <a href="course-single.html">Complete Cyber Security Course Hackers</a>
-                  <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                  <h3>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i> (4)
-                    <span>Enroll: 128</span>
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3 tile bcards">
-              <div class="single-course">
-                <div class="hvrbox">
-                  <img src="./view/base/images/7.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                  <div class="hvrbox-layer_top hvrbox-text">
-                    <div class="hvrbox-text">
-                      <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                          class="fas fa-play"></i></a>
-                      <a href="course-single.html">Preview Course</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-course-content">
-                  <a href="course-single.html">Introduction To Python Programming</a>
-                  <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                  <h3>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i> (4)
-                    <span>Enroll: 128</span>
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3 tile photography">
-              <div class="single-course">
-                <div class="hvrbox">
-                  <img src="./view/base/images/8.jpg" alt="slide 1" class="hvrbox-layer_bottom">
-                  <div class="hvrbox-layer_top hvrbox-text">
-                    <div class="hvrbox-text">
-                      <a href="https://www.youtube.com/watch?v=gwinFP8_qIM" class="btn-circle video"><i
-                          class="fas fa-play"></i></a>
-                      <a href="course-single.html">Preview Course</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-course-content">
-                  <a href="course-single.html">Certificate Early Education Leadership</a>
-                  <p>Nir Eyal <span><del>$169</del> <b>$149</b></span></p>
-                  <h3>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i> (4)
-                    <span>Enroll: 128</span>
-                  </h3>
-                </div>
-              </div>
-            </div>
+            <?php endforeach; ?>
 
             <div class="col-md-12 text-center">
-              <a href="#" class="btn-small"> View more </a>
+              <a href="index.php?act=khoa-hoc" class="btn-small"> Xem thêm </a>
             </div>
           </div>
         </div>

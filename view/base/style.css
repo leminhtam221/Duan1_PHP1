@@ -1205,7 +1205,7 @@ a.btn-circle {
 .btn-cart img {
   width: 30px;
 }
-#cart-counter {
+.counter-number {
   color: #fff;
   width: 1.5rem;
   height: 1.5rem;
@@ -1219,6 +1219,7 @@ a.btn-circle {
   position: absolute;
   top: 0;
   right: 0;
+  cursor: pointer;
 }
 
 .main-menu .nav-item .btn-small {

@@ -132,28 +132,33 @@
                   <li class="nav-item begin">
                     <a class="nav-link btn-cart" href="index.php?act=gio-hang"><img
                         src="./view/base/images/cart-icon.png" alt="">
-                      <span id="cart-counter"><?=rowCount()?></span>
+                      <span class="counter-number" id="cart-counter"><?=rowCount()?></span>
                     </a>
                   </li>
                   <li class="nav-item" id="notication-li">
+                    <div class="d-none" id="idPeople"><?=$log_id?></div>
                     <div class="nav-link">
                       <img src="./view/base/images/bell.png" class="notication-img">
-                      <span id="cart-counter"><?=rowCount()?></span>
+
+                      <?php if(isset($_COOKIE['user_id']) || isset($_COOKIE['user_id'])): ?>
+                      <?php if($counter['sl'] > 0): ?>
+                      <span class="counter-number" id="counterNumber"><?=$counter['sl']?></span>
+                      <?php endif ?>
 
                       <div class="notification" id="notification">
-                        <?php if(isset($_COOKIE['user_id']) || isset($_COOKIE['user_id'])): ?>
                         <?php foreach($danhSachThongBao as $thongBao){ ?>
-                        <a href="#" class="notification__item">
+                        <a href="<?=$thongBao['url']?>" class="notification__item" id="notifiItem<?=$thongBao['id']?>"
+                          onclick="seenDetailNotification(<?=$thongBao['id']?>)">
                           <?=$thongBao['noi_dung'] ?>
                           <?php
-                            if($thongBao['trang_thai'] == 1){
-                              echo '<div class="is-read"></div>';
+                            if($thongBao['trang_thai'] <= 2){
+                              echo '<div class="is-read" id="isRead'.$thongBao['id'].'"></div>';
                             }
                           ?>
                         </a>
                         <?php } ?>
-                        <?php endif ?>
                       </div>
+                      <?php endif ?>
                     </div>
                   </li>
                 </ul>
