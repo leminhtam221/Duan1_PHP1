@@ -23,22 +23,22 @@ $('.btn-add').each(function () {
   $(this).click(function () {
     const prodId = $(this).attr('prodid');
     var qty = $('#cart-counter').text();
-    if ($('#cart-counter').text() == '0') {
-      $('#cart-counter').text(1)
-    } else {
-      $('#cart-counter').text(Number($('#cart-counter').text()) + 1)
-    }
     $.ajax({
       method: "POST",
       url: "controller/ajax.php",
       data: { prodid: prodId },
       success: function (msg) {
-        if (~msg) {
+        if (msg) {
           swal({
             icon: "success",
             title: "Đã thêm vào giỏ hàng!",
           });
           $('.swal-button--confirm').toggleClass('btn')
+          if ($('#cart-counter').text() == '0') {
+            $('#cart-counter').text(1)
+          } else {
+            $('#cart-counter').text(Number($('#cart-counter').text()) + 1)
+          }
         }
       }
     })

@@ -164,7 +164,7 @@
                                       <div class="single-course-content">
                                         <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc='.$khoaHoc['id'].'" class="courses-title">'.$khoaHoc['ten_khoa_hoc'].'</a>
                                         <p>'.$tenGiangVien.' </p>
-                                        <div class="d-flex justify-content-start my-2"><span><del class="mr-2">1000000đ</del> <b>'.$khoaHoc['don_gia'].' đ</b></span></div>
+                                        <div class="d-flex justify-content-start my-2"><span><del class="mr-2 priCe">'.$khoaHoc['don_gia'].'</del> <b class="priCe">'.$khoaHoc['khuyen_mai'].'</b></span></div>
                                         <div class="d-flex justify-content-between" style="margin-top:0.5rem" aria-label="Basic example">
                                           <a prodid="'.$khoaHoc['id'].'" style="cursor:pointer;background-color:#fb3958;color:#fff;border:0" class="btn btn-add"><i class="fa fa-cart-plus"></i></a>
                                           <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc='.$khoaHoc['id'].'" style="background-color:#02b3e4;color:#fff;border:0" class="btn">Mua ngay</a>
@@ -225,7 +225,7 @@
                             <div class="media-body">
                               <h2><a href="index.php?act=khoa-hoc-chi-tiet&idKhoaHoc='.$khoaHoc['id'].'">'.$khoaHoc['ten_khoa_hoc'].'</a></h2>
                               <h5>'.$tenGiangVien.'</h5>
-                              <h4>'.$khoaHoc['khuyen_mai'].' đ<del>'.$khoaHoc['don_gia'].' đ</del></h4>
+                              <h4>'.$khoaHoc['khuyen_mai'].'<del>'.$khoaHoc['don_gia'].'</del></h4>
                               <a href="index.php?act=khoa-hoc-chi-tiet&idKhoaHoc='.$khoaHoc['id'].'" class="btn-bordered"> View Course </a>
                               <h3>
                                 <i class="fas fa-star"></i>
