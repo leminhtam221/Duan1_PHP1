@@ -96,7 +96,7 @@
     return findMultiple($sql);
   }
 
-  function phanTrangResultFilter($idDanhMuc, $trang, $tongSo){
+  function phanTrangResultFilter($trang, $tongSo){
     $soLuong = 6;
     $soTrang = ceil($tongSo / $soLuong);
     $phanTrang = "";

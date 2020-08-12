@@ -22,8 +22,13 @@
         break;
     }
     $resultFilter = fillterKhoaHoc($idDanhMuc,$trang, $minPrice, $maxPrice, $sqlOrder);
-    $tongSoKhoaHoc = counter('khoa_hoc', 'WHERE don_gia BETWEEN '.$minPrice.' AND '.$maxPrice.' AND id_danh_muc = '.$idDanhMuc.'');
-    $phanTrang = phanTrangResultFilter($idDanhMuc, $trang, $tongSoKhoaHoc['sl']);
+    if($idDanhMuc == 0){
+      $sqlAdditional = 'WHERE 1 AND don_gia BETWEEN '.$minPrice.' AND '.$maxPrice.'';
+    }else{
+      $sqlAdditional = 'WHERE don_gia BETWEEN '.$minPrice.' AND '.$maxPrice.' AND id_danh_muc = '.$idDanhMuc.'';
+    }
+    $tongSoKhoaHoc = counter('khoa_hoc', $sqlAdditional);
+    $phanTrang = phanTrangResultFilter($trang, $tongSoKhoaHoc['sl']);
 
     $html = renderHTML($resultFilter,$phanTrang);
     echo $html;
