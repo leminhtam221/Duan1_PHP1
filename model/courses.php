@@ -73,4 +73,43 @@
     }
     return findMultiple($sql);
   }
+
+  function fillterKhoaHoc($idDanhMuc, $trang=1, $minPrice = "", $maxPrice = "", $sqlOrder = ""){
+    $soLuong = 6;
+    $trang -= 1;
+    $from = $trang * $soLuong;
+
+    $sql = "SELECT * FROM khoa_hoc WhERE 1 ";
+    if($idDanhMuc > 0){
+      $sql .= "AND id_danh_muc= $idDanhMuc ";
+    }
+    if($minPrice != "" && $maxPrice != ""){
+      $sql .= "AND don_gia BETWEEN $minPrice AND $maxPrice ";
+    }
+    if($sqlOrder != ""){
+      $sql .= $sqlOrder;
+    }
+    $sql .= " limit ".$from.", ".$soLuong." ";
+    
+    
+    
+    return findMultiple($sql);
+  }
+
+  function phanTrangResultFilter($trang, $tongSo){
+    $soLuong = 6;
+    $soTrang = ceil($tongSo / $soLuong);
+    $phanTrang = "";
+
+    for ($i=1; $i <= $soTrang; $i++) { 
+      if($trang == $i){
+        $cls = 'class="page-item active"';
+      }else{
+        $cls = 'class="page-item"';
+      }
+      $link = "#trang=".$i;
+      $phanTrang.= ' <li '.$cls.'><a class="page-link" href="'.$link.'" id="idTrang='.$i.'" onclick="chuyenTrang('.$i.')">'.$i.'</a></li>';
+    }
+    return $phanTrang;
+  }
 ?>
