@@ -29,7 +29,7 @@ function getCart(){
 	$items=[];
 	$cart = explode(',',$_COOKIE['cart']);
 	foreach ($cart as $item) {
-		$sql = "select khoa_hoc.id, ten_khoa_hoc, hinh_anh, don_gia, khuyen_mai, ho_ten, ten_danh_muc from khoa_hoc inner join giang_vien on id_giang_vien=giang_vien.id inner join danh_muc on khoa_hoc.id_danh_muc=danh_muc.id where khoa_hoc.id=$item";
+		$sql = "select khoa_hoc.id, ten_khoa_hoc, khoa_hoc.hinh_anh, don_gia, khuyen_mai, ho_ten, ten_danh_muc from khoa_hoc inner join giang_vien on id_giang_vien=giang_vien.id inner join danh_muc on khoa_hoc.id_danh_muc=danh_muc.id where khoa_hoc.id=$item";
 		$temp=find($sql);
 		array_push($items, $temp);
 	}
