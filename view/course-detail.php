@@ -61,7 +61,7 @@
         <div class="col-md-2">
           <div class="course-info-right">
             <?php
-              echo '<h3 style="font-size: 1.25rem;margin-top: 1rem;"><del>'.$chiTietKhoaHoc['don_gia'].'đ</del>'.$chiTietKhoaHoc['khuyen_mai'].'đ</h3>'
+              echo '<h3 style="font-size: 1.25rem;margin-top: 1rem;"><del>1000000đ</del>'.$chiTietKhoaHoc['don_gia'].'đ</h3>'
             ?>
           </div>
         </div>

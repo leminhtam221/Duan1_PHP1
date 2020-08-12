@@ -33,11 +33,11 @@
               <div class="card-header" id="headingOne">
                 <a href="#" class="icon-right" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                   aria-controls="collapseOne">
-                  <h3>Category</h3>
+                  <h3>Danh mục</h3>
                 </a>
               </div>
 
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div id="collapseOne" class="collapse show">
                 <div class="card-body">
                   <div class="category">
                     <ul id="nav-list">
@@ -57,76 +57,34 @@
               </div>
             </div>
             <div class="card">
-              <div class="card-header" id="headingTwo">
-                <a href="#" class="icon-right" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-                  aria-controls="collapseTwo">
-                  <h3>Filter Product</h3>
-                </a>
-              </div>
-              <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                  <div class="filter-product">
-                    <label class="container">Feature Products
-                      <input type="checkbox" checked="checked">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Latest Products
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Newest Products
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Popular Products
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Trending Products
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Best Sellers
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Best Rated
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card">
               <div class="card-header" id="headingThree">
                 <a href="#" class="icon-right" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
                   aria-controls="collapseThree">
-                  <h3>Price</h3>
+                  <h3>Giá</h3>
                 </a>
               </div>
-              <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+              <div id="collapseThree" class="collapse show">
                 <div class="card-body">
-
                   <div class="price-filter">
                     <div class="single-select d-flex flex-row">
                       <div class="form-group ">
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option>$10</option>
-                          <option>$20</option>
-                          <option>$30</option>
-                          <option>$40</option>
-                          <option>$50</option>
+                        <select class="form-control" id="minPrice">
+                          <option selected>0</option>
+                          <option>50000</option>
+                          <option>100000</option>
+                          <option>500000</option>
+                          <option>1000000</option>
+                          <option>1500000</option>
                         </select>
                       </div>
                       <p>-</p>
                       <div class="form-group">
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option>$10</option>
-                          <option>$20</option>
-                          <option>$30</option>
-                          <option>$40</option>
-                          <option>$50</option>
+                        <select class="form-control" id="maxPrice">
+                          <option>50000</option>
+                          <option>100000</option>
+                          <option>500000</option>
+                          <option>1000000</option>
+                          <option selected>1500000</option>
                         </select>
                       </div>
                     </div>
@@ -143,13 +101,10 @@
             <div class="col-md-6">
               <div class="search-box d-flex flex-row">
                 <p>Sắp xếp theo : </p>
-                <select class="form-control styleSelect">
-                  <option selected="">All Categories</option>
-                  <?php
-                    foreach ($danhSachDanhMuc as $danhMuc) {
-                      echo '<option value="'.$danhMuc['id'].'">'.$danhMuc['ten_danh_muc'].'</option>';
-                    }
-                  ?>
+                <select class="form-control styleSelect" id="orderCourses">
+                  <option selected="" value="1">Khóa học mới nhất</option>
+                  <option value="2">Khóa học bán chạy</option>
+                  <option value="3">Khóa học cũ</option>
                 </select>
               </div>
             </div>
@@ -180,8 +135,9 @@
                   <div class="row">
 
                     <div class="all-course">
-                      <div class="row">
-                        <?php foreach ($danhSachKhoaHoc as $khoaHoc) {
+                      <div id="coursesContent">
+                        <div class="row">
+                          <?php foreach ($danhSachKhoaHoc as $khoaHoc) {
                             $tenGiangVien = layTenGiangVien($khoaHoc['id_giang_vien']);
                             $tenGiangVien =  $tenGiangVien['ho_ten'];
                             if($khoaHoc['hinh_anh'] == ""){
@@ -208,7 +164,7 @@
                                       <div class="single-course-content">
                                         <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc='.$khoaHoc['id'].'" class="courses-title">'.$khoaHoc['ten_khoa_hoc'].'</a>
                                         <p>'.$tenGiangVien.' </p>
-                                        <div class="d-flex justify-content-start my-2"><span><del class="mr-2">'.$khoaHoc['don_gia'].' đ</del> <b>'.$khoaHoc['khuyen_mai'].' đ</b></span></div>
+                                        <div class="d-flex justify-content-start my-2"><span><del class="mr-2">1000000đ</del> <b>'.$khoaHoc['don_gia'].' đ</b></span></div>
                                         <div class="d-flex justify-content-between" style="margin-top:0.5rem" aria-label="Basic example">
                                           <a prodid="'.$khoaHoc['id'].'" style="cursor:pointer;background-color:#fb3958;color:#fff;border:0" class="btn btn-add"><i class="fa fa-cart-plus"></i></a>
                                           <a href="index.php?act=chi-tiet-khoa-hoc&id-khoa-hoc='.$khoaHoc['id'].'" style="background-color:#02b3e4;color:#fff;border:0" class="btn">Mua ngay</a>
@@ -226,16 +182,18 @@
                                   </div>';
                         } ?>
 
-                        <div class="col-md-12">
-                          <div class="course-pagination">
-                            <ul class="pagination">
-                              <?=$phanTrang;?>
-                              <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a>
-                              </li>
-                            </ul>
+                          <div class="col-md-12">
+                            <div class="course-pagination">
+                              <ul class="pagination">
+                                <?=$phanTrang;?>
+                                <li class="page-item"><a class="page-link" href="#"><i
+                                      class="fas fa-angle-right"></i></a>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
-                        </div>
 
+                        </div>
                       </div>
                     </div>
 
@@ -281,7 +239,6 @@
                           </div>'; 
                   }
                 ?>
-
 
                 <div class="course-pagination">
                   <ul class="pagination">

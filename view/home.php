@@ -183,8 +183,8 @@
                   <p><?=$tenGV['ho_ten']?></p>
                   <div class="d-flex justify-content-start my-2">
                     <span>
-                      <del class="mr-2"><?=$khoaHoc['don_gia']?>đ</del>
-                      <b><?=$khoaHoc['khuyen_mai']?>đ</b>
+                      <del class="mr-2">1000000</del>
+                      <b><?=$khoaHoc['don_gia']?>đ</b>
                     </span>
                   </div>
                   <h3>
