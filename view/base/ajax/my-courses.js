@@ -63,3 +63,27 @@ const clearInput = () => {
   $("#donGia").val("");
   $("#khuyenMai").val("");
 };
+
+/*====Cập nhật trạng thái khóa học====*/
+const statusCourse = (element, status, idCourse) => {
+  if (status) {
+    $(element).html("Ẩn");
+    $(element).removeClass("btn-success");
+    $(element).addClass("btn-warning");
+    $(element).attr("onclick", `statusCourse(this,false,${idCourse})`);
+  } else {
+    $(element).html("Hiện");
+    $(element).removeClass("btn-warning");
+    $(element).addClass("btn-success");
+    $(element).attr("onclick", `statusCourse(this,true,${idCourse})`);
+  }
+
+  $.ajax({
+    type: "POST",
+    url: "ajax/my-courses.php",
+    data: {statusCourse: status, idCourse},
+    success: function (response) {
+      console.log(response);
+    },
+  });
+};

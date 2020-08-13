@@ -42,41 +42,53 @@
                 }
               ?>
               <div class="row">
+                <?php foreach ($danhSachKhoaHoc as $khoaHoc) {?>
                 <?php
-                foreach ($danhSachKhoaHoc as $khoaHoc) {
                   $tenGiangVien = layTenGiangVien($khoaHoc['id_giang_vien']);
                   if($khoaHoc['hinh_anh'] == ""){
                     $img = 'view/base/images/default-image.jpg';
                   }else{
                     if(file_exists('upload/courses/'.$khoaHoc['hinh_anh'].'')){
-                      $img = 'upload/courses/'.$khoaHoc['hinh_anh'].'';
-                    }else{
-                      $img = 'view/base/images/default-image.jpg';
-                    }
+                    $img = 'upload/courses/'.$khoaHoc['hinh_anh'].'';
+                  }else{
+                    $img = 'view/base/images/default-image.jpg';
                   }
-                  echo '<div class="col-md-4">
-                          <div class="single-course">
-                            <div class="hvrbox">
-                              <a href="index.php?act=my-course-detail">
-                                <img src="'.$img.'" class="hvrbox-layer_bottom">
-                              </a>
-                            </div>
-                            <div class="single-course-content">
-                              <a href="index.php?act=my-course-detail&id-khoa-hoc='.$khoaHoc['id'].'&id-user='.$idUser.'" class="courses-title">'.$khoaHoc['ten_khoa_hoc'].'</a>
-                              <p>'.$tenGiangVien['ho_ten'].'</p>
-                              <h3>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> (4)
-                                <span>Ghi danh: '.$khoaHoc['luot_mua'].'</span>
-                              </h3>
-                            </div>
-                          </div>
-                        </div>';
-                }
-              ?>
+                  }
+                ?>
+
+                <div class="col-md-4">
+                  <div class="single-course">
+                    <div class="hvrbox">
+                      <a href="index.php?act=my-course-detail&id-khoa-hoc=<?=$khoaHoc['id']?>&id-user=<?=$idUser?>">
+                        <img src="<?=$img?>" class="hvrbox-layer_bottom">
+                      </a>
+                    </div>
+                    <div class="single-course-content">
+                      <a href="index.php?act=my-course-detail&id-khoa-hoc=<?=$khoaHoc['id']?>&id-user=<?=$idUser?>"
+                        class="courses-title"><?=$khoaHoc['ten_khoa_hoc']?></a>
+                      <?php if(isset($_COOKIE['lecturer_id'])): ?>
+                      <p><?=$tenGiangVien['ho_ten']?>
+                        <?php if($khoaHoc['trang_thai'] == 1): ?>
+                        <span class="btn btn-success px-2 py-0 text-light"
+                          onclick="statusCourse(this,true,<?=$khoaHoc['id']?>)">Hiện</span>
+                        <?php else: ?>
+                        <span class="btn btn-warning px-2 py-0 text-light"
+                          onclick="statusCourse(this,false,<?=$khoaHoc['id']?>)">Ẩn</span>
+                        <?php endif ?>
+                      </p>
+                      <?php endif ?>
+                      <h3>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> (4)
+                        <span>Ghi danh: <?=$khoaHoc['luot_mua']?></span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <?php } ?>
               </div>
             </div>
 

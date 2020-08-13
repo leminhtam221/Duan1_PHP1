@@ -53,5 +53,16 @@
     echo $html;
   }
 
+  if(isset($_POST['statusCourse'])){
+    $stausCourse = $_POST['statusCourse'];
+    $idCourse = $_POST['idCourse'];
+    if($stausCourse == 'true'){
+      $sql = "UPDATE khoa_hoc SET(trang_thai) VALUES(2) WHERE id_khoa_hoc = '$idCourse'";
+      execSQL($sql,1);
+    }else{
+      $sql = "UPDATE khoa_hoc SET(trang_thai) VALUES(1) WHERE id_khoa_hoc = '$idCourse'";
+      execSQL($sql,1);
+    }
+  }
   
 ?>
