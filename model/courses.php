@@ -91,8 +91,6 @@
     }
     $sql .= " limit ".$from.", ".$soLuong." ";
     
-    
-    
     return findMultiple($sql);
   }
 

@@ -2,6 +2,7 @@
   require_once "./../model/DB.php";
   require_once "./../model/binh-luan.php";
   require_once "./../model/user.php";
+  require_once "./../model/danh-gia.php";
 
   if(isset($_POST['idKhoaHoc']) && isset($_POST['commentContent'])){
     $idKhoaHoc = $_POST['idKhoaHoc'];
@@ -26,5 +27,31 @@
                 </div>';
     }
     echo $html;
+  }
+
+  if(isset($_POST['ratingStart'])){
+    $soSao = $_POST['ratingStart'];
+    $idKhoaHoc = $_POST['idKhoaHoc'];
+    $idUser = $_POST['idUser'];
+
+    $isExist = checkRatingIsExist($idUser,$idKhoaHoc);
+    
+    if(empty($isExist)){
+      addRating($idUser, $idKhoaHoc, $soSao);
+    }else{
+      updateRating($idUser, $soSao);
+    }
+
+    $counter = counter('danh_gia', 'WHERE id_khoa_hoc = '.$idKhoaHoc.'');
+    $counter = (int)$counter['sl'];
+
+    $sumRating = 0;
+    $sum = sumRating($idKhoaHoc);
+    foreach ($sum as $item) {
+      $item = (int)$item['so_sao'];
+      $sumRating += $item;
+    }
+    
+    echo json_encode(array($sumRating,$counter));
   }
 ?>
