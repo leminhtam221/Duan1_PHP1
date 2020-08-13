@@ -37,14 +37,17 @@
                   </div>
                   <div class="single-course-content">
                     <a href="index.php?act=my-course-detail&id-khoa-hoc='.$khoaHoc['id'].'&id-user='.$idUser.'">'.$khoaHoc['ten_khoa_hoc'].'</a>
-                    <p>'.$tenGiangVien['ho_ten'].'</p>
+                    <p>'.$tenGiangVien['ho_ten'].'
+                      <span class="btn btn-warning px-2 py-0 text-light"
+                      onclick="statusCourse(this,false,'.$khoaHoc['id'].')">Ẩn</span>
+                    </p>
                     <h3>
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i> (4)
-                      <span>Enroll: 128</span>
+                      <i class="fas fa-star"></i> (5)
+                      <span>Ghi danh: 0</span>
                     </h3>
                   </div>
                 </div>
@@ -57,10 +60,10 @@
     $stausCourse = $_POST['statusCourse'];
     $idCourse = $_POST['idCourse'];
     if($stausCourse == 'true'){
-      $sql = "UPDATE khoa_hoc SET(trang_thai) VALUES(2) WHERE id_khoa_hoc = '$idCourse'";
+      $sql = "UPDATE khoa_hoc SET trang_thai = 1 WHERE id = '$idCourse'";
       execSQL($sql,1);
     }else{
-      $sql = "UPDATE khoa_hoc SET(trang_thai) VALUES(1) WHERE id_khoa_hoc = '$idCourse'";
+      $sql = "UPDATE khoa_hoc SET trang_thai = 2 WHERE id = '$idCourse'";
       execSQL($sql,1);
     }
   }

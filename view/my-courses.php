@@ -68,7 +68,7 @@
                         class="courses-title"><?=$khoaHoc['ten_khoa_hoc']?></a>
                       <?php if(isset($_COOKIE['lecturer_id'])): ?>
                       <p><?=$tenGiangVien['ho_ten']?>
-                        <?php if($khoaHoc['trang_thai'] == 1): ?>
+                        <?php if($khoaHoc['trang_thai'] == 2): ?>
                         <span class="btn btn-success px-2 py-0 text-light"
                           onclick="statusCourse(this,true,<?=$khoaHoc['id']?>)">Hiện</span>
                         <?php else: ?>
@@ -82,7 +82,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i> (4)
+                        <i class="fas fa-star"></i> (5)
                         <span>Ghi danh: <?=$khoaHoc['luot_mua']?></span>
                       </h3>
                     </div>
