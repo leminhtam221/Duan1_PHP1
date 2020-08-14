@@ -17,4 +17,9 @@
     $sql = "UPDATE thong_bao SET trang_thai = 3 WHERE id = '$idThongBao'";
     execSQL($sql,1);
   }
+
+  function addThongBao($noiDung, $url, $trangThai, $idUser){
+    $sql = "INSERT INTO thong_bao(noi_dung, url, trang_thai, id_user) VALUES('$noiDung','$url', '$trangThai', '$idUser')";
+    execSQL($sql,0);
+  }
 ?>

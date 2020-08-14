@@ -43,6 +43,7 @@
  <script src="./view/base/ajax/reset-password.js"></script>
  <script src="./view/base/ajax/courses.js"></script>
  <script src="./view/base/ajax/contact.js"></script>
+ <script src="./view/base/ajax/checkout.js"></script>
  </body>
 
  </html>

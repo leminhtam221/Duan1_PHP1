@@ -11,9 +11,9 @@ $("#buttonActivate").click(function (e) {
       success: function (response) {
         if (response[0]) {
           swal({
-            title: "Opp",
+            title: "Success",
             text: response[1],
-            icon: "warning",
+            icon: "success",
           });
         } else {
           swal({
