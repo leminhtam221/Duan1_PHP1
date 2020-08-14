@@ -7,7 +7,11 @@ $("#sumitComment").click(function (e) {
   let ngayTao = new Date().toLocaleDateString();
 
   if (commentContent == "") {
-    alert("Comment không được để trống");
+    swal({
+      title: "Opp",
+      text: "Comment không được để trống",
+      icon: "warning",
+    });
   } else {
     $.ajax({
       type: "POST",

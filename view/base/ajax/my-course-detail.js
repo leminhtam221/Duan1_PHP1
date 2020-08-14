@@ -47,7 +47,11 @@ $("#submitCourse").click(function (e) {
   let themChuong = "themchuong";
 
   if (tenChuongHoc == "") {
-    alert("tên chương học không được để trống");
+    swal({
+      title: "Opp",
+      text: "Tên chương học không được để trống",
+      icon: "warning",
+    });
   } else {
     $.ajax({
       type: "POST",
@@ -88,7 +92,11 @@ $("#updateCourse").click(function (e) {
   let idChuong = $("#idChuongHoc").val();
 
   if (tenChuongHoc == "") {
-    alert("tên chương học không được để trống");
+    swal({
+      title: "Opp",
+      text: "Tên chương học không được để trống",
+      icon: "warning",
+    });
   } else {
     $.ajax({
       type: "POST",
@@ -122,7 +130,11 @@ $("#submitVideo").click(function (e) {
   let link = $("#link").val();
 
   if (tenVideo == "" || link == "") {
-    alert("Vui lòng nhập đầy đủ thông tin");
+    swal({
+      title: "Opp",
+      text: "Vui lòng nhập đầy đủ thông tin",
+      icon: "warning",
+    });
   } else {
     $.ajax({
       type: "POST",

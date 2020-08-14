@@ -10,7 +10,7 @@
       $checkCode =  kiemTraMaKichHoat($maKichHoat);
 
       if(empty($checkCode )){
-        echo "Mã kích hoạt không chính xác";
+        echo json_encode(array(false,"Mã kích hoạt không chính xác")) ;
       }else{
         $thongTinUser = loadThongTinUser($idUser);
         $idKhoaHocUser = $thongTinUser['id_khoa_hoc_da_kich_hoat'];
@@ -24,15 +24,15 @@
           themMaKhoaHocDaKichHoat($idUser, $idKhoaHoc);
           deleteMaKichHoat($checkCode['id']);
         }
-        echo "Kích hoạt thành công";
+        echo json_encode(array(true,"Kích hoạt thành công"));
       }
 
     }
   }else{
     if(isset($_COOKIE['lecturer_id'])){
-      echo "Chỉ user mới được nhập mã kích hoạt";
+      echo json_encode(array(false, "Chỉ user mới được nhập mã kích hoạt"));
     }else{
-      echo "Vui lòng đăng nhập trước khi nhập mã kích hoạt";
+      echo json_encode(array(false, "Vui lòng đăng nhập trước khi nhập mã kích hoạt"));
     }
   }
 ?>

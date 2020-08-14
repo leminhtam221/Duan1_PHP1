@@ -50,7 +50,11 @@ $("#buttonSaveAvatar").click(function (e) {
     success: function (response) {
       const src = `upload/avatar/${response}`;
       $(".avatarImg").attr("src", src);
-      alert("Cập nhật thành công");
+      swal({
+        title: "Success",
+        text: "Cập nhật thành công",
+        icon: "success",
+      });
 
       $("#buttonUploadAvatar").css("display", "inline-block");
       $("#buttonSaveAvatar").css("display", "none");

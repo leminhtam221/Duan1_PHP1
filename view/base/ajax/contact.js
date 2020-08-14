@@ -8,9 +8,17 @@ $("#submitEmail").click(function (e) {
   var re = /\S+@\S+\.\S+/;
 
   if (subject == "" && email == "" && content == "") {
-    alert("Vui lòng nhập đủ thông tin");
+    swal({
+      title: "Opp",
+      text: "Vui lòng nhập đủ thông tin",
+      icon: "warning",
+    });
   } else if (!re.test(email)) {
-    alert("Email không đúng định dạng");
+    swal({
+      title: "Opp",
+      text: "Email không đúng định dạng",
+      icon: "warning",
+    });
   } else {
     $.ajax({
       type: "POST",
@@ -18,11 +26,17 @@ $("#submitEmail").click(function (e) {
       data: {subject, email, password, content},
       success: function (response) {
         if (response) {
-          alert("Gửi mail thành công");
-          console.log(response);
+          swal({
+            title: "Success",
+            text: "Gửi mail thành công",
+            icon: "success",
+          });
         } else {
-          alert("Có lỗi trong quá trình gửi mail");
-          console.log(response);
+          swal({
+            title: "Opp",
+            text: "Có lỗi trong quá trình gửi mail",
+            icon: "warning",
+          });
         }
       },
     });
