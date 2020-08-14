@@ -6,6 +6,7 @@
     $to = $soLuong;
 
     $sql = "SELECT * FROM khoa_hoc WhERE 1";
+    $sql .= " AND trang_thai = 2";
     if($idDanhMuc > 0){
       $sql .= " AND id_danh_muc=".$idDanhMuc;
     }
@@ -90,8 +91,6 @@
       $sql .= $sqlOrder;
     }
     $sql .= " limit ".$from.", ".$soLuong." ";
-    
-    
     
     return findMultiple($sql);
   }

@@ -21,9 +21,17 @@ $("#submitAddCourses").click(function (e) {
   arr = arr.filter((item) => item !== "");
 
   if (arr.length < 7) {
-    alert("Vui lòng nhập đầy đủ thông tin");
+    swal({
+      title: "Opp",
+      text: "Vui lòng nhập đầy đủ thông tin",
+      icon: "warning",
+    });
   } else if (tenKhoaHoc.length < 25) {
-    alert("Tên khóa học phải từ 25 ký tự trở lên");
+    swal({
+      title: "Opp",
+      text: "Tên khóa học phải từ 25 ký tự trở lên",
+      icon: "warning",
+    });
   } else {
     /*=============Upload hình ảnh=============*/
     let fd = new FormData();
@@ -47,7 +55,7 @@ $("#submitAddCourses").click(function (e) {
       success: function (response) {
         let html = `<div class="row">${response}</div>`;
         $("#v-pills-home").html(html);
-        alert("Thêm thành công");
+        swal("Good job!", "Thêm khóa học thành công!", "success");
         clearInput();
       },
     });
@@ -62,4 +70,28 @@ const clearInput = () => {
   $("#moTa").val("");
   $("#donGia").val("");
   $("#khuyenMai").val("");
+};
+
+/*====Cập nhật trạng thái khóa học====*/
+const statusCourse = (element, status, idCourse) => {
+  if (status) {
+    $(element).html("Ẩn");
+    $(element).removeClass("btn-success");
+    $(element).addClass("btn-warning");
+    $(element).attr("onclick", `statusCourse(this,false,${idCourse})`);
+  } else {
+    $(element).html("Hiện");
+    $(element).removeClass("btn-warning");
+    $(element).addClass("btn-success");
+    $(element).attr("onclick", `statusCourse(this,true,${idCourse})`);
+  }
+
+  $.ajax({
+    type: "POST",
+    url: "ajax/my-courses.php",
+    data: {statusCourse: status, idCourse},
+    success: function (response) {
+      console.log(response);
+    },
+  });
 };

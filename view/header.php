@@ -143,6 +143,8 @@
                       <?php if(isset($_COOKIE['user_id']) || isset($_COOKIE['user_id'])): ?>
                       <?php if($counter['sl'] > 0): ?>
                       <span class="counter-number" id="counterNumber"><?=$counter['sl']?></span>
+                      <?php else: ?>
+                      <span class="counter-number d-none" id="counterNumber"></span>
                       <?php endif ?>
 
                       <div class="notification" id="notification">

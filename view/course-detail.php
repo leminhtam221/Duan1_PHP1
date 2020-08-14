@@ -37,13 +37,21 @@
         </div>
         <div class="col-md-3">
           <div class="course-info-middle">
-            <p>
+            <p class="start-rating">
+              <?php if(!empty($isCourseRating)): ?>
+              <?php for($i = 1; $i <= $start; $i++):?>
+              <i class="fas fa-star"></i>
+              <?php endfor ?>
+
+              &nbsp; <?php echo $start;?> (<?php echo $counter;?> đánh giá)
+              <?php else: ?>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              &nbsp; 4.9 (66 ratings)
+              &nbsp; 5 (0 đánh giá)
+              <?php endif ?>
             </p>
             <h4><?=$chiTietKhoaHoc['luot_mua']?> học viên đã ghi danh</h4>
           </div>
@@ -207,6 +215,56 @@
                     <?php
                       $idUser = isset($_COOKIE['user_id']);
                     ?>
+                    <div class="d-flex">
+                      <h2 class="heading mr-3"
+                        style="font-size: 22px;font-weight: 400;color: #454545;margin-bottom: 10px;">
+                        Đánh giá khóa học</h2>
+                      <?php if(empty($isUserRating)):?>
+                      <div id="rating" class="mb-2">
+                        <input type="radio" id="star5" name="rating" value="5" class="inputrating" />
+                        <label class="full" for="star5" title="Awesome - 5 stars"><i class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star4" name="rating" value="4" class="inputrating" />
+                        <label class="full" for="star4" title="Pretty good - 4 stars"><i
+                            class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star3" name="rating" value="3" class="inputrating" />
+                        <label class="full" for="star3" title="Meh - 3 stars"><i class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star2" name="rating" value="2" class="inputrating" />
+                        <label class="full" for="star2" title="Kinda bad - 2 stars"><i class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star1" name="rating" value="1" class="inputrating" />
+                        <label class="full" for="star1" title="Sucks big time - 1 star"><i
+                            class="fas fa-star"></i></label>
+                      </div>
+                      <?php else: ?>
+                      <div id="rating" class="mb-2">
+                        <input type="radio" id="star5" name="rating" value="5" class="inputrating"
+                          <?=$isUserRating['so_sao']=='5'?'checked':''?> />
+                        <label class="full" for="star5" title="Awesome - 5 stars"><i class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star4" name="rating" value="4" class="inputrating"
+                          <?=$isUserRating['so_sao']=='4'?'checked':''?> />
+                        <label class="full" for="star4" title="Pretty good - 4 stars"><i
+                            class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star3" name="rating" value="3" class="inputrating"
+                          <?=$isUserRating['so_sao']=='3'?'checked':''?> />
+                        <label class="full" for="star3" title="Meh - 3 stars"><i class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star2" name="rating" value="2" class="inputrating"
+                          <?=$isUserRating['so_sao']=='2'?'checked':''?> />
+                        <label class="full" for="star2" title="Kinda bad - 2 stars"><i class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star1" name="rating" value="1" class="inputrating"
+                          <?=$isUserRating['so_sao']=='1'?'checked':''?> />
+                        <label class="full" for="star1" title="Sucks big time - 1 star"><i
+                            class="fas fa-star"></i></label>
+                      </div>
+                      <?php endif; ?>
+                    </div>
+
                     <div class="comment-form m-0">
                       <h3>Post A Comment</h3>
                       <form>
@@ -303,7 +361,8 @@
                 background-color: #02b3e4
               }
               </style>
-              <button prodid="<?=@$idKhoaHoc?>" id="add-cart" type="button" class="btn btn-outline-primary w-100 btn-add">Thêm Vào Giỏ Hàng</button>
+              <button prodid="<?=@$idKhoaHoc?>" id="add-cart" type="button"
+                class="btn btn-outline-primary w-100 btn-add">Thêm Vào Giỏ Hàng</button>
               <a href="#" class="btn btn-primary w-100 mt-2 mb-4"
                 style="background-color: #02b3e4;border-color:#02b3e4;">Mua Ngay</a>
               <h2>Chia sẻ qua</h2>

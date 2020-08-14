@@ -7,11 +7,28 @@ $("#buttonActivate").click(function (e) {
       type: "POST",
       url: "ajax/activate-courses.php",
       data: {activateCode},
+      dataType: "json",
       success: function (response) {
-        alert(response);
+        if (response[0]) {
+          swal({
+            title: "Success",
+            text: response[1],
+            icon: "success",
+          });
+        } else {
+          swal({
+            title: "Opp",
+            text: response[1],
+            icon: "warning",
+          });
+        }
       },
     });
   } else {
-    alert("Vui lòng nhập mã kích hoạt");
+    swal({
+      title: "Opp",
+      text: "Vui lòng nhập mã kích hoạt",
+      icon: "warning",
+    });
   }
 });

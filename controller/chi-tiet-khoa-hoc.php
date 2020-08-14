@@ -9,6 +9,24 @@
     $danhSachBinhLuan = loadComment($idKhoaHoc);
     $danhSachChuongKhoaHoc = loadChuongTheoKhoaHoc($idKhoaHoc);
     $tenDanhMuc = layTenDanhMuc($chiTietKhoaHoc['id_danh_muc']);
+    
+    if(!empty($idUser)){
+      $isUserRating = checkRatingIsExist($idUser,$idKhoaHoc);
+    }
+    $isCourseRating = checkCourseRatingIsExist($idKhoaHoc);
+    if(!empty($isCourseRating)){
+      $counter = counter('danh_gia', 'WHERE id_khoa_hoc = '.$idKhoaHoc.'');
+      $counter = (int)$counter['sl'];
+      $sum = sumRating($idKhoaHoc);
+      $sumRating = 0;
+      foreach ($sum as $item) {
+        $item = (int)$item['so_sao'];
+        $sumRating += $item;
+      }
+      if($sumRating != 0){
+        $start = ceil(($sumRating / $counter));
+      }
+    }
 
     /*=====Check hình ảnh khóa học=====*/
     if($chiTietKhoaHoc['hinh_anh'] == ""){
