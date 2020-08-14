@@ -1,3 +1,10 @@
+$(document).ready(eCounter)
+
+function eCounter() {
+  if ($('#cart-counter').html() < 1)
+    $('#cart-counter').hide()
+}
+
 
 
 function setTotalPrice() {
@@ -36,9 +43,14 @@ $('.btn-add').each(function () {
           $('.swal-button--confirm').toggleClass('btn')
           if ($('#cart-counter').text() == '0') {
             $('#cart-counter').text(1)
+            $('#cart-counter').show()
           } else {
             $('#cart-counter').text(Number($('#cart-counter').text()) + 1)
           }
+        } else {
+          swal({
+            title: "Đã thêm vào giỏ hàng trước đó!",
+          });
         }
       }
     })

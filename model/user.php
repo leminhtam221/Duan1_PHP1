@@ -1,6 +1,6 @@
 <?php
-function checkLogin($uname, $pwd){
-   $user = find("select * from user where tai_khoan='$uname' and mat_khau='$pwd' or email='$uname' and mat_khau='$pwd'");
+function login($uname){
+   $user = find("select * from user where tai_khoan='$uname' or email='$uname'");
    return $user;
 }
 function userSignUp($uname, $pwd, $email, $fname, $lname){

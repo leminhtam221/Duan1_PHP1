@@ -20,8 +20,8 @@
     execSQL($sql,0);
   }
 
-  function checkLoginGV($uname, $pwd){
-    $user = find("select * from giang_vien where tai_khoan='$uname' and mat_khau='$pwd' or email='$uname' and mat_khau='$pwd'");
+  function loginGV($uname){
+    $user = find("select * from giang_vien where tai_khoan='$uname' or email='$uname'");
     return $user;
  }
 

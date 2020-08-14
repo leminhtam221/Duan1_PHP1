@@ -13,6 +13,7 @@ include "./model/cart.php";
 include "./model/don-hang.php";
 include "./model/chi-tiet-don-hang.php";
 include "./model/thong-bao.php";
+include "./model/ma-kich-hoat.php";
 
 // INCLUDE controller
 include "./controller/controller.php";

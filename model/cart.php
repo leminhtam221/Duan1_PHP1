@@ -3,7 +3,7 @@
 // them san pham moi vao gio hang
 function addToCart($id){
 	
-	if(!isset($_COOKIE['cart'])){ // case gio hang rong
+	if($_COOKIE['cart']==''){ // case gio hang rong
 		$cart = array($id);
 		$cart_str = join($cart, ',');
 		setcookie('cart',$cart_str,time() + (86400 * 180), "/");
