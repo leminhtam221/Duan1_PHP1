@@ -22,7 +22,7 @@
       <?php if(!isset($_COOKIE['cart'])): ?>
       <div class="card-body" id="cart">
         <h5 class="mb-4">Giỏ Hàng Của Bạn (<span id="cart-counter2">0</span> khóa học)</h5>
-        <a href="#" type="button" class="card-link-secondary "><i class="fa fa-home mr-1"></i>
+        <a href="index.php" type="button" class="card-link-secondary "><i class="fa fa-home mr-1"></i>
           Trở lại trang chủ </a>
       </div>
       <?php elseif($ordered): ?>

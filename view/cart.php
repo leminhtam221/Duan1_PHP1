@@ -71,7 +71,7 @@
 					<p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding
 						items to your cart does not mean booking them.</p>
 					<?php else: ?>
-					<a href="#" type="button" class="card-link-secondary "><i class="fa fa-home mr-1"></i>
+					<a href="index.php" type="button" class="card-link-secondary "><i class="fa fa-home mr-1"></i>
 						Trở lại trang chủ </a>
 					<?php endif ?>
 				</div>

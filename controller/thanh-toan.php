@@ -23,9 +23,7 @@ if($_COOKIE['user_id']!=''){
       $cartArr = explode(',',$_COOKIE['cart']);
       for($i=0;$i<count($cartArr);$i++){
         $khoaHoc = loadKhoaHocChiTiet($cartArr[$i]);
-        $code = RandomString();
-        addToOrderDetails($khoaHoc['khuyen_mai'], $lastId, $khoaHoc['id'], $code);
-        insertActiveCode($code,$khoaHoc['id']);
+        addToOrderDetails($khoaHoc['khuyen_mai'], $lastId, $khoaHoc['id'], RandomString());
         clearCart();
         $ordered = true;
       }
